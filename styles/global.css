@@ -1,5 +1,149 @@
+:root {
+  --primary: #673ab7;
+  --secondary: #df74e2;
+}
+
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body.locked {
+  position: relative;
+  z-index: 1;
+  overflow-y: hidden;
+}
+
+/* Overlay */
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fade-in 0.5s;
+  top: 0;
+}
+
+.hide-overlay {
+  animation: fade-out 0.5s;
+}
+
+@keyframes fade-in {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+/* Navigation */
+.nav {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.nav .links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: right;
+}
+
+.nav .links li {
+  display: inline-block;
+  padding: 20px 0;
+}
+
+.nav .links li .link {
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.nav .links li .link:hover {
+  background-color: white;
+  color: goldenrod;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+/* Navigation button (for mobile) */
+.open-menu-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.8rem;
+  display: none;
+}
+
+.open-menu-button:hover {
+  color: goldenrod;
+  background-color: white;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+@media screen and (max-width: 650px) {
+  .links {
+    position: absolute;
+    left: -1000px;
+    text-align: left;
+    height: 100vh;
+    z-index: 50;
+  }
+
+  .links.visible {
+    left: 1px;
+    transition: left 0.5s;
+    background-color: white;
+    width: 60%;
+    font-weight: bold;
+  }
+
+  .links.invisible {
+    transition: left 0.5s;
+    left: -1000px;
+  }
+
+  .links.visible li {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    padding: 0;
+  }
+
+  .links.visible li .link:hover {
+    background-color: #d6d1d1;
+  }
+
+  .links.visible li .link {
+    color: black;
+    text-align: left;
+    display: flex;
+    padding: 40px;
+  }
+
+  .open-menu-button {
+    display: block;
+    padding: 15px;
+  }
 }
