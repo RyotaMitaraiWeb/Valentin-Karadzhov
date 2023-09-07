@@ -6,7 +6,8 @@
   --secondary: #df74e2;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -39,6 +40,7 @@ body.locked {
   from {
     background-color: transparent;
   }
+
   to {
     background-color: rgba(0, 0, 0, 0.6);
   }
@@ -48,6 +50,7 @@ body.locked {
   from {
     background-color: rgba(0, 0, 0, 0.6);
   }
+
   to {
     background-color: transparent;
   }
@@ -113,51 +116,52 @@ body.locked {
     gap: 30px;
   }
 
-@media screen and (max-width: 650px) {
-  .links {
-    position: absolute;
-    left: -1000px;
-    text-align: left;
-    height: 100vh;
-    z-index: 50;
-  }
+  @media screen and (max-width: 650px) {
+    .links {
+      position: absolute;
+      left: -1000px;
+      text-align: left;
+      height: 100vh;
+      z-index: 50;
+    }
 
-  .links.visible {
-    left: 1px;
-    transition: left 0.5s;
-    background-color: white;
-    width: 60%;
-    font-weight: bold;
-    align-self: first baseline;
-  }
+    .links.visible {
+      left: 1px;
+      transition: left 0.5s;
+      background-color: white;
+      width: 60%;
+      font-weight: bold;
+      align-self: first baseline;
+    }
 
-  .links.invisible {
-    transition: left 0.5s;
-    left: -1000px;
-  }
+    .links.invisible {
+      transition: left 0.5s;
+      left: -1000px;
+    }
 
-  .links.visible li {
-    display: block;
-    width: 100%;
-    text-align: left;
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
-    padding: 0;
-  }
+    .links.visible li {
+      display: block;
+      width: 100%;
+      text-align: left;
+      border-bottom: 1px solid gray;
+      border-right: 1px solid gray;
+      padding: 0;
+    }
 
-  .links.visible li .link:hover {
-    background-color: #d6d1d1;
-  }
+    .links.visible li .link:hover {
+      background-color: #d6d1d1;
+    }
 
-  .links.visible li .link {
-    color: black;
-    text-align: left;
-    display: flex;
-    padding: 40px;
-  }
+    .links.visible li .link {
+      color: black;
+      text-align: left;
+      display: flex;
+      padding: 40px;
+    }
 
-  .open-menu-button {
-    display: block;
-    padding: 15px;
+    .open-menu-button {
+      display: block;
+      padding: 15px;
+    }
   }
 }
