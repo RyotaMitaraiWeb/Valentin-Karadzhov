@@ -1,5 +1,43 @@
+:root {
+  --primary: #673ab7;
+  --secondary: #df74e2;
+}
+
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Navigation */
+.nav {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+}
+
+.nav .links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: right;
+}
+
+.nav .links li {
+  display: inline-block;
+  padding: 20px 0;
+}
+
+.nav .links li .link {
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.nav .links li .link:hover {
+  background-color: white;
+  color: goldenrod;
+  transition: color 0.2s, background-color 0.2s;
 }
