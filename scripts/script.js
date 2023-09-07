@@ -23,6 +23,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const menuButton = document.querySelector('#menu-button');
+  menuButton.addEventListener('click', showNavigationMenu);
+
   function showNavigationMenu(event) {
     event.preventDefault();
     const links = document.querySelector('.links');
