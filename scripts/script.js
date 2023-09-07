@@ -1,6 +1,27 @@
 window.addEventListener('DOMContentLoaded', () => {
+  const theme = localStorage.getItem('theme') || 'light';
+  setTheme(theme);
+
   const menuButton = document.querySelector('#menu-button');
   menuButton.addEventListener('click', showNavigationMenu);
+
+  const slideToggle = document.querySelector('#switch');
+  slideToggle.checked = theme === 'dark';
+  slideToggle.addEventListener('change', () => {
+    setTheme(localStorage.getItem('theme') === 'light' ? 'dark' : 'light' );
+  });
+
+  function setTheme(theme) {
+    localStorage.setItem('theme', theme);
+    const body = document.querySelector('body');
+    if (theme === 'light') {
+      body.classList.add('light');
+      body.classList.remove('dark');
+    } else {
+      body.classList.remove('light');
+      body.classList.add('dark');
+    }
+  }
 
   function showNavigationMenu(event) {
     event.preventDefault();

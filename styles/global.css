@@ -1,3 +1,6 @@
+@import './components/slide-toggle.css';
+@import './components/tooltip.css';
+
 :root {
   --primary: #673ab7;
   --secondary: #df74e2;
@@ -8,6 +11,7 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #e9e4e4;
 }
 
 body.locked {
@@ -55,21 +59,20 @@ body.locked {
   padding: 0;
   background-color: var(--primary);
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .nav .links {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
-  text-align: right;
 }
 
 .nav .links li {
   display: inline-block;
   padding: 20px 0;
+  text-align: center;
 }
 
 .nav .links li .link {
@@ -100,7 +103,11 @@ body.locked {
   transition: color 0.2s, background-color 0.2s;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
+  .nav {
+    gap: 30px;
+  }
+
   .links {
     position: absolute;
     left: -1000px;
@@ -115,6 +122,7 @@ body.locked {
     background-color: white;
     width: 60%;
     font-weight: bold;
+    align-self: first baseline;
   }
 
   .links.invisible {
