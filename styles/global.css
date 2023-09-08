@@ -272,6 +272,11 @@ footer.footer ul {
   padding-left: 0;
 }
 
+footer.footer ul li {
+  margin-bottom: 1.5em;
+  font-size: 1.1em;
+}
+
 footer.footer section {
   width: 450px;
   background-color: #7247c2;
