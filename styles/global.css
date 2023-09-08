@@ -2,7 +2,7 @@
 @import './components/tooltip.css';
 
 :root {
-  --primary: #673ab7;
+  --primary: #6635ba;
   --secondary: #df74e2;
   --background-light: #e9e4e4;
   --background-dark: #121212;
@@ -21,15 +21,20 @@ html {
   padding: 0;
   height: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  transition: background-color var(--theme-animation-duration);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 /* Animations */
-.animate-background {
+body.loaded .animate-background {
   transition: background-color var(--theme-animation-duration);
 }
 
-.animate-text {
+body.loaded .animate-text {
   transition: color var(--theme-animation-duration);
 }
 
@@ -228,4 +233,51 @@ body.locked {
       padding: 15px;
     }
   }
+}
+
+/* Footer */
+footer.footer {
+  background-color: var(--primary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 20px;
+  margin-top: auto;
+  gap: 10px;
+}
+
+footer.footer h1 {
+  color: var(--text-emphasis-dark);
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 5px;
+}
+
+footer.footer a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+footer.footer .icon {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+footer.footer a:hover {
+  text-decoration: underline;
+}
+
+footer.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer.footer ul li {
+  margin-bottom: 1.5em;
+  font-size: 1.1em;
+}
+
+footer.footer section {
+  width: 450px;
+  background-color: #7247c2;
+  border-radius: 5px;
 }
