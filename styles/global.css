@@ -24,6 +24,15 @@ html {
   transition: background-color var(--theme-animation-duration);
 }
 
+/* Animations */
+.animate-background {
+  transition: background-color var(--theme-animation-duration);
+}
+
+.animate-text {
+  transition: color var(--theme-animation-duration);
+}
+
 /* Theming */
 body.light,
 body.light .theme-background {
@@ -36,12 +45,10 @@ body.dark .theme-background {
 }
 
 body.light .theme-accent-background {
-  transition: background-color var(--theme-animation-duration);
   background-color: var(--accent-light);
 }
 
 body.dark .theme-accent-background {
-  transition: background-color var(--theme-animation-duration);
   background-color: var(--accent-dark);
 }
 
@@ -59,11 +66,6 @@ body.light .theme-text-emphasis {
 
 body.light .theme-text {
   color: var(--text-medium-light);
-}
-
-.theme-text,
-.theme-text-emphasis {
-  transition: color var(--theme-animation-duration);
 }
 
 body.locked {
@@ -174,6 +176,7 @@ body.locked {
       text-align: left;
       height: 100vh;
       z-index: 50;
+      font-size: 1.2rem;
     }
 
     .links.visible {
@@ -194,7 +197,6 @@ body.locked {
       width: 100%;
       text-align: left;
       border-bottom: 1px solid gray;
-      border-right: 1px solid gray;
       padding: 0;
     }
 
@@ -203,7 +205,15 @@ body.locked {
     }
 
     .links.visible li .link:hover {
+      color: white;
+    }
+
+    body.light .links.visible li .link:hover {
       background-color: #d6d1d1;
+    }
+
+    body.dark .links.visible li .link:hover {
+      background-color: rgba(145, 145, 145, 0.8);
     }
 
     .links.visible li .link {
