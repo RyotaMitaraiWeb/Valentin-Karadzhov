@@ -21,7 +21,6 @@ html {
   padding: 0;
   height: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  transition: background-color var(--theme-animation-duration);
   display: flex;
   flex-direction: column;
 }
@@ -31,11 +30,11 @@ main {
 }
 
 /* Animations */
-.animate-background {
+body.loaded .animate-background {
   transition: background-color var(--theme-animation-duration);
 }
 
-.animate-text {
+body.loaded .animate-text {
   transition: color var(--theme-animation-duration);
 }
 

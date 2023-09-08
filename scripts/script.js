@@ -76,4 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
       links.classList.remove('visible', 'invisible', 'theme-accent-background');
     }, 500);
   }
+
+  const body = document.querySelector('body');
+  setTimeout(() => body.classList.add('loaded'), 1);
 });
