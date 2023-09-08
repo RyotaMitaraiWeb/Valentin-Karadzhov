@@ -6,7 +6,7 @@
   --secondary: #df74e2;
   --background-light: #e9e4e4;
   --background-dark: #121212;
-  --accent-dark: #313030;
+  --accent-dark: #383838;
   --accent-light: white;
   --text-emphasis-dark: rgba(255, 255, 255, 0.87);
   --text-medium-dark: rgba(255, 255, 255, 0.6);
@@ -27,19 +27,16 @@ html {
 /* Theming */
 body.light,
 body.light .theme-background {
-  transition: background-color var(--theme-animation-duration);
   background-color: var(--background-light);
 }
 
 body.dark,
 body.dark .theme-background {
-  transition: background-color var(--theme-animation-duration);
   background-color: var(--background-dark);
 }
 
 body.light .theme-accent-background {
   transition: background-color var(--theme-animation-duration);
-
   background-color: var(--accent-light);
 }
 
@@ -66,7 +63,7 @@ body.light .theme-text {
 
 .theme-text,
 .theme-text-emphasis {
-  transition: color 1s;
+  transition: color var(--theme-animation-duration);
 }
 
 body.locked {
