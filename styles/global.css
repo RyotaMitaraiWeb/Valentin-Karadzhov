@@ -2,11 +2,11 @@
 @import './components/tooltip.css';
 
 :root {
-  --primary: #673ab7;
+  --primary: #6635ba;
   --secondary: #df74e2;
   --background-light: #e9e4e4;
   --background-dark: #121212;
-  --accent-dark: #313030;
+  --accent-dark: #383838;
   --accent-light: white;
   --text-emphasis-dark: rgba(255, 255, 255, 0.87);
   --text-medium-dark: rgba(255, 255, 255, 0.6);
@@ -21,30 +21,39 @@ html {
   padding: 0;
   height: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Animations */
+body.loaded .animate-background {
   transition: background-color var(--theme-animation-duration);
+}
+
+body.loaded .animate-text {
+  transition: color var(--theme-animation-duration);
 }
 
 /* Theming */
 body.light,
 body.light .theme-background {
-  transition: background-color var(--theme-animation-duration);
   background-color: var(--background-light);
 }
 
 body.dark,
 body.dark .theme-background {
-  transition: background-color var(--theme-animation-duration);
   background-color: var(--background-dark);
 }
 
 body.light .theme-accent-background {
-  transition: background-color var(--theme-animation-duration);
-
   background-color: var(--accent-light);
 }
 
 body.dark .theme-accent-background {
-  transition: background-color var(--theme-animation-duration);
   background-color: var(--accent-dark);
 }
 
@@ -62,11 +71,6 @@ body.light .theme-text-emphasis {
 
 body.light .theme-text {
   color: var(--text-medium-light);
-}
-
-.theme-text,
-.theme-text-emphasis {
-  transition: color 1s;
 }
 
 body.locked {
@@ -177,6 +181,7 @@ body.locked {
       text-align: left;
       height: 100vh;
       z-index: 50;
+      font-size: 1.2rem;
     }
 
     .links.visible {
@@ -197,7 +202,6 @@ body.locked {
       width: 100%;
       text-align: left;
       border-bottom: 1px solid gray;
-      border-right: 1px solid gray;
       padding: 0;
     }
 
@@ -206,7 +210,15 @@ body.locked {
     }
 
     .links.visible li .link:hover {
+      color: white;
+    }
+
+    body.light .links.visible li .link:hover {
       background-color: #d6d1d1;
+    }
+
+    body.dark .links.visible li .link:hover {
+      background-color: rgba(145, 145, 145, 0.8);
     }
 
     .links.visible li .link {
@@ -221,4 +233,51 @@ body.locked {
       padding: 15px;
     }
   }
+}
+
+/* Footer */
+footer.footer {
+  background-color: var(--primary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 20px;
+  margin-top: auto;
+  gap: 10px;
+}
+
+footer.footer h1 {
+  color: var(--text-emphasis-dark);
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 5px;
+}
+
+footer.footer a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+footer.footer .icon {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+footer.footer a:hover {
+  text-decoration: underline;
+}
+
+footer.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer.footer ul li {
+  margin-bottom: 1.5em;
+  font-size: 1.1em;
+}
+
+footer.footer section {
+  width: 450px;
+  background-color: #7247c2;
+  border-radius: 5px;
 }

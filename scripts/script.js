@@ -7,6 +7,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const slideToggle = document.querySelector('#switch');
   slideToggle.checked = theme === 'dark';
+  const slideToggleTooltip = document.querySelector('.switch.tooltip .tooltip-text');
+  slideToggleTooltip.addEventListener('click', () => {
+    setTheme(localStorage.getItem('theme') === 'light' ? 'dark' : 'light' );
+  });
+
   slideToggle.addEventListener('change', () => {
     setTheme(localStorage.getItem('theme') === 'light' ? 'dark' : 'light' );
   });
@@ -21,6 +26,9 @@ window.addEventListener('DOMContentLoaded', () => {
       body.classList.remove('light');
       body.classList.add('dark');
     }
+
+    const toggle = document.querySelector('#switch');
+    toggle.checked = theme === 'dark';
   }
 
   function showNavigationMenu(event) {
@@ -54,9 +62,21 @@ window.addEventListener('DOMContentLoaded', () => {
     links.classList.add('invisible');
 
     setTimeout(() => {
-      body.removeChild(overlay);
+      try {
+        // clicking on the overlay while being closed can, 
+        // depending on the timing, make
+        // this to attempt to remove the overlay when it's already
+        // detached from the DOM tree, throwing an error
+        // since the error doesn't break anything,
+        // this code is mostly meant to silence it. 
+        body.removeChild(overlay);
+      } catch {}
+
       body.classList.remove('locked');
       links.classList.remove('visible', 'invisible', 'theme-accent-background');
     }, 500);
   }
+
+  const body = document.querySelector('body');
+  setTimeout(() => body.classList.add('loaded'), 1);
 });
