@@ -4,6 +4,15 @@
 :root {
   --primary: #673ab7;
   --secondary: #df74e2;
+  --background-light: #e9e4e4;
+  --background-dark: #121212;
+  --accent-dark: #313030;
+  --accent-light: white;
+  --text-emphasis-dark: rgba(255, 255, 255, 0.87);
+  --text-medium-dark: rgba(255, 255, 255, 0.6);
+  --text-emphasis-light: black;
+  --text-medium-light: #0e0e0e;
+  --theme-animation-duration: 0.7s;
 }
 
 body,
@@ -12,7 +21,52 @@ html {
   padding: 0;
   height: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #e9e4e4;
+  transition: background-color var(--theme-animation-duration);
+}
+
+/* Theming */
+body.light,
+body.light .theme-background {
+  transition: background-color var(--theme-animation-duration);
+  background-color: var(--background-light);
+}
+
+body.dark,
+body.dark .theme-background {
+  transition: background-color var(--theme-animation-duration);
+  background-color: var(--background-dark);
+}
+
+body.light .theme-accent-background {
+  transition: background-color var(--theme-animation-duration);
+
+  background-color: var(--accent-light);
+}
+
+body.dark .theme-accent-background {
+  transition: background-color var(--theme-animation-duration);
+  background-color: var(--accent-dark);
+}
+
+body.dark .theme-text-emphasis {
+  color: var(--text-emphasis-dark);
+}
+
+body.dark .theme-text {
+  color: var(--text-medium-dark);
+}
+
+body.light .theme-text-emphasis {
+  color: var(--text-emphasis-light);
+}
+
+body.light .theme-text {
+  color: var(--text-medium-light);
+}
+
+.theme-text,
+.theme-text-emphasis {
+  transition: color 1s;
 }
 
 body.locked {
@@ -66,13 +120,13 @@ body.locked {
   align-items: center;
   flex-direction: row;
   justify-content: flex-end;
+  gap: 10px;
 }
 
 .nav .links {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
   text-align: right;
 }
 
@@ -128,7 +182,6 @@ body.locked {
     .links.visible {
       left: 1px;
       transition: left 0.5s;
-      background-color: white;
       width: 60%;
       font-weight: bold;
       align-self: first baseline;
@@ -146,6 +199,10 @@ body.locked {
       border-bottom: 1px solid gray;
       border-right: 1px solid gray;
       padding: 0;
+    }
+
+    .dark .links.visible li a {
+      color: white;
     }
 
     .links.visible li .link:hover {

@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
   function showNavigationMenu(event) {
     event.preventDefault();
     const links = document.querySelector('.links');
-    links.classList.add('visible');
+    links.classList.add('visible', 'theme-accent-background');
 
     const body = document.querySelector('body');
     body.classList.add('locked');
@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       body.removeChild(overlay);
       body.classList.remove('locked');
-      links.classList.remove('visible', 'invisible');
+      links.classList.remove('visible', 'invisible', 'theme-accent-background');
     }, 500);
   }
 });
