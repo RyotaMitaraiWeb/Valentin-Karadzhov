@@ -7,6 +7,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const slideToggle = document.querySelector('#switch');
   slideToggle.checked = theme === 'dark';
+  const slideToggleTooltip = document.querySelector('.switch.tooltip .tooltip-text');
+  slideToggleTooltip.addEventListener('click', () => {
+    setTheme(localStorage.getItem('theme') === 'light' ? 'dark' : 'light' );
+  });
+
   slideToggle.addEventListener('change', () => {
     setTheme(localStorage.getItem('theme') === 'light' ? 'dark' : 'light' );
   });
@@ -21,6 +26,9 @@ window.addEventListener('DOMContentLoaded', () => {
       body.classList.remove('light');
       body.classList.add('dark');
     }
+
+    const toggle = document.querySelector('#switch');
+    toggle.checked = theme === 'dark';
   }
 
   function showNavigationMenu(event) {
