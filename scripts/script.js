@@ -62,7 +62,16 @@ window.addEventListener('DOMContentLoaded', () => {
     links.classList.add('invisible');
 
     setTimeout(() => {
-      body.removeChild(overlay);
+      try {
+        // clicking on the overlay while being closed can, 
+        // depending on the timing, make
+        // this to attempt to remove the overlay when it's already
+        // detached from the DOM tree, throwing an error
+        // since the error doesn't break anything,
+        // this code is mostly meant to silence it. 
+        body.removeChild(overlay);
+      } catch {}
+
       body.classList.remove('locked');
       links.classList.remove('visible', 'invisible', 'theme-accent-background');
     }, 500);
