@@ -3,7 +3,8 @@
 
 :root {
   --primary: #6635ba;
-  --secondary: #df74e2;
+  --secondary-dark: #1a3eb4;
+  --secondary-light: #122b7e;
   --background-light: #e9e4e4;
   --background-dark: #121212;
   --accent-dark: #383838;
@@ -27,10 +28,25 @@ html {
 
 main {
   flex: 1;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.pink {
+  color: var(--secondary-light);
+}
+
+body.light {
+  background-color: var(--background-light);
+}
+
+body.dark {
+  background-color: var(--background-dark);
 }
 
 /* Animations */
-body.loaded .animate-background {
+body.loaded .animate-background,
+body.loaded {
   transition: background-color var(--theme-animation-duration);
 }
 
@@ -280,4 +296,37 @@ footer.footer section {
   width: 450px;
   background-color: #7247c2;
   border-radius: 5px;
+}
+
+.link-button {
+  background-color: var(--secondary-light);
+  color: var(--text-emphasis-dark);
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: background-color 0.3s color 0.3s;
+}
+
+body.light .link-button {
+  background-color: var(--secondary-light);
+}
+
+body.dark .link-button {
+  background-color: var(--secondary-dark);
+}
+
+body.dark .link-button:hover,
+body.dark .link-button:focus,
+body.light .link-button:hover,
+body.light .link-button:focus {
+  background-color: #3c57b2;
+  transition: background-color 0.3s;
+}
+
+.link-button:active,
+.link-button:active {
+  /* background-color: #556cb7; */
+  transition: background-color 0.3s;
+  outline: 3px solid #556cb7;
 }

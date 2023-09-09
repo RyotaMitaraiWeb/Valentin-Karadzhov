@@ -1,0 +1,91 @@
+.introduction {
+  margin-top: 10px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 50% 5% 50%;
+  place-content: center;
+}
+
+.introduction h1, .introduction h2, .introduction p {
+  text-align: center;
+}
+
+.introduction .summary {
+  padding: 16px;
+}
+
+.introduction hr {
+  border: 1px solid gray;
+  height: 90%;
+}
+
+.introduction li {
+  margin-bottom: 10px;
+}
+
+.introduction a {
+  text-decoration: none;
+}
+
+.introduction a:hover {
+  text-decoration: underline;
+}
+
+.introduction p, .introduction li {
+  font-size: 1.3em;
+}
+
+@media screen and (max-width: 980px) {
+  .introduction {
+    display: block;
+  }
+
+  .introduction hr {
+    height: 0;
+    width: 95%;
+    margin: 2em auto;
+  }
+
+  .introduction ul {
+    padding: 16px;
+  }
+
+  .introduction li {
+    margin-bottom: 1.5em;
+    font-size: 1.5em;
+  }
+}
+
+.site-navigation article {
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  margin: 1em auto;
+  width: 80%;
+}
+
+.site-navigation article h1 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.5em;
+}
+
+.site-navigation h1 {
+  text-align: center;
+}
+
+.site-navigation {
+  font-size: 1.3rem;
+}
+
+.site-navigation .navigation-icon {
+  font-size: 1.7rem;
+}
+
+.site-navigation p {
+  margin-top: 1.5em;
+}
+
+.site-navigation .learn-more {
+  font-size: 1.4rem;
+}
