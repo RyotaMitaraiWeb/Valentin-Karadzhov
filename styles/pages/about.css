@@ -1,0 +1,25 @@
+main > h1 {
+  text-align: center;
+}
+
+main section {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 1em auto;
+  width: 80%;
+}
+
+main section p, main section h1 {
+  line-height: 1.5;
+}
+
+main section h1 {
+  margin: 0;
+  font-size: 1.6em;
+}
+
+@media screen and (max-width: 500px) {
+  main section {
+    width: 90%;
+  }
+}
