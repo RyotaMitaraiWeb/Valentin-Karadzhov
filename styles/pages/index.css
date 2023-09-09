@@ -3,7 +3,6 @@
   border-radius: 5px;
   display: grid;
   grid-template-columns: 50% 5% 50%;
-  place-content: center;
 }
 
 .introduction h1, .introduction h2, .introduction p {
@@ -22,6 +21,11 @@
 
 .introduction li {
   margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+.introduction p {
+  font-size: 1.2em;
 }
 
 .introduction a {
@@ -30,10 +34,6 @@
 
 .introduction a:hover {
   text-decoration: underline;
-}
-
-.introduction p, .introduction li {
-  font-size: 1.3em;
 }
 
 @media screen and (max-width: 980px) {
@@ -53,7 +53,16 @@
 
   .introduction li {
     margin-bottom: 1.5em;
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .introduction li {
     font-size: 1.1em;
+  }
+
+  .introduction p {
+    text-align: left;
   }
 }
 

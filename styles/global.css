@@ -185,71 +185,71 @@ body.locked {
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 745px) {
   .nav {
     gap: 30px;
   }
 
-  @media screen and (max-width: 650px) {
-    .links {
-      position: absolute;
-      left: -1000px;
-      text-align: left;
-      height: 100vh;
-      z-index: 50;
-      font-size: 1.2rem;
-    }
 
-    .links.visible {
-      left: 1px;
-      transition: left 0.5s;
-      width: 60%;
-      font-weight: bold;
-      align-self: first baseline;
-    }
+  .links {
+    position: absolute;
+    left: -1000px;
+    text-align: left;
+    height: 100vh;
+    z-index: 50;
+    font-size: 1.2rem;
+  }
 
-    .links.invisible {
-      transition: left 0.5s;
-      left: -1000px;
-    }
+  .links.visible {
+    left: 1px;
+    transition: left 0.5s;
+    width: 60%;
+    font-weight: bold;
+    align-self: first baseline;
+  }
 
-    .links.visible li {
-      display: block;
-      width: 100%;
-      text-align: left;
-      border-bottom: 1px solid gray;
-      padding: 0;
-    }
+  .links.invisible {
+    transition: left 0.5s;
+    left: -1000px;
+  }
 
-    .dark .links.visible li a {
-      color: white;
-    }
+  .links.visible li {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid gray;
+    padding: 0;
+  }
 
-    .links.visible li .link:hover {
-      color: white;
-    }
+  .dark .links.visible li a {
+    color: white;
+  }
 
-    body.light .links.visible li .link:hover {
-      background-color: #d6d1d1;
-    }
+  .links.visible li .link:hover {
+    color: white;
+  }
 
-    body.dark .links.visible li .link:hover {
-      background-color: rgba(145, 145, 145, 0.8);
-    }
+  body.light .links.visible li .link:hover {
+    background-color: #d6d1d1;
+  }
 
-    .links.visible li .link {
-      color: black;
-      text-align: left;
-      display: flex;
-      padding: 40px;
-    }
+  body.dark .links.visible li .link:hover {
+    background-color: rgba(145, 145, 145, 0.8);
+  }
 
-    .open-menu-button {
-      display: block;
-      padding: 15px;
-    }
+  .links.visible li .link {
+    color: black;
+    text-align: left;
+    display: flex;
+    padding: 40px;
+  }
+
+  .open-menu-button {
+    display: block;
+    padding: 15px;
   }
 }
+
 
 /* Footer */
 footer.footer {
