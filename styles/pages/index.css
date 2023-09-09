@@ -8,6 +8,7 @@
 
 .introduction h1, .introduction h2, .introduction p {
   text-align: center;
+  line-height: 1.5;
 }
 
 .introduction .summary {
@@ -68,6 +69,7 @@
   margin-top: 0;
   margin-bottom: 8px;
   font-size: 1.5em;
+  line-height: 1.5;
 }
 
 .site-navigation h1 {
@@ -84,6 +86,7 @@
 
 .site-navigation p {
   margin-top: 1.5em;
+  line-height: 1.5;
 }
 
 .site-navigation .learn-more {
