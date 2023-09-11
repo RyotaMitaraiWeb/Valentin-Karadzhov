@@ -89,6 +89,10 @@ body.light .theme-text {
   color: var(--text-medium-light);
 }
 
+body.dark .theme-link {
+  color: var(--text-emphasis-dark);
+}
+
 body.locked {
   position: relative;
   z-index: 1;
