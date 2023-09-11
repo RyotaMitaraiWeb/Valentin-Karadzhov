@@ -1,0 +1,45 @@
+
+
+.skills-intro, .other-skills {
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin: 1em auto;
+  width: 90%;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.skills-section {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.technology {
+  border-radius: 5px;
+  padding: 16px 8px;
+  width: 160px;
+  height: 100px;
+}
+
+.technology h1 {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.technology svg {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  display: block;
+}
+
+.other-skills li {
+  margin-bottom: 1.5em;
+}

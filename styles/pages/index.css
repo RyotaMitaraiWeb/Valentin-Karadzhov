@@ -16,6 +16,7 @@
 
 .introduction hr {
   border: 1px solid gray;
+  width: 0;
   height: 90%;
 }
 
