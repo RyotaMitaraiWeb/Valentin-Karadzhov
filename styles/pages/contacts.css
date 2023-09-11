@@ -1,0 +1,14 @@
+main .contact {
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+main h1 {
+  text-align: center;
+}
+
+.contact p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
