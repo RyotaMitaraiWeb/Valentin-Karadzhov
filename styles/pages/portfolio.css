@@ -93,7 +93,7 @@ article.project {
 .project-summary .review {
   background-color: var(--primary);
   border-top-right-radius: 10px;
-  padding: 4px;
+  padding: 4px 16px;
 }
 
 .project-summary .technology-chips {
@@ -116,7 +116,7 @@ article.project {
 
 .project-summary p {
   font-size: 1.3rem;
-  padding: 16px 8px;
+  padding: 16px;
   line-height: 1.5;
 }
 
