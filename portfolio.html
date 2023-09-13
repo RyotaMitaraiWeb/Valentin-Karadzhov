@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentin Karadzhov - Fullstack Web Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/pages/portfolio.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="switch tooltip">
+      <input id="switch" class="look" type="checkbox">
+      <label for="switch"></label>
+      <span class="tooltip-text">Change theme</span>
+    </div>
+    <ul class="links">
+      <li><a class="link" href="/index.html">Home</a></li>
+      <li><a class="link" href="/about.html">About me</a></li>
+      <li><a class="link" href="/portfolio.html">Project highlights</a></li>
+      <li><a class="link" href="/skills.html">Skills</a></li>
+      <li><a class="link" href="/contacts.html">Contact me</a></li>
+    </ul>
+    <button id="menu-button" class="open-menu-button">&equiv;</button>
+  </nav>
+  <main class="theme-background animate-background">
+    <h1 class="theme-text-emphasis animate-text">Project highlights</h1>
+    <section class="portfolio-intro theme-accent-background animate-background">
+      <h1 class="theme-text-emphasis animate-text">Overview</h1>
+      <p class="theme-text animate-text">
+        These projects are those that I consider to be my best ones. You can review which
+        technologies (languages, libraries, frameworks, databases) were used to
+        develop them and general details about them. Each highlight provides links
+        to the projects' GitHub repositories, where you can also find a link to a
+        live demo or a Dockerfile to run this locally if those are available.
+      </p>
+      <p class="theme-text animate-text">
+        If you want to review more projects, consider paying a visit to the
+        <a class="theme-link animate-text" href="/projects.html">projects catalogue page</a>,
+        where you can find more projects that I have worked on. You can also
+        check out my
+        <a class="theme-link animate-text" href="https://github.com/RyotaMitaraiWeb" target="_blank"
+          rel="noopener noreferrer">GitHub profile</a>
+        for this purpose.
+      </p>
+    </section>
+    <section class="projects">
+      <h1 class="theme-text-emphasis animate-text">The highlights</h1>
+      <div class="highlights">
+        <article class="project">
+          <div class="project-intro">
+            <div class="project-image quiz-world" aria-hidden="true"></div>
+            <ul class="project-links">
+              <li>
+                <a class="link-button" href="https://github.com/RyotaMitaraiWeb/Quiz-World" target="_blank"
+                  rel="noopener noreferrer">
+                  GitHub repository (Angular project)
+                </a>
+              </li>
+              <li>
+                <a class="link-button" href="https://github.com/RyotaMitaraiWeb/QuizWorld" target="_blank"
+                  rel="noopener noreferrer">
+                  GitHub repository (ASP.NET Core project)
+                </a>
+              </li>
+            </ul>
+          </div>
+          <section class="project-summary">
+            <div class="review">
+              <h1>Quiz World</h1>
+              <h2 class="screenreader-text">Technologies used:</h2>
+              <ul class="technology-chips">
+                <li class="technology-chip">Angular</li>
+                <li class="technology-chip">ASP.NET Core</li>
+                <li class="technology-chip">MS SQL Server</li>
+              </ul>
+            </div>
+            <div class="mobile-background quiz-world" aria-hidden="true"></div>
+            <p class="theme-text animate-text">
+              <em class="theme-text-emphasis animate-text">Quiz World</em> is an app that allows users to
+              create and take quizzes, featuring single-choice, multiple-choice, and text-based questions.
+              The user interface, built with Angular Material, offers an excellent user experience for quizzes and quiz
+              creation.
+              It supports sorting, pagination, and role-based authorization.
+              Quiz World leverages ASP.NET Core's Web API to a full extent and utilizes a Redis database for securely
+              managing user logouts.
+              The front-end and back-end projects include over 500 unit, integration, and component tests.
+              The database architecture is driven by Entity Framework Core.
+            </p>
+          </section>
+        </article>
+        <article class="project">
+          <div class="project-intro">
+            <div class="project-image vue-flashcards" aria-hidden="true"></div>
+            <ul class="project-links">
+              <li>
+                <a class="link-button" href="https://github.com/RyotaMitaraiWeb/Flashcards" target="_blank"
+                  rel="noopener noreferrer">
+                  GitHub repository (Vue project)
+                </a>
+              </li>
+              <li>
+                <a class="link-button" href="https://github.com/RyotaMitaraiWeb/Flashcards-Service" target="_blank"
+                  rel="noopener noreferrer">
+                  GitHub repository (NestJS project)
+                </a>
+              </li>
+            </ul>
+          </div>
+          <section class="project-summary">
+            <div class="review">
+              <h1>Vue Flashcards</h1>
+              <h2 class="screenreader-text">Technologies used:</h2>
+              <ul class="technology-chips">
+                <li class="technology-chip">Vue</li>
+                <li class="technology-chip">TypeScript</li>
+                <li class="technology-chip">NestJS</li>
+                <li class="technology-chip">PostgreSQL</li>
+              </ul>
+            </div>
+            <div class="mobile-background vue-flashcards" aria-hidden="true"></div>
+            <p class="theme-text animate-text">
+              Originally, I had a flashcards project written in
+              <em><a class="theme-link animate-text" href="https://github.com/RyotaMitaraiWeb/Flashcards-client"
+                  target="_blank" rel="noopener noreferrer">React</a></em>
+              and
+              <em><a class="theme-link animate-text" href="https://github.com/RyotaMitaraiWeb/Flashcards-server"
+                  target="_blank" rel="noopener noreferrer">Express (with TypeScript)</a></em>.
+              However, because it was one of my first serious projects, both the client
+              and the server's codebases ended up quite messy.
+              To revive the concept, I decided to redo the whole thing using NestJS and Vue to practice these frameworks. The
+              new version has a cleaner look, thanks to the Vuetify component library.
+              <em class="theme-text-emphasis animate-text">Vue Flashcards</em> lets you make
+              flashcards for effective studying. Once you create a deck, everyone can use it and bookmark it.
+              Additionally, users can personalize their color preferences for a more customized experience. Both
+              the client and the server have numerous tests; the Vue application has mostly
+              component and end-to-end tests with a few unit tests, wheres the NestJS application
+              has many unit, integration, and end-to-end tests.
+
+            </p>
+          </section>
+        </article>
+        <article class="project">
+          <div class="project-intro">
+            <div class="project-image react-ecommerce" aria-hidden="true"></div>
+            <ul class="project-links">
+              <li>
+                <a class="link-button" href="https://github.com/RyotaMitaraiWeb/ecommerce-client" target="_blank"
+                  rel="noopener noreferrer">
+                  GitHub repository (React project)
+                </a>
+              </li>
+              <li>
+                <a class="link-button" href="https://github.com/RyotaMitaraiWeb/ecommerce-server" target="_blank"
+                  rel="noopener noreferrer">
+                  GitHub repository (Express project)
+                </a>
+              </li>
+            </ul>
+          </div>
+          <section class="project-summary">
+            <div class="review">
+              <h1>React Ecommerce</h1>
+              <h2 class="screenreader-text">Technologies used:</h2>
+              <ul class="technology-chips">
+                <li class="technology-chip">React</li>
+                <li class="technology-chip">TypeScript</li>
+                <li class="technology-chip">Express</li>
+                <li class="technology-chip">MongoDB</li>
+              </ul>
+            </div>
+            <div class="mobile-background react-ecommerce" aria-hidden="true"></div>
+            <p class="theme-text animate-text">
+              <em class="theme-text-emphasis animate-text">React Ecommerce</em> is a rather weird store, not only
+              because you don't
+              use real money to purchase things, but also because you cannot buy the same product
+              multpile times. Anyways, this project utilizes TypeScript on both the front end and
+              the back end, with Mongoose powering the MongoDB database. The user interface is
+              achieved with the help of Material UI.
+              The user is capable of searching, sorting, and paginating lists of products.
+              Logged in users can adjust color preferences and track the products which
+              they have "bought". The projects together feature 200+ tests, most of which
+              are end-to-end ones. Front-end tests were written in Playwright and back-end tests
+              were written in Mocha and Chai.
+            </p>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <section class="footer-links">
+      <h1>Site navigation</h1>
+      <ul class="fa-ul">
+        <li>
+          <span class="fa fa-home icon fa-li"></span>
+          <a class="link" href="/index.html">Home</a>
+        </li>
+        <li>
+          <span class="fa fa-id-card icon fa-li"></span>
+          <a class="link" href="/about.html">About me</a>
+        </li>
+        <li>
+          <span class="fa fa-folder-open icon fa-li"></span>
+          <a class="link" href="/portfolio.html">Project highlights (portfolio)</a>
+        </li>
+        <li>
+          <span class="fa fa-list-alt icon fa-li"></span>
+          <a class="link" href="/projects.html">Projects catalogue</a>
+        </li>
+        <li>
+          <span class="fa fa-pencil icon fa-li"></span>
+          <a class="link" href="/skills.html">Skills</a>
+        </li>
+        <li>
+          <span class="fa fa-mail-forward icon fa-li"></span>
+          <a class="link" href="/contacts.html">Contact me</a>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h1>Offsite navigation</h1>
+      <ul class="fa-ul">
+        <li>
+          <span class="fa fa-envelope icon fa-li"></span>
+          <a href="mailto:valkaradzhov@gmail.com">valkaradzhov@gmail.com</a>
+        </li>
+        <li>
+          <span class="fa fa-file-pdf-o icon fa-li"></span>
+          <a href="#" download>Download my CV (PDF)</a>
+        </li>
+        <li>
+          <span class="fa fa-github-square icon fa-li"></span>
+          <a href="https://github.com/RyotaMitaraiWeb" target="_blank">GitHub profile</a>
+        </li>
+        <li>
+          <span class="fa fa-linkedin-square icon fa-li"></span>
+          <a href="https://bg.linkedin.com/in/valentin-karadzhov-100615213" target="_blank">LinkedIn profile</a>
+        </li>
+      </ul>
+    </section>
+  </footer>
+  <script src="/scripts/script.js"></script>
+</body>
+
+</html>

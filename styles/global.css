@@ -32,6 +32,11 @@ main {
   margin: 0 auto;
 }
 
+.screenreader-text {
+  position: absolute;
+  left: -999999px;
+}
+
 hr {
   width: 90%;
 }
