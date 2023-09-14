@@ -279,7 +279,7 @@ footer.footer {
   gap: 10px;
 }
 
-footer.footer h1 {
+footer.footer h2 {
   color: var(--text-emphasis-dark);
   font-size: 1.2em;
   text-align: center;
