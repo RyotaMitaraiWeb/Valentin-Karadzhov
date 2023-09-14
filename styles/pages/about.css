@@ -13,7 +13,7 @@ main section p, main section h1 {
   line-height: 1.5;
 }
 
-main section h1 {
+main section h2 {
   margin: 0;
   font-size: 1.6em;
   text-align: left;
