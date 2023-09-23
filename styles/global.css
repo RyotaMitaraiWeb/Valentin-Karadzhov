@@ -226,6 +226,7 @@ body.locked {
     height: 100vh;
     z-index: 50;
     font-size: 1.2rem;
+    overflow-y: auto;
   }
 
   .links.visible {
