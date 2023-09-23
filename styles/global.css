@@ -14,6 +14,7 @@
   --text-emphasis-light: black;
   --text-medium-light: #0e0e0e;
   --theme-animation-duration: 0.7s;
+  ---shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 body,
@@ -45,7 +46,12 @@ hr {
   color: var(--secondary-light);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-align: center;
 }
 
@@ -68,6 +74,7 @@ body.loaded .animate-text {
 }
 
 /* Theming */
+
 body.light,
 body.light .theme-background {
   background-color: var(--background-light);
@@ -76,6 +83,10 @@ body.light .theme-background {
 body.dark,
 body.dark .theme-background {
   background-color: var(--background-dark);
+}
+
+.theme-accent-background {
+  box-shadow: var(---shadow);
 }
 
 body.light .theme-accent-background {
