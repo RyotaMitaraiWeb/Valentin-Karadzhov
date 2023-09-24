@@ -54,7 +54,7 @@
     font-size: 1.1em;
   }
 
-  .introduction p {
+  .introduction p, .site-navigation article p {
     text-align: left;
   }
 }
@@ -93,4 +93,8 @@
 
 .site-navigation .learn-more {
   font-size: 1.4rem;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+  padding: 16px 8px;
 }
