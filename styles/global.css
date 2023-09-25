@@ -341,6 +341,7 @@ body.locked {
     border: none;
     font-weight: bold;
     width: 100%;
+    cursor: pointer;
   }
 
   .dark .links.visible li .link {
