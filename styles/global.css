@@ -337,6 +337,12 @@ body.locked {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .links.visible {
+    width: 80%;
+  }
+}
+
 
 /* Footer */
 footer.footer {
