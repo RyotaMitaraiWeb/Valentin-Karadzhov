@@ -1,25 +1,13 @@
 window.addEventListener('DOMContentLoaded', () => {
   const theme = localStorage.getItem('theme') || 'light';
-  setTheme(theme);
+  setThemeOnLoad();
 
   createOverlay();
 
   const menuButton = document.querySelector('#menu-button');
   menuButton.addEventListener('click', showNavigationMenu);
 
-  const slideToggle = document.querySelector('#switch');
-  slideToggle.checked = theme === 'dark';
-  const slideToggleTooltip = document.querySelector('.switch.tooltip .tooltip-text');
-  slideToggleTooltip.addEventListener('click', () => {
-    setTheme(localStorage.getItem('theme') === 'light' ? 'dark' : 'light' );
-  });
-
-  slideToggle.addEventListener('change', () => {
-    setTheme(localStorage.getItem('theme') === 'light' ? 'dark' : 'light' );
-  });
-
   function setTheme(theme) {
-    localStorage.setItem('theme', theme);
     const body = document.querySelector('body');
     if (theme === 'light') {
       body.classList.add('light');
@@ -59,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const overlay = document.querySelector('.overlay');
     overlay.classList.remove('hide-overlay');
 
-    
+
   }
 
   function hideNavigationMenu(event) {
@@ -76,4 +64,45 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const body = document.querySelector('body');
   setTimeout(() => body.classList.add('loaded'), 1);
+
+  function setThemeOnLoad() {
+    const localStorageTheme = localStorage.getItem('theme');
+    const slideToggle = document.querySelector('#switch');
+
+    if (!localStorageTheme) {
+      const preference = prefersDarkMode();
+      setTheme(preference);
+      slideToggle.checked = true;
+    } else {
+      setTheme(localStorageTheme);
+      slideToggle.checked = localStorageTheme === 'dark';
+    }
+
+    const slideToggleTooltip = document.querySelector('.switch.tooltip .tooltip-text');
+    slideToggleTooltip.addEventListener('click', updateThemeFromToggle);
+
+    slideToggle.addEventListener('click', updateThemeFromToggle);
+  }
+
+  function updateThemeFromToggle() {
+    const localStorageTheme = localStorage.getItem('theme');
+
+    if (!localStorageTheme && prefersDarkMode()) {
+      setTheme('light');
+      localStorage.setItem('theme', 'light');
+    } else if (!localStorageTheme && prefersDarkMode()) {
+      setTheme('light');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      const theme = localStorageTheme === 'light' ? 'dark' : 'light';
+      setTheme(theme);
+      localStorage.setItem('theme', theme);
+    }
+  }
+
+  function prefersDarkMode() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches 
+      ? 'dark'
+      : 'light'
+  }
 });
