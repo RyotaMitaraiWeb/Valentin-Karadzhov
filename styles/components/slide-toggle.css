@@ -30,8 +30,13 @@
   position: absolute;
   top: 1px;
   left: 1px;
-  transition: 100ms;
   background-color: white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .switch label:after {
+    transition: 100ms;
+  }
 }
 
 .switch .look:checked + label:after {

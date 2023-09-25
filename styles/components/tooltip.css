@@ -3,6 +3,12 @@
   display: inline-block;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .tooltip .tooltip-text {
+    transition: opacity 0.5s;
+  }
+}
+
 .tooltip .tooltip-text {
   visibility: hidden;
   width: 120px;
@@ -18,7 +24,6 @@
   margin-left: -60px;
 
   opacity: 0;
-  transition: opacity 0.5s;
 }
 
 .tooltip .tooltip-text::after {
