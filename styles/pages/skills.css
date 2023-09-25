@@ -1,10 +1,5 @@
-.skills-intro, .other-skills {
-  border-radius: 5px;
-  padding: 8px 16px;
-  margin: 1em auto;
-  width: 90%;
+.other-skills {
   font-size: 1.2em;
-  line-height: 1.5;
 }
 
 .skills-intro h2 {
