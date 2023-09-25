@@ -171,6 +171,10 @@ body.locked {
   display: none;
 }
 
+.nav .links .mobile-icon {
+  display: none;
+}
+
 /* Skip link */
 
 .skip-link {
@@ -185,6 +189,8 @@ body.locked {
   left: 30px;
   top: 60px;
 }
+
+
 /* Navigation button (for mobile) */
 .open-menu-button {
   background-color: transparent;
@@ -203,6 +209,10 @@ body.locked {
 
 
 @media screen and (max-width: 745px) {
+  .nav .links .mobile-icon {
+    display: inline-block;
+    font-size: 1.6rem;
+  }
 
   /* Overlay */
   .overlay {
@@ -316,6 +326,8 @@ body.locked {
     text-align: left;
     display: flex;
     padding: 40px;
+    gap: 20px;
+    align-items: center;
   }
 
   .open-menu-button {
