@@ -33,6 +33,10 @@ window.addEventListener('DOMContentLoaded', () => {
     toggle.checked = theme === 'dark';
   }
 
+
+  const closeMenuButton = document.querySelector('.close-menu');
+  closeMenuButton.addEventListener('click', hideNavigationMenu);
+
   function createOverlay() {
     const overlay = document.createElement('div');
     overlay.classList.add('overlay', 'hide-overlay');
