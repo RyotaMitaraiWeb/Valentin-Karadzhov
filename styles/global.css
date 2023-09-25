@@ -306,7 +306,7 @@ body.locked {
   }
 
   .dark .links.visible li .link {
-    color: white;
+    color: var(--text-emphasis-dark);
   }
 
   .links.visible li .link:hover {
@@ -322,12 +322,13 @@ body.locked {
   }
 
   .links.visible li .link {
-    color: black;
+    color: var(--text-emphasis-light);
     text-align: left;
     display: flex;
     padding: 40px;
     gap: 20px;
     align-items: center;
+    font-weight: normal;
   }
 
   .open-menu-button {
