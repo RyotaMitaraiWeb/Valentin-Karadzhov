@@ -190,7 +190,7 @@ body.locked {
   .overlay {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.6);
     transition: background-color 0.5s;
