@@ -123,41 +123,6 @@ body.locked {
   overflow-y: hidden;
 }
 
-/* Overlay */
-.overlay {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.6);
-  animation: fade-in 0.5s;
-  top: 0;
-}
-
-.hide-overlay {
-  animation: fade-out 0.5s;
-}
-
-@keyframes fade-in {
-  from {
-    background-color: transparent;
-  }
-
-  to {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-}
-
-@keyframes fade-out {
-  from {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-
-  to {
-    background-color: transparent;
-  }
-}
-
 /* Navigation */
 .nav {
   margin: 0;
@@ -214,6 +179,33 @@ body.locked {
 
 
 @media screen and (max-width: 745px) {
+
+  /* Overlay */
+  .overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: background-color 0.5s;
+    top: 0;
+  }
+
+  .hide-overlay {
+    background-color: transparent;
+    z-index: -1;
+    animation: move-overlay-to-the-back 0.6s;
+  }
+
+  @keyframes move-overlay-to-the-back {
+    from {
+      z-index: 2;
+    }
+    to {
+      z-index: -1;
+    }
+  }
+
   .nav {
     gap: 30px;
   }
@@ -229,16 +221,34 @@ body.locked {
     overflow-y: auto;
   }
 
+  body.dark .links {
+    background-color: var(--accent-dark);
+  }
+
+  body.light .links {
+    background-color: var(--accent-light);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .links {
+      transition: left 0.5s;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .links {
+      transition: none;
+    }
+  }
+  
   .links.visible {
     left: 1px;
-    transition: left 0.5s;
     width: 60%;
     font-weight: bold;
     align-self: first baseline;
   }
 
   .links.invisible {
-    transition: left 0.5s;
     left: -1000px;
   }
 

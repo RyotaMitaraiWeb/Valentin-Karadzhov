@@ -2,6 +2,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const theme = localStorage.getItem('theme') || 'light';
   setTheme(theme);
 
+  createOverlay();
+
   const menuButton = document.querySelector('#menu-button');
   menuButton.addEventListener('click', showNavigationMenu);
 
@@ -31,25 +33,29 @@ window.addEventListener('DOMContentLoaded', () => {
     toggle.checked = theme === 'dark';
   }
 
-  function showNavigationMenu(event) {
-    event.preventDefault();
-    const links = document.querySelector('.links');
-    links.classList.add('visible', 'theme-accent-background');
-
-    const body = document.querySelector('body');
-    body.classList.add('locked');
-
-    createOverlay();
-  }
-
   function createOverlay() {
     const overlay = document.createElement('div');
-    overlay.classList.add('overlay');
+    overlay.classList.add('overlay', 'hide-overlay');
 
     const body = document.querySelector('body');
     body.appendChild(overlay);
 
     overlay.addEventListener('click', hideNavigationMenu);
+  }
+
+  function showNavigationMenu(event) {
+    event.preventDefault();
+    const links = document.querySelector('.links');
+    links.classList.add('visible');
+    links.classList.remove('invisible');
+
+    const body = document.querySelector('body');
+    body.classList.add('locked');
+
+    const overlay = document.querySelector('.overlay');
+    overlay.classList.remove('hide-overlay');
+
+    
   }
 
   function hideNavigationMenu(event) {
@@ -59,22 +65,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelector('.links');
 
     overlay.classList.add('hide-overlay');
+    body.classList.remove('locked');
+
     links.classList.add('invisible');
-
-    setTimeout(() => {
-      try {
-        // clicking on the overlay while being closed can, 
-        // depending on the timing, make
-        // this to attempt to remove the overlay when it's already
-        // detached from the DOM tree, throwing an error
-        // since the error doesn't break anything,
-        // this code is mostly meant to silence it. 
-        body.removeChild(overlay);
-      } catch {}
-
-      body.classList.remove('locked');
-      links.classList.remove('visible', 'invisible', 'theme-accent-background');
-    }, 500);
   }
 
   const body = document.querySelector('body');
