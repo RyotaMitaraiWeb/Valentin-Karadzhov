@@ -73,6 +73,10 @@ body.dark {
   body.loaded .animate-text {
     transition: color var(--theme-animation-duration);
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Theming */
@@ -167,6 +171,20 @@ body.locked {
   display: none;
 }
 
+/* Skip link */
+
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  display: block;
+  padding: 16px;
+  border: 3px solid gray;
+}
+
+.skip-link:focus {
+  left: 30px;
+  top: 60px;
+}
 /* Navigation button (for mobile) */
 .open-menu-button {
   background-color: transparent;
