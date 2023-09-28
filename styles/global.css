@@ -441,10 +441,12 @@ body.dark .settings-menu .options-buttons li button:hover span, .settings-menu .
     width: 60%;
     font-weight: bold;
     align-self: first baseline;
+    visibility: visible;
   }
 
   .links.invisible {
     left: -1000px;
+    visibility: hidden;
   }
 
   .links.visible li {

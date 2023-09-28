@@ -26,8 +26,8 @@ body.animate .settings-menu {
   transition: background-color var(--theme-animation-duration), right 0.5s;
 }
 
-body.animate .settings-menu.closed {
-  animation: hide-settings 2s;
+body.animate .settings-menu.closed, body.animate .links.invisible {
+  animation: hide-menu 2s;
 }
 
 body.loaded.animate .link-button {
@@ -49,7 +49,7 @@ body.loaded.animate .overlay {
   transition: background-color 0.5s;
 }
 
-@keyframes hide-settings {
+@keyframes hide-menu {
   from {
     visibility: visible;
   }
