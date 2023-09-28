@@ -59,10 +59,14 @@
         </button>
       </li>
     </ul>
-    <button aria-description="Open navigation menu" id="menu-button" class="open-menu-button menu-button"><span
-        class="fa fa-fw fa-bars"></span></button>
-    <button aria-description="Open settings menu" id="settings-button" class="settings-button menu-button"><span
-        class="fa fa-fw fa-gear"></span></button>
+    <button id="menu-button" class="open-menu-button menu-button">
+      <span aria-hidden="true" class="fa fa-fw fa-bars"></span>
+      <span class="screenreader-text">Open navigation menu</span>
+      </button>
+    <button id="settings-button" class="settings-button menu-button">
+      <span class="fa fa-fw fa-gear"></span>
+      <span class="screenreader-text">Open settings menu</span>
+    </button>
     <section class="settings-menu closed theme-accent-background">
       <h2 class="theme-text-emphasis animate-text">Settings</h2>
       <h3 class="theme-text-emphasis animate-text">Change theme</h3>
