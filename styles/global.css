@@ -53,7 +53,7 @@ h6 {
   text-align: center;
 }
 
-body.light {
+body {
   background-color: var(--background-light);
 }
 
@@ -63,12 +63,10 @@ body.dark {
 
 /* Theming */
 
-body.light,
-body.light .theme-background {
+.theme-background {
   background-color: var(--background-light);
 }
 
-body.dark,
 body.dark .theme-background {
   background-color: var(--background-dark);
 }
@@ -77,7 +75,7 @@ body.dark .theme-background {
   box-shadow: var(--shadow);
 }
 
-body.light .theme-accent-background {
+.theme-accent-background {
   background-color: var(--accent-light);
 }
 
@@ -93,11 +91,11 @@ body.dark .theme-text {
   color: var(--text-medium-dark);
 }
 
-body.light .theme-text-emphasis {
+.theme-text-emphasis {
   color: var(--text-emphasis-light);
 }
 
-body.light .theme-text {
+.theme-text {
   color: var(--text-medium-light);
 }
 
@@ -563,7 +561,7 @@ footer.footer section {
   padding: 8px 16px;
 }
 
-body.light .link-button {
+.link-button {
   background-color: var(--secondary-light);
 }
 
@@ -571,14 +569,55 @@ body.dark .link-button {
   background-color: var(--secondary-dark);
 }
 
-body.dark .link-button:hover,
-body.dark .link-button:focus,
-body.light .link-button:hover,
-body.light .link-button:focus {
+.link-button:hover,
+.link-button:focus,
+.link-button:hover,
+.link-button:focus {
   background-color: #3c57b2;
 }
 
 .link-button:active,
 .link-button:active {
   outline: 3px solid #556cb7;
+}
+
+/*
+Respect the user's system preferences if script cannot load
+to manage the preferences
+*/
+@media (prefers-color-scheme: dark) {
+  body.no-script {
+    background-color: var(--background-dark);
+  }
+
+  .no-script .theme-background {
+    background-color: var(--background-dark);
+  }
+
+  .no-script .theme-accent-background {
+    background-color: var(--accent-dark);
+  }
+  
+  .no-script .theme-text-emphasis {
+    color: var(--text-emphasis-dark);
+  }
+  
+  .no-script .theme-text {
+    color: var(--text-medium-dark);
+  }
+
+  .no-script .link-button {
+    background-color: var(--secondary-dark);
+  }
+
+  .no-script .theme-link {
+    color: var(--text-emphasis-dark);
+  }
+
+  .no-script .link-button:hover,
+  .no-script .link-button:focus,
+  .no-script .link-button:hover,
+  .no-script .link-button:focus {
+    background-color: #3c57b2;
+  }
 }

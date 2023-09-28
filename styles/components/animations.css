@@ -26,7 +26,8 @@ body.animate .settings-menu {
   transition: background-color var(--theme-animation-duration), right 0.5s;
 }
 
-body.animate .settings-menu.closed, body.animate .links.invisible {
+body.animate .settings-menu.closed,
+body.animate .links.invisible {
   animation: hide-menu 2s;
 }
 
@@ -45,8 +46,60 @@ body.loaded.animate .overlay {
   transition: background-color 0.5s;
 }
 
-.body.loaded.animate .overlay.settings-overlay, .body.loaded.animate .hide-overlay {
+.body.loaded.animate .overlay.settings-overlay,
+.body.loaded.animate .hide-overlay {
   transition: background-color 0.5s;
+}
+
+/*
+Respect the user's system preferences if script cannot load
+to manage the preferences
+*/
+@media (prefers-reduced-motion: no-preference) {
+  .no-script .animate-background {
+    transition: background-color var(--theme-animation-duration);
+  }
+
+  .no-script .animate-text {
+    transition: color var(--theme-animation-duration);
+  }
+
+  body.no-script {
+    transition: background-color var(--theme-animation-duration);
+  }
+
+  .no-script .links {
+    transition: left 0.5s;
+  }
+
+  .no-script .settings-menu {
+    transition: background-color var(--theme-animation-duration), right 0.5s;
+  }
+
+  .no-script .settings-menu.closed,
+  .no-script .links.invisible {
+    animation: hide-menu 2s;
+  }
+
+  .no-script .link-button {
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+
+  .no-script .nav .links li .link:hover,
+  .no-script .settings-button:hover,
+  .no-script .open-menu-button:hover {
+    transition: color 0.2s, background-color 0.2s;
+  }
+
+  .no-script .overlay {
+    transition: background-color 0.5s;
+  }
+
+  .no-script .overlay.settings-overlay,
+  .no-script .hide-overlay {
+    transition: background-color 0.5s;
+  }
 }
 
 @keyframes hide-menu {

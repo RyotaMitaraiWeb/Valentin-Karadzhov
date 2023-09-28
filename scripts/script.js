@@ -89,6 +89,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const body = document.querySelector('body');
+  body.classList.remove('no-script');
   setTimeout(() => body.classList.add('loaded'), 1);
 
   function setThemeOnLoad() {
