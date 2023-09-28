@@ -1,0 +1,60 @@
+:root {
+  --theme-animation-duration: 0.7s;
+}
+
+body.loaded.animate .animate-background {
+  transition: background-color var(--theme-animation-duration);
+}
+
+body.loaded.animate .animate-text {
+  transition: color var(--theme-animation-duration);
+}
+
+body.loaded.animate {
+  transition: background-color var(--theme-animation-duration);
+}
+
+body.animate {
+  scroll-behavior: smooth;
+}
+
+body.animate .links {
+  transition: left 0.5s;
+}
+
+body.animate .settings-menu {
+  transition: background-color var(--theme-animation-duration), right 0.5s;
+}
+
+body.animate .settings-menu.closed {
+  animation: hide-settings 2s;
+}
+
+body.loaded.animate .link-button {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+body.animate .nav .links li .link:hover,
+body.animate .settings-button:hover,
+.body.animate .open-menu-button:hover {
+  transition: color 0.2s, background-color 0.2s;
+}
+
+body.loaded.animate .overlay {
+  transition: background-color 0.5s;
+}
+
+.body.loaded.animate .overlay.settings-overlay, .body.loaded.animate .hide-overlay {
+  transition: background-color 0.5s;
+}
+
+@keyframes hide-settings {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+  }
+}

@@ -1,5 +1,4 @@
-@import './components/slide-toggle.css';
-@import './components/tooltip.css';
+@import './components/animations.css';
 
 :root {
   --primary: #6635ba;
@@ -13,8 +12,7 @@
   --text-medium-dark: rgba(255, 255, 255, 0.6);
   --text-emphasis-light: black;
   --text-medium-light: #0e0e0e;
-  --theme-animation-duration: 0.7s;
-  ---shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  --shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 body,
@@ -63,23 +61,6 @@ body.dark {
   background-color: var(--background-dark);
 }
 
-/* Animations */
-@media (prefers-reduced-motion: no-preference) {
-
-  body.loaded .animate-background,
-  body.loaded {
-    transition: background-color var(--theme-animation-duration);
-  }
-
-  body.loaded .animate-text {
-    transition: color var(--theme-animation-duration);
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
 /* Theming */
 
 body.light,
@@ -93,7 +74,7 @@ body.dark .theme-background {
 }
 
 .theme-accent-background {
-  box-shadow: var(---shadow);
+  box-shadow: var(--shadow);
 }
 
 body.light .theme-accent-background {
@@ -127,7 +108,6 @@ body.dark .theme-link {
 body.locked {
   position: relative;
   z-index: 1;
-  overflow-y: hidden;
 }
 
 /* Sections */
@@ -143,7 +123,7 @@ body.locked {
 }
 
 .content-section p:not(:first-of-type) {
-  margin-top: 2.25em; 
+  margin-top: 2.25em;
 }
 
 .content-section h2,
@@ -198,7 +178,6 @@ body.locked {
 .nav .links li .link:hover {
   background-color: white;
   color: goldenrod;
-  transition: color 0.2s, background-color 0.2s;
 }
 
 .nav .links li.close-menu-list-item {
@@ -238,11 +217,194 @@ body.locked {
 .open-menu-button:hover {
   color: goldenrod;
   background-color: white;
-  transition: color 0.2s, background-color 0.2s;
 }
 
+/* Settings */
+.settings-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.8rem;
+  height: 100%;
+}
+
+.settings-button:hover {
+  color: goldenrod;
+  background-color: white;
+}
+
+.hide-overlay {
+  background-color: transparent;
+  z-index: -1;
+  animation: move-overlay-to-the-back 6s;
+}
+
+.settings-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow-x: hidden;
+  z-index: 3;
+  width: 35%;
+  height: 100%;
+  visibility: visible;
+}
+
+@media screen and (max-width: 975px) {
+  .settings-menu {
+    width: 40%;
+  }
+}
 
 @media screen and (max-width: 745px) {
+  .settings-menu {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .settings-menu {
+    width: 90%;
+  }
+}
+
+.settings-menu.closed {
+  right: -1000px;
+  visibility: hidden;
+}
+
+.settings-menu hr {
+  width: 100%;
+  margin-top: 1.5em;
+}
+
+.overlay,
+.settings-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+}
+
+.overlay.hide-overlay,
+.settings-overlay.hide-overlay {
+  background-color: transparent;
+  z-index: -1;
+  animation: move-overlay-to-the-back 0.6s;
+}
+
+.settings-menu .options-buttons {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  border: 1px solid gray;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+.settings-menu .options-buttons li {
+  width: 100%;
+}
+
+.settings-menu .options-buttons li:not(:last-child) {
+  border-right: 1px solid gray;
+}
+
+.settings-menu .options-buttons li button {
+  display: flex;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 16px 8px;
+  cursor: pointer;
+}
+
+.settings-menu .options-buttons li button span {
+  vertical-align: middle;
+}
+
+.settings-menu .options-buttons li:first-child button {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.settings-menu .options-buttons li:last-child button {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.settings-menu .options-buttons li button.selected {
+  background-color: gray;
+}
+
+.settings-menu .options-buttons li button.selected span {
+  color: var(--text-emphasis-light);
+}
+
+.settings-menu .options-buttons li button:hover, .settings-menu .options-buttons li button:focus {
+  background-color: #d6d1d1;
+}
+
+body.dark .settings-menu .options-buttons li button:hover span, .settings-menu .options-buttons li button:focus span {
+  color: var(--text-emphasis-light);
+}
+
+@keyframes move-overlay-to-the-back {
+  from {
+    z-index: 2;
+  }
+
+  to {
+    z-index: -1;
+  }
+}
+
+.close-menu-button {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  color: var(--text-emphasis-light);
+  text-align: left;
+  display: flex;
+  padding: 40px;
+  gap: 20px;
+  align-items: center;
+  font-weight: normal;
+  font-size: 1.2rem;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+  margin-top: 1.5em;
+}
+
+.dark .close-menu-button {
+  color: var(--text-emphasis-dark);
+}
+
+.light .close-menu-button {
+  color: var(--text-emphasis-light);
+}
+
+.light .close-menu-button:hover {
+  background-color: #d6d1d1;
+}
+
+.dark .close-menu-button:hover {
+  background-color: rgba(145, 145, 145, 0.8);
+}
+
+@media screen and (max-width: 745px) {
+
   .content-section h2,
   .content-section h3,
   .content-section h4,
@@ -256,39 +418,8 @@ body.locked {
     font-size: 1.6rem;
   }
 
-  /* Overlay */
-  .overlay {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.6);
-    transition: background-color 0.5s;
-    top: 0;
-  }
-
-  .hide-overlay {
-    background-color: transparent;
-    z-index: -1;
-    animation: move-overlay-to-the-back 0.6s;
-  }
-
-  @keyframes move-overlay-to-the-back {
-    from {
-      z-index: 2;
-    }
-
-    to {
-      z-index: -1;
-    }
-  }
-
-  .nav {
-    gap: 30px;
-  }
-
   .links {
-    position: absolute;
+    position: fixed;
     left: -1000px;
     text-align: left;
     height: 100vh;
@@ -303,18 +434,6 @@ body.locked {
 
   body.light .links {
     background-color: var(--accent-light);
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .links {
-      transition: left 0.5s;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .links {
-      transition: none;
-    }
   }
 
   .links.visible {
@@ -352,15 +471,13 @@ body.locked {
     color: var(--text-emphasis-dark);
   }
 
-  .links.visible li .link:hover {
-    color: white;
-  }
+  
 
-  body.light .links.visible li .link:hover {
+  body.light .links.visible li .link:hover, body.light .links.visible li .link:focus {
     background-color: #d6d1d1;
   }
 
-  body.dark .links.visible li .link:hover {
+  body.dark .links.visible li .link:hover, body.dark .links.visible li .link:focus {
     background-color: rgba(145, 145, 145, 0.8);
   }
 
@@ -441,7 +558,6 @@ footer.footer section {
   border-radius: 10px;
   text-decoration: none;
   padding: 8px 16px;
-  transition: background-color 0.3s color 0.3s;
 }
 
 body.light .link-button {
@@ -457,12 +573,9 @@ body.dark .link-button:focus,
 body.light .link-button:hover,
 body.light .link-button:focus {
   background-color: #3c57b2;
-  transition: background-color 0.3s;
 }
 
 .link-button:active,
 .link-button:active {
-  /* background-color: #556cb7; */
-  transition: background-color 0.3s;
   outline: 3px solid #556cb7;
 }

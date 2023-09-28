@@ -11,7 +11,7 @@
 }
 
 .introduction .summary {
-  padding: 16px;
+  padding: 8px;
 }
 
 .introduction hr {
@@ -41,6 +41,10 @@
   }
 
   .introduction ul {
+    padding: 16px;
+  }
+
+  .introduction .summary {
     padding: 16px;
   }
 

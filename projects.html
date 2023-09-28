@@ -20,11 +20,6 @@
     <a href="#main" class="skip-link theme-accent-background animate-background theme-link animate-text">
       Skip to content
     </a>
-    <div class="switch tooltip">
-      <input id="switch" class="look" type="checkbox">
-      <label for="switch"></label>
-      <span class="tooltip-text">Change theme</span>
-    </div>
     <ul class="links">
       <li>
         <a class="link" href="/index.html">
@@ -63,7 +58,60 @@
         </button>
       </li>
     </ul>
-    <button id="menu-button" class="open-menu-button">&equiv;</button>
+    <button aria-description="Open navigation menu" id="menu-button" class="open-menu-button"><span
+        class="fa fa-fw fa-bars"></span></button>
+    <button aria-description="Open settings menu" id="settings-button" class="settings-button"><span
+        class="fa fa-fw fa-gear"></span></button>
+    <section class="settings-menu closed theme-accent-background">
+      <h2 class="theme-text-emphasis animate-text">Settings</h2>
+      <h3 class="theme-text-emphasis animate-text">Change theme</h3>
+      <ul class="options-buttons theme-buttons">
+        <li>
+          <button data-theme="light" class="light">
+            <span class="fa fa-sun-o fa-fwt theme-text-emphasis"></span>
+            <span class="theme-text-emphasis">Light</span>
+          </button>
+        </li>
+        <li>
+          <button data-theme="system" class="system selected">
+            <span class="fa fa-desktop fa-fwt theme-text-emphasis"></span>
+            <span class="theme-text-emphasis">System</span>
+          </button>
+        </li>
+        <li>
+          <button data-theme="dark" class="dark">
+            <span class="fa fa-moon-o fa-fwt theme-text-emphasis"></span>
+            <span class="theme-text-emphasis">Dark</span>
+          </button>
+        </li>
+      </ul>
+      <hr>
+      <h3 class="theme-text-emphasis animate-text">Keep animations?</h3>
+      <ul class="options-buttons animation-buttons">
+        <li>
+          <button data-option="animate" class="animate">
+            <span class="fa fa-check fa-fwt theme-text-emphasis"></span>
+            <span class="theme-text-emphasis">Yes</span>
+          </button>
+        </li>
+        <li>
+          <button data-option="system" class="system selected">
+            <span class="fa fa-desktop fa-fwt theme-text-emphasis"></span>
+            <span class="theme-text-emphasis">System</span>
+          </button>
+        </li>
+        <li>
+          <button data-option="no-animate" class="no-animate">
+            <span class="fa fa-ban fa-fwt theme-text-emphasis"></span>
+            <span class="theme-text-emphasis">No</span>
+          </button>
+        </li>
+      </ul>
+      <button id="close-settings" class="close-menu-button">
+        <span class="fa fa-times fa-fw"></span>
+        <span class="text">Close menu</span>
+      </button>
+    </section>
   </nav>
   <main id="main" class="theme-background animate-background">
     <h1 class="theme-text-emphasis animate-text">Other projects</h1>
