@@ -81,6 +81,10 @@
   font-size: 1.6rem;
 }
 
+.project-summary h4 {
+  color: white; /* Mostly to quiet WCAG extension down for failing contrast */
+}
+
 .project-summary .review {
   background-color: var(--primary);
   border-top-right-radius: 10px;
