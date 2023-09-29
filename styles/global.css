@@ -272,7 +272,22 @@ body.locked {
 
 .settings-menu hr {
   width: 100%;
-  margin-top: 1.5em;
+  margin: 1.5em 0;
+}
+
+.settings-menu .menu-heading {
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 1.2em;
+}
+
+.settings-menu .menu-subheading {
+  font-size: 1.5rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 1.25em;
 }
 
 .overlay,
