@@ -28,7 +28,7 @@ body.animate .settings-menu {
 
 body.animate .settings-menu.invisible,
 body.animate .links.invisible {
-  animation: hide-menu 2s;
+  animation: hide-menu 1s;
 }
 
 body.loaded.animate .link-button, body.loaded.animate .close-menu-button {
@@ -81,7 +81,7 @@ to manage the preferences
 
   .no-script .settings-menu.closed,
   .no-script .links.invisible {
-    animation: hide-menu 2s;
+    animation: hide-menu 1s;
   }
 
   .no-script .link-button, .no-script .close-menu-button {
