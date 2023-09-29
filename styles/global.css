@@ -142,19 +142,16 @@ body.locked {
   }
 }
 
-/* Navigation */
-.nav {
+/* Header */
+.header {
   margin: 0;
   padding: 0;
   background-color: var(--primary);
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 10px;
 }
 
+/* Navigation */
 .nav .links {
   list-style: none;
   padding: 0;
