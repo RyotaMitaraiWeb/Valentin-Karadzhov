@@ -21,7 +21,7 @@
       Skip to content
     </a>
     <nav class="nav">
-      <ul class="links">
+      <ul class="links menu" id="navigation">
         <li>
           <a class="link" href="/index.html">
             <span aria-hidden="true" class="fa fa-home mobile-icon fa-fw"></span>
@@ -60,15 +60,15 @@
         </li>
       </ul>
     </nav>
-    <button id="menu-button" class="open-menu-button menu-button">
+    <button data-menu="navigation" id="menu-button" class="open-menu-button menu-button">
       <span aria-hidden="true" class="fa fa-fw fa-bars"></span>
       <span class="screenreader-text">Open navigation menu</span>
     </button>
-    <button id="settings-button" class="settings-button menu-button">
+    <button data-menu="settings" id="settings-button" class="settings-button menu-button">
       <span aria-hidden="true" class="fa fa-fw fa-gear"></span>
       <span class="screenreader-text">Open settings menu</span>
     </button>
-    <div class="settings-menu closed theme-accent-background">
+    <div id="settings" class="settings-menu menu invisible theme-accent-background">
       <span class="menu-heading theme-text-emphasis animate-text">Settings</span>
       <span class="menu-subheading theme-text-emphasis animate-text">Change theme</span>
       <ul class="options-buttons theme-buttons">

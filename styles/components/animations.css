@@ -26,7 +26,7 @@ body.animate .settings-menu {
   transition: background-color var(--theme-animation-duration), right 0.5s;
 }
 
-body.animate .settings-menu.closed,
+body.animate .settings-menu.invisible,
 body.animate .links.invisible {
   animation: hide-menu 2s;
 }

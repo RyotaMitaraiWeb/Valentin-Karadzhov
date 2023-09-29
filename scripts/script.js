@@ -2,14 +2,10 @@ window.addEventListener('DOMContentLoaded', () => {
   setThemeOnLoad();
   setAnimationPreferencesOnLoad();
 
-  createOverlay();
-  createOverlay('settings-overlay')
+  const overlay = createOverlay();
 
-  const menuButton = document.querySelector('#menu-button');
-  menuButton.addEventListener('click', showNavigationMenu);
-
-  const settingsButton = document.querySelector('#settings-button');
-  settingsButton.addEventListener('click', showSettingsMenu);
+  const menuButtons = document.querySelectorAll('[data-menu]');
+  menuButtons.forEach(b => b.addEventListener('click', showMenu));
 
   const themeButtons = document.querySelectorAll('.theme-buttons button');
   themeButtons.forEach(b => b.addEventListener('click', changeThemeFromButton));
@@ -17,75 +13,52 @@ window.addEventListener('DOMContentLoaded', () => {
   const animationButtons = document.querySelectorAll('.animation-buttons button');
   animationButtons.forEach(b => b.addEventListener('click', changeAnimationPreferenceFromButton));
 
-  const menuButtons = document.querySelectorAll('.menu-button');
-  menuButtons.forEach(mb => mb.addEventListener('click', function (e) {
-    e.preventDefault();
-    menuButtons.forEach(mb => mb.disabled = true);
-  }));
+  const closeMenuButtons = document.querySelectorAll('.close-menu');
+  closeMenuButtons.forEach(cmb => cmb.addEventListener('click', hideMenus));
 
-  const closeMenuButton = document.querySelector('.close-menu');
-  closeMenuButton.addEventListener('click', hideMenus);
-
-  const closeSettings = document.querySelector('#close-settings');
-  closeSettings.addEventListener('click', hideMenus);
-
-  function createOverlay(...additionalClassNames) {
+  function createOverlay() {
     const overlay = document.createElement('div');
 
-    overlay.classList.add('overlay', 'hide-overlay', ...additionalClassNames);
+    overlay.classList.add('overlay', 'hide-overlay');
 
     const body = document.querySelector('body');
     body.appendChild(overlay);
 
     overlay.addEventListener('click', hideMenus);
-  }
-
-  function showNavigationMenu(event) {
-    event.preventDefault();
-    const links = document.querySelector('.links');
-    links.classList.add('visible');
-    links.classList.remove('invisible');
-
-    const body = document.querySelector('body');
-    body.classList.add('locked');
-
-    const overlay = document.querySelector('.overlay');
-    overlay.classList.remove('hide-overlay');
-
-    const firstLink = document.querySelector('.link');
-    firstLink.focus();
-  }
-
-  function showSettingsMenu(event) {
-    event.preventDefault();
-    const settingsMenu = document.querySelector('.settings-menu');
-    settingsMenu.classList.remove('closed');
-
-    const body = document.querySelector('body');
-    body.classList.add('locked');
-
-    const overlay = document.querySelector('.settings-overlay');
-    overlay.classList.remove('hide-overlay');
-
-    const button = settingsMenu.querySelector('button');
-    button.focus();
+    return overlay;
   }
 
   function hideMenus(event) {
     event.preventDefault();
-    const overlays = document.querySelectorAll('.overlay');
-    const body = document.querySelector('body');
-    const links = document.querySelector('.links');
+    const menus = document.querySelectorAll('.menu');
 
-    const settingsMenu = document.querySelector('.settings-menu');
-    settingsMenu.classList.add('closed');
+    menus.forEach(m => {
+      m.classList.add('invisible');
+    });
 
-    overlays.forEach(o => o.classList.add('hide-overlay'));
-    body.classList.remove('locked');
+    overlay.classList.add('hide-overlay');
 
-    links.classList.add('invisible');
+    toggleDisableStatusForMenuButtons(false);
+  }
 
-    menuButtons.forEach(mb => mb.disabled = false);
+  function showMenu(event) {
+    event.preventDefault();
+    
+    const button = this;
+    const menuValue = button.dataset.menu;
+
+    const menu = document.getElementById(menuValue);
+    menu.classList.remove('invisible');
+    menu.classList.add('visible');
+
+    const overlay = document.querySelector('.overlay');
+    overlay.classList.remove('hide-overlay');
+
+    toggleDisableStatusForMenuButtons(true);
+  }
+
+  function toggleDisableStatusForMenuButtons(disabled) {
+    menuButtons.forEach(b => b.disabled = disabled);
   }
 
   const body = document.querySelector('body');

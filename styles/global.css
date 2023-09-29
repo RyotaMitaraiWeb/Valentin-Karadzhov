@@ -265,7 +265,7 @@ body.locked {
   }
 }
 
-.settings-menu.closed {
+.settings-menu.invisible {
   right: -1000px;
   visibility: hidden;
 }
