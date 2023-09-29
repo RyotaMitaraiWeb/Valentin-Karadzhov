@@ -104,6 +104,10 @@ to manage the preferences
   .no-script .hide-overlay {
     transition: background-color 0.5s;
   }
+
+  .no-script .settings-menu .options-buttons li button {
+    transition: background-color 0.1s;
+  }
 }
 
 @keyframes hide-menu {
