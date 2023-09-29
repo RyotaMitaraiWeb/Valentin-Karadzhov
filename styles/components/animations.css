@@ -51,6 +51,10 @@ body.loaded.animate .overlay {
   transition: background-color 0.5s;
 }
 
+body.loaded.animate .settings-menu .options-buttons li button {
+  transition: background-color 0.1s;
+}
+
 /*
 Respect the user's system preferences if script cannot load
 to manage the preferences
