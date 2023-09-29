@@ -31,10 +31,9 @@ body.animate .links.invisible {
   animation: hide-menu 2s;
 }
 
-body.loaded.animate .link-button {
+body.loaded.animate .link-button, body.loaded.animate .close-menu-button {
   transition: background-color 0.3s, color 0.3s;
 }
-
 
 body.animate .nav .links li .link:hover,
 body.animate .settings-button:hover,
@@ -85,7 +84,7 @@ to manage the preferences
     animation: hide-menu 2s;
   }
 
-  .no-script .link-button {
+  .no-script .link-button, .no-script .close-menu-button {
     transition: background-color 0.3s, color 0.3s;
   }
 
