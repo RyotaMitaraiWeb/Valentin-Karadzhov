@@ -55,6 +55,9 @@ window.addEventListener('DOMContentLoaded', () => {
     overlay.classList.remove('hide-overlay');
 
     toggleDisableStatusForMenuButtons(true);
+
+    const firstFocusableElement = menu.querySelector('button, a');
+    firstFocusableElement.focus();
   }
 
   function toggleDisableStatusForMenuButtons(disabled) {
