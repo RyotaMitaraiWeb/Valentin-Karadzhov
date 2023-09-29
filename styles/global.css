@@ -350,11 +350,11 @@ body.locked {
   color: var(--text-emphasis-light);
 }
 
-.settings-menu .options-buttons li button:hover, .settings-menu .options-buttons li button:focus {
+.settings-menu .options-buttons li button:hover {
   background-color: #d6d1d1;
 }
 
-body.dark .settings-menu .options-buttons li button:hover span, .settings-menu .options-buttons li button:focus span {
+body.dark .settings-menu .options-buttons li button:hover span {
   color: var(--text-emphasis-light);
 }
 
@@ -474,11 +474,11 @@ body.dark .settings-menu .options-buttons li button:hover span, .settings-menu .
 
   
 
-  body.light .links.visible li .link:hover, body.light .links.visible li .link:focus {
+  body.light .links.visible li .link:hover {
     background-color: #d6d1d1;
   }
 
-  body.dark .links.visible li .link:hover, body.dark .links.visible li .link:focus {
+  body.dark .links.visible li .link:hover {
     background-color: rgba(145, 145, 145, 0.8);
   }
 
