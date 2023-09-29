@@ -571,8 +571,8 @@ body.dark .link-button {
 
 .link-button:hover,
 .link-button:focus,
-.link-button:hover,
-.link-button:focus {
+body.dark .link-button:hover,
+body.dark .link-button:focus {
   background-color: #3c57b2;
 }
 
