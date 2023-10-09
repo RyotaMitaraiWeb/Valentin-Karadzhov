@@ -54,6 +54,10 @@ body.loaded.animate .settings-menu .options-buttons li button {
   transition: background-color 0.1s;
 }
 
+body.loaded.animate .themed-svg {
+  transition: fill var(--theme-animation-duration);
+}
+
 /*
 Respect the user's system preferences if script cannot load
 to manage the preferences
@@ -106,6 +110,10 @@ to manage the preferences
 
   .no-script .settings-menu .options-buttons li button {
     transition: background-color 0.1s;
+  }
+
+  .no-script .themed-svg {
+    transition: fill var(--theme-animation-duration);
   }
 }
 

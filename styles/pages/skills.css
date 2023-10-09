@@ -42,3 +42,7 @@
 .other-skills li {
   margin-bottom: 1.5em;
 }
+
+.dark .themed-svg {
+  fill: var(--text-emphasis-dark);
+}
