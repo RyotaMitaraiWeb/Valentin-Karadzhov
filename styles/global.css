@@ -210,7 +210,8 @@ body.locked {
   display: none;
 }
 
-.open-menu-button:hover {
+.open-menu-button:hover,
+.open-menu-button:focus {
   color: goldenrod;
   background-color: white;
 }
@@ -225,7 +226,8 @@ body.locked {
   height: 100%;
 }
 
-.settings-button:hover {
+.settings-button:hover,
+.settings-button:focus {
   color: goldenrod;
   background-color: white;
 }
@@ -353,6 +355,10 @@ body.locked {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
 }
+
+/* .settings-menu .options-buttons li button:focus {
+  outline: 2px solid var(--golden);
+} */
 
 .settings-menu .options-buttons li button.selected {
   background-color: gray;
@@ -484,8 +490,6 @@ body.dark .settings-menu .options-buttons li button:hover span {
     color: var(--text-emphasis-dark);
   }
 
-  
-
   body.light .links.visible li .link:hover {
     background-color: #d6d1d1;
   }
@@ -609,11 +613,11 @@ to manage the preferences
   .no-script .theme-accent-background {
     background-color: var(--accent-dark);
   }
-  
+
   .no-script .theme-text-emphasis {
     color: var(--text-emphasis-dark);
   }
-  
+
   .no-script .theme-text {
     color: var(--text-medium-dark);
   }
