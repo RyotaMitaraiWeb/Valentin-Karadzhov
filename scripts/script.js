@@ -16,6 +16,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const closeMenuButtons = document.querySelectorAll('.close-menu');
   closeMenuButtons.forEach(cmb => cmb.addEventListener('click', hideMenus));
 
+  let currentMenu = '';
+
   function createOverlay() {
     const overlay = document.createElement('div');
 
@@ -28,9 +30,14 @@ window.addEventListener('DOMContentLoaded', () => {
     return overlay;
   }
 
+  function getCurrentMenu() {
+    return document.getElementById(currentMenu);
+  }
+
   function hideMenus(event) {
     event.preventDefault();
     const menus = document.querySelectorAll('.menu');
+    const menuToFocus = document.querySelector(`button[data-menu=${currentMenu}]`);
 
     menus.forEach(m => {
       m.classList.add('invisible');
@@ -39,6 +46,7 @@ window.addEventListener('DOMContentLoaded', () => {
     overlay.classList.add('hide-overlay');
 
     toggleDisableStatusForMenuButtons(false);
+    menuToFocus.focus();
   }
 
   function showMenu(event) {
@@ -47,7 +55,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const button = this;
     const menuValue = button.dataset.menu;
 
-    const menu = document.getElementById(menuValue);
+    currentMenu = menuValue;
+
+    const menu = getCurrentMenu();
     menu.classList.remove('invisible');
     menu.classList.add('visible');
 
@@ -58,6 +68,50 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const firstFocusableElement = menu.querySelector('button, a');
     firstFocusableElement.focus();
+    focusTrap(menu);
+  }
+
+  function focusTrap(menu) {
+    const focusableElements = menu.querySelectorAll('a, button');
+    const length = focusableElements.length;
+
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement = focusableElements[length - 1];
+
+    lastFocusableElement.addEventListener('keydown', redirectFocusFromLastFocusableElement);
+    firstFocusableElement.addEventListener('keydown', redirectFocusFromFirstFocusableEelement);
+  }
+
+  function redirectFocusFromLastFocusableElement(event) {
+    const menu = getCurrentMenu();
+    const firstFocusableElement = menu.querySelector('a, button');;
+
+    if (event.key === 'Tab' && !event.shiftKey) {
+      event.preventDefault();
+      firstFocusableElement.focus();
+    }
+  }
+
+  function redirectFocusFromFirstFocusableEelement(event) {
+    const menu = getCurrentMenu();
+
+    const focusableElements = menu.querySelectorAll('a, button');
+    const length = focusableElements.length;
+
+    const lastFocusableElement = focusableElements[length - 1];
+
+    if (event.key === 'Tab' && event.shiftKey) {
+      event.preventDefault();
+      lastFocusableElement.focus();
+    }
+  }
+
+  function removeFocusTrap(menu) {
+    const focusableElements = menu.querySelectorAll('a, button');
+    const length = focusableElements.length;
+    const lastFocusableElement = focusableElements[length - 1];
+
+    // lastFocusableElement.removeEventListener('keydown', )
   }
 
   function toggleDisableStatusForMenuButtons(disabled) {
