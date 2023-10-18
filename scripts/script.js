@@ -30,6 +30,12 @@ window.addEventListener('DOMContentLoaded', () => {
     return overlay;
   }
 
+  window.addEventListener('keyup', (event) => {
+    if (event.key === 'Escape' && currentMenu) {
+      hideMenus(event);
+    }
+  });
+
   function getCurrentMenu() {
     return document.getElementById(currentMenu);
   }
@@ -47,6 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     toggleDisableStatusForMenuButtons(false);
     menuToFocus.focus();
+    currentMenu = '';
   }
 
   function showMenu(event) {
@@ -104,14 +111,6 @@ window.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       lastFocusableElement.focus();
     }
-  }
-
-  function removeFocusTrap(menu) {
-    const focusableElements = menu.querySelectorAll('a, button');
-    const length = focusableElements.length;
-    const lastFocusableElement = focusableElements[length - 1];
-
-    // lastFocusableElement.removeEventListener('keydown', )
   }
 
   function toggleDisableStatusForMenuButtons(disabled) {

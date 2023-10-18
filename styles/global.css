@@ -184,6 +184,10 @@ body.locked {
   display: none;
 }
 
+.nav.mobile {
+  display: none;
+}
+
 /* Skip link */
 
 .skip-link {
@@ -356,10 +360,6 @@ body.locked {
   border-bottom-right-radius: 30px;
 }
 
-/* .settings-menu .options-buttons li button:focus {
-  outline: 2px solid var(--golden);
-} */
-
 .settings-menu .options-buttons li button.selected {
   background-color: gray;
 }
@@ -421,7 +421,15 @@ body.dark .settings-menu .options-buttons li button:hover span {
 }
 
 @media screen and (max-width: 745px) {
+  .nav.desktop {
+    display: none;
+  }
 
+  .nav.mobile {
+    display: block;
+    visibility: hidden;
+  }
+  
   .content-section h2,
   .content-section h3,
   .content-section h4,
