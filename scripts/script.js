@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     overlay.classList.add('hide-overlay');
 
-    toggleDisableStatusForMenuButtons(false);
+    // toggleDisableStatusForMenuButtons(false);
     menuToFocus.focus();
     currentMenu = '';
   }
@@ -71,7 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const overlay = document.querySelector('.overlay');
     overlay.classList.remove('hide-overlay');
 
-    toggleDisableStatusForMenuButtons(true);
+    // toggleDisableStatusForMenuButtons(true);
 
     const firstFocusableElement = menu.querySelector('button, a');
     firstFocusableElement.focus();
@@ -111,10 +111,6 @@ window.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       lastFocusableElement.focus();
     }
-  }
-
-  function toggleDisableStatusForMenuButtons(disabled) {
-    menuButtons.forEach(b => b.disabled = disabled);
   }
 
   const body = document.querySelector('body');
