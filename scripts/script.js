@@ -91,9 +91,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function redirectFocusFromLastFocusableElement(event) {
     const menu = getCurrentMenu();
-    const firstFocusableElement = menu.querySelector('a, button');;
+    const firstFocusableElement = menu.querySelector('a, button');
 
-    if (event.key === 'Tab' && !event.shiftKey) {
+    if ((event.key === 'Tab' && !event.shiftKey) || event.key === 'ArrowDown') {
       event.preventDefault();
       firstFocusableElement.focus();
     }
@@ -107,7 +107,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const lastFocusableElement = focusableElements[length - 1];
 
-    if (event.key === 'Tab' && event.shiftKey) {
+    if ((event.key === 'Tab' && event.shiftKey) || event.key === 'ArrowUp') {
       event.preventDefault();
       lastFocusableElement.focus();
     }
