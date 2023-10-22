@@ -7,7 +7,7 @@
 
 .project {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 350px 2fr;
   border: 1px solid gray;
   border-radius: 10px;
   min-height: 550px;
@@ -45,12 +45,12 @@
 }
 
 .project .project-intro .project-image {
-  background-size: cover;
-  height: 80%;
+  height: 350px;
   background-position: center;
   margin-bottom: 10px;
   border-bottom: 1px solid gray;
   border-top-left-radius: 10px;
+  background-size: 100% 100%;
 }
 
 .project .project-intro .project-links {
@@ -81,10 +81,6 @@
 
 .quiz-world {
   background-image: url('/assets/images/quiz-world-project-highlight.jpg');
-}
-
-.project .project-intro .project-image.quiz-world {
-  background-position: left;
 }
 
 .project-summary {
@@ -139,7 +135,7 @@
   display: none;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
   .project .project-intro .project-image {
     display: none;
     height: 0;
@@ -161,14 +157,10 @@
 
   .mobile-background {
     display: block;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     width: 100%;
-    height: 500px;
-  }
-
-  .mobile-background.quiz-world {
-    background-position: left;
+    min-height: 700px;
   }
 
   .project .project-intro .project-links {
@@ -190,5 +182,11 @@
 
   .project .project-intro {
     border-right: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mobile-background {
+    display: none;
   }
 }
