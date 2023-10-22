@@ -157,8 +157,8 @@
   </header>
   <main id="main" class="theme-background animate-background">
     <h1 class="theme-text-emphasis animate-text">Other projects</h1>
-    <section class="portfolio-intro theme-accent-background animate-background">
-      <h1 class="theme-text-emphasis animate-text">Overview</h1>
+    <section class="portfolio-intro theme-accent-background animate-background content-section">
+      <h2 class="theme-text-emphasis animate-text">Overview</h2>
       <p class="theme-text animate-text">
         Here you can find some other projects I have worked on. You can review
         which technologies (languages, frameworks, libraries, databases) were used to
@@ -176,7 +176,44 @@
       </p>
     </section>
     <section class="projects">
-      <h1 class="theme-text-emphasis animate-text">Projects catalogue</h1>
+      <h2 class="theme-text-emphasis animate-text">Projects catalogue</h2>
+      <div class="highlights">
+        <div class="project">
+          <section class="project-summary theme-accent-background animate-background">
+            <div class="review">
+              <h3>Next.js Blog</h3>
+              <h4 class="screenreader-text">Technologies used:</h4>
+              <ul class="technology-chips">
+                <li class="technology-chip">Next.js</li>
+                <li class="technology-chip">TypeScript</li>
+                <li class="technology-chip">PostgreSQL</li>
+              </ul>
+            </div>
+            <div class="mobile-background nextjs-blog" aria-hidden="true"></div>
+            <p class="theme-text animate-text">
+              <em class="theme-text-emphasis animate-text">Next.js Blog</em> is a simple
+              blog website that implements role-based authorization. Users log in with
+              their GMail accounts and can comment on any articles, while those that are
+              specifically designated as writers can also create them. The website
+              implements a minimalistic design with Material UI and uses a simple API
+              written within the same project. Database managament is done in PostgreSQL
+              with the help of the Prisma ORM.
+            </p>
+          </section>
+          <section class="project-intro">
+            <h4 class="screenreader-text">Project links</h4>
+            <div class="project-image nextjs-blog" aria-hidden="true"></div>
+            <ul class="project-links">
+              <li>
+                <a class="link-button" href="https://github.com/RyotaMitaraiWeb/nextjs-blog" target="_blank"
+                  rel="noopener noreferrer">
+                  GitHub repository
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="footer">

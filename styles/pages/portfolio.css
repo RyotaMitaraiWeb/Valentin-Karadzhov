@@ -83,6 +83,10 @@
   background-image: url('/assets/images/quiz-world-project-highlight.jpg');
 }
 
+.nextjs-blog {
+  background-image: url('/assets/images/nextjs-blog-project-highlight.jpg');
+}
+
 .project-summary {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
