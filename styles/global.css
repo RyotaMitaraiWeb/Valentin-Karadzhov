@@ -462,7 +462,7 @@ body.dark .settings-menu .options-buttons li button:hover span {
     background-color: var(--accent-light);
   }
 
-  .links.visible {
+  .nav-menu.visible .links {
     left: 0;
     width: 60%;
     font-weight: bold;
@@ -470,12 +470,16 @@ body.dark .settings-menu .options-buttons li button:hover span {
     visibility: visible;
   }
 
-  .links.invisible {
+  .nav-menu.invisible {
+    visibility: hidden;
+  }
+
+  .nav-menu.invisible .links {
     left: -1000px;
     visibility: hidden;
   }
 
-  .links.visible li {
+  .nav-menu.visible .links li {
     display: block;
     width: 100%;
     text-align: left;
@@ -484,7 +488,7 @@ body.dark .settings-menu .options-buttons li button:hover span {
     margin: 0;
   }
 
-  .nav .links li.close-menu-list-item {
+  .nav-menu .links li.close-menu-list-item {
     display: block;
   }
 
@@ -496,19 +500,19 @@ body.dark .settings-menu .options-buttons li button:hover span {
     cursor: pointer;
   }
 
-  .dark .links.visible li .link {
+  .dark .nav-menu.visible .links li .link {
     color: var(--text-emphasis-dark);
   }
 
-  body.light .links.visible li .link:hover {
+  body.light .nav-menu.visible .links li .link:hover {
     background-color: #d6d1d1;
   }
 
-  body.dark .links.visible li .link:hover {
+  body.dark .nav-menu.visible .links li .link:hover {
     background-color: rgba(145, 145, 145, 0.8);
   }
 
-  .links.visible li .link {
+  .nav-menu.visible .links li .link {
     color: var(--text-emphasis-light);
     text-align: left;
     display: flex;
@@ -525,7 +529,7 @@ body.dark .settings-menu .options-buttons li button:hover span {
 }
 
 @media screen and (max-width: 500px) {
-  .links.visible {
+  .nav-menu.visible .links {
     width: 80%;
   }
 }

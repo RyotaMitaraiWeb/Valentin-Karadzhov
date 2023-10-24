@@ -27,7 +27,7 @@ body.animate .settings-menu {
 }
 
 body.animate .settings-menu.invisible,
-body.animate .links.invisible {
+body.animate .nav-menu.invisible .links {
   animation: hide-menu 1s;
 }
 
@@ -84,7 +84,7 @@ to manage the preferences
   }
 
   .no-script .settings-menu.closed,
-  .no-script .links.invisible {
+  .no-script .nav-menu.invisible .links, .nav-menu.invisible {
     animation: hide-menu 1s;
   }
 
