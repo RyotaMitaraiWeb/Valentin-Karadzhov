@@ -158,7 +158,7 @@ window.addEventListener('DOMContentLoaded', () => {
         b.classList.remove('selected');
       }
 
-      b.setAttribute('aria-pressed', buttonTheme === theme);
+      b.setAttribute('aria-current', buttonTheme === theme);
     });
   }
 
@@ -183,7 +183,7 @@ window.addEventListener('DOMContentLoaded', () => {
         b.classList.remove('selected');
       }
 
-      b.setAttribute('aria-pressed', buttonOption === option);
+      b.setAttribute('aria-current', buttonOption === option);
     });
   }
 
