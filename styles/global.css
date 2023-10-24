@@ -463,7 +463,7 @@ body.dark .settings-menu .options-buttons li button:hover span {
   }
 
   .links.visible {
-    left: 1px;
+    left: 0;
     width: 60%;
     font-weight: bold;
     align-self: first baseline;
@@ -481,6 +481,7 @@ body.dark .settings-menu .options-buttons li button:hover span {
     text-align: left;
     border-bottom: 1px solid gray;
     padding: 0;
+    margin: 0;
   }
 
   .nav .links li.close-menu-list-item {
