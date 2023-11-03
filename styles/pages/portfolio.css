@@ -72,19 +72,19 @@
 }
 
 .react-ecommerce {
-  background-image: url('/assets/images/react-ecommerce-project-highlight.jpg');
+  background-image: url('../../assets/images/react-ecommerce-project-highlight.jpg');
 }
 
 .vue-flashcards {
-  background-image: url('/assets/images/vue-flashcards-project-highlight.jpg');
+  background-image: url('../../assets/images/vue-flashcards-project-highlight.jpg');
 }
 
 .quiz-world {
-  background-image: url('/assets/images/quiz-world-project-highlight.jpg');
+  background-image: url('../../assets/images/quiz-world-project-highlight.jpg');
 }
 
 .nextjs-blog {
-  background-image: url('/assets/images/nextjs-blog-project-highlight.jpg');
+  background-image: url('../../assets/images/nextjs-blog-project-highlight.jpg');
 }
 
 .project-summary {
