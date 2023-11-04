@@ -54,6 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // toggleDisableStatusForMenuButtons(false);
     menuToFocus.focus();
     currentMenu = '';
+    body.classList.remove('locked');
   }
 
   function showMenu(event) {
@@ -76,6 +77,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const firstFocusableElement = menu.querySelector('button, a');
     firstFocusableElement.focus();
     focusTrap(menu);
+
+    body.classList.add('locked');
   }
 
   function focusTrap(menu) {
