@@ -5,11 +5,11 @@
   --secondary-dark: #1a3eb4;
   --secondary-light: #122b7e;
   --background-light: #e9e4e4;
-  --background-dark: #121212;
-  --accent-dark: #383838;
+  --background-dark: #202124;
+  --accent-dark: #424242;
   --accent-light: white;
-  --text-emphasis-dark: rgba(255, 255, 255, 0.87);
-  --text-medium-dark: rgba(255, 255, 255, 0.6);
+  --text-emphasis-dark: #e3e3e3;
+  --text-medium-dark: #c4c7c5;
   --text-emphasis-light: black;
   --text-medium-light: #0e0e0e;
   --shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
