@@ -13,6 +13,7 @@
   --text-emphasis-light: black;
   --text-medium-light: #0e0e0e;
   --shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  --focus-outline: #69fff0
   ;
 }
 
@@ -348,6 +349,10 @@ body.locked {
   cursor: pointer;
 }
 
+.settings-menu .options-buttons li button:focus-visible {
+  outline: 4px solid var(--focus-outline);
+}
+
 .settings-menu .options-buttons li button span {
   vertical-align: middle;
 }
@@ -422,6 +427,10 @@ body.dark .settings-menu .options-buttons li button:hover span {
   background-color: rgba(145, 145, 145, 0.8);
 }
 
+.close-menu-button:focus-visible {
+  outline: 4px solid var(--focus-outline);
+}
+
 @media screen and (max-width: 745px) {
   .nav.desktop {
     display: none;
@@ -491,6 +500,10 @@ body.dark .settings-menu .options-buttons li button:hover span {
 
   .nav-menu .links li.close-menu-list-item {
     display: block;
+  }
+
+  .nav-menu .links li.close-menu-list-item button:focus-visible {
+    outline: 4px solid var(--focus-outline);
   }
 
   button.link {
