@@ -29,6 +29,10 @@
   font-size: 1.2em;
 }
 
+.quick-info a:hover {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 980px) {
   .introduction {
     display: block;
