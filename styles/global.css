@@ -12,7 +12,8 @@
   --text-medium-dark: #e3e3e3;
   --text-emphasis-light: black;
   --text-medium-light: #0e0e0e;
-  --shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;;
+  --shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  ;
 }
 
 body,
@@ -23,11 +24,6 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
-}
-
-body.locked {
-  position: fixed;
-  overflow: hidden;
 }
 
 main {
@@ -435,7 +431,7 @@ body.dark .settings-menu .options-buttons li button:hover span {
     display: block;
     visibility: hidden;
   }
-  
+
   .content-section h2,
   .content-section h3,
   .content-section h4,
