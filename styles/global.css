@@ -101,6 +101,10 @@ body.dark .theme-text {
   color: var(--text-medium-light);
 }
 
+.theme-link:hover {
+  text-decoration: none;
+}
+
 body.dark .theme-link {
   color: var(--text-emphasis-dark);
 }
