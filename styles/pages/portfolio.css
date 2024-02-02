@@ -87,6 +87,10 @@
   background-image: url('../../assets/images/nextjs-blog-project-highlight.jpg');
 }
 
+.cardflow {
+  background-image: url('../../assets/images/cardflow-project-highlight.jpg');
+}
+
 .project-summary {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
