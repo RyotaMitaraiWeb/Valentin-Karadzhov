@@ -155,6 +155,7 @@ body.locked {
   background-color: var(--primary);
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 1.5em;
 }
 
 /* Navigation */
