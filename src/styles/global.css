@@ -1,48 +1,71 @@
 @import "tailwindcss";
 
+:root {
+  --_primary-light: #7843E9;
+  --_on-primary-light: #fff;
+  --_surface-light: #fff;
+  --_on-surface-light: #1a1a1a;
+  --_site-bg-light: #f1f1f1;
+  --_on-site-bg-light: #2c2c2c;
+
+  --_primary-dark: #A48EFF;
+  --_on-primary-dark: #1A1A1A;
+  --_surface-dark: #23262f;
+  --_on-surface-dark: #fafafa;
+  --_site-bg-dark: #17181c;
+  --_on-site-bg-dark: #e0e0e0;
+
+  --_primary-hc: #FFD700;
+  --_on-primary-hc: #000;
+  --_surface-hc: #fff;
+  --_on-surface-hc: #000;
+  --_site-bg-hc: #000;
+  --_on-site-bg-hc: #fff;
+}
+
 @theme {
-  --color-primary: #7843E9;
-  --color-on-primary: #fff;
+  --color-primary: var(--_primary-light);
+  --color-on-primary: var(--_on-primary-light);
 
-  --color-surface: #fff;
-  --color-on-surface: #1a1a1a;
+  --color-surface: var(--_surface-light);
+  --color-on-surface: var(--_on-surface-light);
 
-  --color-site-bg: #f1f1f1;
-  --color-on-site-bg: #2c2c2c;
+  --color-site-bg: var(--_site-bg-light);
+  --color-on-site-bg: var(--_on-site-bg-light);
 }
 
-html.dark {
-  --color-primary: #A48EFF;
-  --color-on-primary: #1A1A1A;
+html.theme-dark {
+  --color-primary: var(--_primary-dark);
+  --color-on-primary: var(--_on-primary-dark);
 
-  --color-surface: #23262f;
-  --color-on-surface: #fafafa;
+  --color-surface: var(--_surface-dark);
+  --color-on-surface: var(--_on-surface-dark);
 
-  --color-site-bg: #17181c;
-  --color-on-site-bg: #e0e0e0;
+  --color-site-bg: var(--_site-bg-dark);
+  --color-on-site-bg: var(--_on-site-bg-dark);
 }
 
-html.high-contrast {
-  --color-primary: #FFD700;
-  --color-on-primary: #000;
+html.theme-high-contrast {
+  --color-primary: var(--_primary-hc);
+  --color-on-primary: var(--_on-primary-hc);
 
-  --color-surface: #fff;
-  --color-on-surface: #000;
+  --color-surface: var(--_surface-hc);
+  --color-on-surface: var(--_on-surface-hc);
 
-  --color-site-bg: #000;
-  --color-on-site-bg: #fff;
+  --color-site-bg: var(--_site-bg-hc);
+  --color-on-site-bg: var(--_on-site-bg-hc);
 }
 
 /* Outline when focusing interactive elements */
 
-.light .focus-outline:focus-visible {
+.theme-light .focus-outline:focus-visible {
   outline: 3px solid blue;
 }
 
-.dark .focus-outline:focus-visible {
+.theme-dark .focus-outline:focus-visible {
   outline: 3px solid lightskyblue;
 }
 
-.high-contrast .focus-outline:focus-visible {
+.theme-high-contrast .focus-outline:focus-visible {
   outline: 6px solid var(--color-primary);
 }
