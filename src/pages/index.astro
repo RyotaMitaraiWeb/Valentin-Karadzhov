@@ -1,17 +1,46 @@
 ---
-import '../styles/global.css';
-import '../styles/system-theme-preferences.scss';
-import '../styles/focus-outline.scss';
+import "../styles/global.css";
+import "../styles/system-theme-preferences.scss";
+import "../styles/focus-outline.scss";
+
+/*
+	Inline script below is used this way so that the theme can be loaded before
+	the CSS has loaded, preventing а flash of unstyled content. Astro, by default,
+	uses module scripts, which are asynchronous. Inline scripts do not support
+	imports, so WET code is pretty much necessary here.
+
+	Because of this, if you make any changes to the theming, you need to
+	check this file as well and ensure it's consistent with the changes.
+
+	The script is also executed as an IIFE to prevent global scope pollution.
+*/
 ---
 
-<html lang="en" class="theme-system">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="bg-site-bg">
-	</body>
+<html lang="en" class="system">
+  <head>
+    <script is:inline>
+      (function() {
+				const theme = localStorage.getItem('theme') || 'system';
+				const html = document.querySelector('html');
+
+				/* 
+					"system" is the default theme (the class in the <html> tag), 
+					so there's no point in doing anything if it's the preferred
+					theme
+				*/
+				if (theme === 'system' || !html) return;
+
+				html.classList.remove('system');
+				html.classList.add(theme);
+			})();
+    </script>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="bg-site-bg">
+    <p class="bg-primary text-on-primary">test</p>
+  </body>
 </html>
