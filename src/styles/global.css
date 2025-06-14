@@ -40,7 +40,7 @@
   --color-on-site-bg: var(--_on-site-bg-light);
 }
 
-html.theme-dark {
+html.dark {
   --color-primary: var(--_primary-dark);
   --color-on-primary: var(--_on-primary-dark);
 
@@ -51,7 +51,7 @@ html.theme-dark {
   --color-on-site-bg: var(--_on-site-bg-dark);
 }
 
-html.theme-high-contrast {
+html.high-contrast {
   --color-primary: var(--_primary-hc);
   --color-on-primary: var(--_on-primary-hc);
 

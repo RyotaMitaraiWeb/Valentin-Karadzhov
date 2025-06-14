@@ -2,27 +2,27 @@
   outline-style: solid;
 }
 
-.theme-light,
-.theme-system {
+.light,
+.system {
   .focus-outline:focus-visible {
     outline-width: var(--_outline-width-light);
     outline-color: var(--_outline-color-light);
   }
 }
 
-.theme-dark .focus-outline:focus-visible {
+.dark .focus-outline:focus-visible {
   outline-width: var(--_outline-width-dark);
   outline-color: var(--_outline-color-dark);
 }
 
-.theme-system .focus-outline:focus-visible {
+.system .focus-outline:focus-visible {
   @media (prefers-color-scheme: dark) {
     outline-width: var(--_outline-width-dark);
     outline-color: var(--_outline-color-dark);
   }
 }
 
-.theme-high-contrast .focus-outline:focus-visible {
+.high-contrast .focus-outline:focus-visible {
   outline-width: var(--_outline-width-hc);
   outline-color: var(--_outline-color-hc);
 }
