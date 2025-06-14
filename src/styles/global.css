@@ -7,6 +7,8 @@
   --_on-surface-light: #1a1a1a;
   --_site-bg-light: #f1f1f1;
   --_on-site-bg-light: #2c2c2c;
+  --_outline-width-light: 3px;
+  --_outline-color-light: blue;
 
   --_primary-dark: #A48EFF;
   --_on-primary-dark: #1A1A1A;
@@ -14,6 +16,8 @@
   --_on-surface-dark: #fafafa;
   --_site-bg-dark: #17181c;
   --_on-site-bg-dark: #e0e0e0;
+  --_outline-width-dark: 3px;
+  --_outline-color-dark: lightskyblue;
 
   --_primary-hc: #FFD700;
   --_on-primary-hc: #000;
@@ -21,6 +25,8 @@
   --_on-surface-hc: #000;
   --_site-bg-hc: #000;
   --_on-site-bg-hc: #fff;
+  --_outline-width-hc: 6px;
+  --_outline-color-hc: rgb(0, 183, 255);
 }
 
 @theme {
@@ -54,18 +60,4 @@ html.theme-high-contrast {
 
   --color-site-bg: var(--_site-bg-hc);
   --color-on-site-bg: var(--_on-site-bg-hc);
-}
-
-/* Outline when focusing interactive elements */
-
-.theme-light .focus-outline:focus-visible {
-  outline: 3px solid blue;
-}
-
-.theme-dark .focus-outline:focus-visible {
-  outline: 3px solid lightskyblue;
-}
-
-.theme-high-contrast .focus-outline:focus-visible {
-  outline: 6px solid var(--color-primary);
 }
