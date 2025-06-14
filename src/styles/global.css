@@ -33,3 +33,16 @@ html.high-contrast {
   --color-on-site-bg: #fff;
 }
 
+/* Outline when focusing interactive elements */
+
+.light .focus-outline:focus-visible {
+  outline: 3px solid blue;
+}
+
+.dark .focus-outline:focus-visible {
+  outline: 3px solid lightskyblue;
+}
+
+.high-contrast .focus-outline:focus-visible {
+  outline: 6px solid var(--color-primary);
+}
