@@ -2,6 +2,7 @@ html.system {
   @media (prefers-color-scheme: dark) {
     --color-primary: var(--_primary-dark);
     --color-on-primary: var(--_on-primary-dark);
+    --color-primary-hover: var(--_primary-hover-dark);
 
     --color-surface: var(--_surface-dark);
     --color-on-surface: var(--_on-surface-dark);
