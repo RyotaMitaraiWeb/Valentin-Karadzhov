@@ -3,7 +3,8 @@
 :root {
   --_primary-light: #7843E9;
   --_on-primary-light: #fff;
-  --_primary-hover-light: #5F30D4;
+  --_primary-hover-light: #5f30d4;
+  --_primary-active-light: #4c20b5;
   --_surface-light: #fff;
   --_on-surface-light: #1a1a1a;
   --_site-bg-light: #f1f1f1;
@@ -14,6 +15,7 @@
   --_primary-dark: #A48EFF;
   --_on-primary-dark: #1A1A1A;
   --_primary-hover-dark: #BCA9FF;
+  --_primary-active-dark: #937bff;
   --_surface-dark: #23262f;
   --_on-surface-dark: #fafafa;
   --_site-bg-dark: #17181c;
@@ -24,6 +26,7 @@
   --_primary-hc: #ffd700;
   --_on-primary-hc: #000;
   --_primary-hover-hc: #84e2f1;
+  --_primary-active-hc: #ffffff;
   --_surface-hc: #fff;
   --_on-surface-hc: #000;
   --_site-bg-hc: #000;
@@ -36,6 +39,7 @@
   --color-primary: var(--_primary-light);
   --color-on-primary: var(--_on-primary-light);
   --color-primary-hover: var(--_primary-hover-light);
+  --color-primary-active: var(--_primary-active-light);
 
   --color-surface: var(--_surface-light);
   --color-on-surface: var(--_on-surface-light);
@@ -48,6 +52,7 @@ html.dark {
   --color-primary: var(--_primary-dark);
   --color-on-primary: var(--_on-primary-dark);
   --color-primary-hover: var(--_primary-hover-dark);
+  --color-primary-active: var(--_primary-active-dark);
 
   --color-surface: var(--_surface-dark);
   --color-on-surface: var(--_on-surface-dark);
@@ -60,6 +65,7 @@ html.high-contrast {
   --color-primary: var(--_primary-hc);
   --color-on-primary: var(--_on-primary-hc);
   --color-primary-hover: var(--_primary-hover-hc);
+  --color-primary-active: var(--_primary-active-hc);
 
   --color-surface: var(--_surface-hc);
   --color-on-surface: var(--_on-surface-hc);
