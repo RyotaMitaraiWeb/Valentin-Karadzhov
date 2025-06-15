@@ -1,0 +1,111 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"dialog"> {
+  side: "left" | "right";
+  id: string;
+}
+
+const { class: className, side, ...props } = Astro.props;
+---
+
+<dialog
+  data-drawer
+  class:list={[
+    side,
+    "bg-transparent min-w-screen min-h-screen motion-safe:transition-colors",
+    className,
+  ]}
+  {...props}
+>
+  <slot />
+</dialog>
+
+<script>
+  import { closeDialog } from "../../util/dialog/closeDialog";
+
+  const dialogs = document.querySelectorAll(
+    "dialog[data-drawer]"
+  ) as NodeListOf<HTMLDialogElement>;
+
+  for (const dialog of dialogs) {
+    dialog.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target === dialog) {
+        closeDialog(dialog);
+      }
+    });
+  }
+</script>
+
+<style lang="scss" is:global>
+  $animation-style: cubic-bezier(0.4, 0, 0.2, 1);
+
+  dialog {
+    @media (prefers-reduced-motion: no-preference) {
+      &.left {
+        & > * {
+          animation: slideInFromLeft 150ms $animation-style both;
+        }
+
+        &.close {
+          animation: slideToTheLeft 150ms $animation-style both;
+        }
+      }
+
+      &.right {
+        & > * {
+          animation: slideInFromRight 150ms $animation-style both;
+        }
+
+        &.close {
+          animation: slideToTheRight 150ms $animation-style both;
+        }
+      }
+    }
+
+    &.right > * {
+      margin-left: auto;
+    }
+
+    &.close::backdrop {
+      background-color: transparent;
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideToTheRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes slideToTheLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>
