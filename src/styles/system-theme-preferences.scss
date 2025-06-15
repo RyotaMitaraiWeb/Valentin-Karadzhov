@@ -1,0 +1,14 @@
+html.system {
+  @media (prefers-color-scheme: dark) {
+    --color-primary: var(--_primary-dark);
+    --color-on-primary: var(--_on-primary-dark);
+    --color-primary-hover: var(--_primary-hover-dark);
+    --color-primary-active: var(--_primary-active-dark);
+
+    --color-surface: var(--_surface-dark);
+    --color-on-surface: var(--_on-surface-dark);
+
+    --color-site-bg: var(--_site-bg-dark);
+    --color-on-site-bg: var(--_on-site-bg-dark);
+  }
+}
