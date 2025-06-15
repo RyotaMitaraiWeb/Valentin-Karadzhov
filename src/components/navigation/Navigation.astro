@@ -1,0 +1,21 @@
+---
+import { links } from "../../common/navigation";
+import DesktopNavigationLink from "./desktop/DesktopNavigationLink.astro";
+import MobileMenuButton from "./mobile/MobileMenuButton.astro";
+import SettingsMenuButton from "./SettingsMenuButton.astro";
+---
+
+<nav class="bg-surface h-auto w-full flex justify-end">
+  <ul class="flex gap-2">
+    {links.map(link => <DesktopNavigationLink href={link.href}>
+      {link.text}
+    </DesktopNavigationLink>)}
+
+    <li>
+      <SettingsMenuButton />
+    </li>
+    <li class="lg:hidden">
+      <MobileMenuButton />
+    </li>
+  </ul>
+</nav>
