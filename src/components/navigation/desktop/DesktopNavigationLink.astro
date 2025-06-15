@@ -1,0 +1,12 @@
+---
+interface Props {
+  href: string;
+}
+
+const props = Astro.props;
+---
+<li>
+  <a class="block text-xl text-on-surface hover:text-primary hover:underline p-4 focus-outline" href={props.href}>
+    <slot />
+  </a>
+</li>
