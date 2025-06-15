@@ -1,4 +1,9 @@
 ---
+import "../styles/global.css";
+import "../styles/system-theme-preferences.scss";
+import "../styles/focus-outline.scss";
+import Navigation from '../components/navigation/Navigation.astro';
+
 interface Props {
   pageTitle: string;
   metaDescription: string;
@@ -46,6 +51,9 @@ const props = Astro.props;
     <title>{props.pageTitle}</title>
   </head>
   <body class="bg-site-bg text-on-site-bg">
+    <header>
+      <Navigation />
+    </header>
     <main>
       <slot />
     </main>
