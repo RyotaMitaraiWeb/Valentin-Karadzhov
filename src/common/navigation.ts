@@ -22,6 +22,6 @@ export const links: NavigationLink[] = [
   },
   {
     text: "Contact me",
-    href: "/#contacts"
+    href: "/contacts"
   },
 ];
