@@ -1,7 +1,7 @@
 ---
 import { GITHUB_PROFILE_URL } from "../../common/github";
 import { LINKEDIN_PROFILE_URL } from "../../common/linkedin";
-import { EMAIL_ADDRESS } from "../../common/personalAssets";
+import { CV_PATH, EMAIL_ADDRESS } from "../../common/personalAssets";
 import EmailIcon from "../icons/EmailIcon.astro";
 import GitHubIcon from "../icons/GitHubIcon.astro";
 import LinkedInIcon from "../icons/LinkedInIcon.astro";
@@ -11,7 +11,9 @@ import FooterLink from "./FooterLink.astro";
 const iconSize = 16;
 ---
 
-<footer class="w-full py-8 flex flex-col gap-8 lg:gap-0 lg:flex-row lg:justify-evenly">
+<footer
+  class="w-full py-8 flex flex-col gap-8 lg:gap-0 lg:flex-row lg:justify-evenly"
+>
   <section>
     <h2>Valentin Karadzhov</h2>
     <p>TypeScript and .NET developer and a web designer</p>
@@ -38,7 +40,7 @@ const iconSize = 16;
         </FooterLink>
       </li>
       <li>
-        <FooterLink href={"#"} target="_blank">
+        <FooterLink href={CV_PATH} target="_blank">
           <PdfIcon size={iconSize} slot="icon" />
           Open my CV in a new tab
         </FooterLink>
