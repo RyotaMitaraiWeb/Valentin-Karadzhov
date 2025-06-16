@@ -1,0 +1,40 @@
+---
+import { themes, type theme } from "../../../common/theme";
+
+interface Props {
+  value: theme;
+  description?: string;
+}
+
+const props = Astro.props;
+---
+
+<button
+  data-theme={props.value}
+  class="focus-outline font-bold hover:text-primary active:opacity-65"
+  aria-pressed={themes.system.value === props.value}
+>
+  <slot name="icon" />
+  <span>
+    <slot />
+  </span>
+</button>
+
+<script>
+  import type { theme } from "../../../common/theme";
+  import { changeTheme } from "../../../util/changeTheme";
+
+  const buttons = document.querySelectorAll(
+    "[data-theme]"
+  ) as NodeListOf<HTMLButtonElement>;
+
+  for (const button of buttons) {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const theme: theme = button.dataset.theme as theme;
+
+      changeTheme(theme);
+    });
+  }
+</script>
