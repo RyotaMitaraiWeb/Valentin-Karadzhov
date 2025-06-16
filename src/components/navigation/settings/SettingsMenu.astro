@@ -1,0 +1,14 @@
+---
+import { SETTINGS_MENU_DIALOG_ID } from "../../../common/dialog";
+import Drawer from "../../drawer/Drawer.astro";
+
+const changeThemeId = "change-theme";
+---
+
+<Drawer id={SETTINGS_MENU_DIALOG_ID} side="right">
+  <div class="bg-surface text-on-surface min-h-screen w-9/10 sm:w-2/3 md:w-1/2">
+    <section>
+      <h2 id={changeThemeId}>Change the website's theme</h2>
+    </section>
+  </div>
+</Drawer>
