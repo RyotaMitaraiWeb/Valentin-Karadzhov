@@ -35,6 +35,11 @@ const { class: className, side, ...props } = Astro.props;
         closeDialog(dialog);
       }
     });
+
+    dialog.addEventListener("close", () => {
+      dialog.classList.remove("close");
+      dialog.classList.remove("open");
+    });
   }
 </script>
 
@@ -64,12 +69,30 @@ const { class: className, side, ...props } = Astro.props;
       }
     }
 
-    &.right > * {
-      margin-left: auto;
+    &.left {
+      transform: translateX(-100%);
+
+      &.open {
+        transform: translateX(0);
+      }
     }
 
-    &.close::backdrop {
+    &.right {
+      transform: translateX(100%);
+
+      &.open {
+        transform: translateX(0);
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    &::backdrop {
       background-color: transparent;
+
+      &.open {
+        background-color: rgba(0, 0, 0, 0.6);
+      }
     }
   }
 
