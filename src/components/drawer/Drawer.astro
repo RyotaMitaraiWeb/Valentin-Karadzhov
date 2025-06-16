@@ -13,7 +13,7 @@ const { class: className, side, ...props } = Astro.props;
   data-drawer
   class:list={[
     side,
-    "bg-transparent min-w-screen min-h-screen motion-safe:transition-colors",
+    "bg-transparent overflow-hidden min-w-screen min-h-screen motion-safe:transition-colors",
     className,
   ]}
   {...props}

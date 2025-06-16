@@ -1,8 +1,43 @@
 ---
 import { MOBILE_MENU_DIALOG_ID } from "../../../common/dialog";
+import { links } from "../../../common/navigation";
 import Drawer from "../../drawer/Drawer.astro";
+import MobileNavigationLink from "./MobileNavigationLink.astro";
 ---
 
-<Drawer side="right" id={MOBILE_MENU_DIALOG_ID}>
-  <h1 class="w-40">Hello</h1>
+<Drawer side="left" id={MOBILE_MENU_DIALOG_ID} class="lg:hidden">
+  <nav class="bg-surface h-screen w-9/10 sm:w-2/3 md:w-1/2">
+    <ul class="h-full">
+      {
+        links.map((link) => (
+          <MobileNavigationLink href={link.href}>
+            {link.text}
+          </MobileNavigationLink>
+        ))
+      }
+
+      <li class="border-b-gray-500 border-b">
+        <button
+          id="close-mobile-menu-button"
+          class="flex focus-outline w-full cursor-pointer text-on-surface hover:text-primary hover:underline active:opacity-65 p-8"
+        >
+          Close
+        </button>
+      </li>
+    </ul>
+  </nav>
 </Drawer>
+
+<script>
+  import { MOBILE_MENU_DIALOG_ID } from "../../../common/dialog";
+  import { closeDialog } from "../../../util/dialog/closeDialog";
+
+  const button = document.getElementById(
+    "close-mobile-menu-button"
+  ) as HTMLDialogElement;
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeDialog(MOBILE_MENU_DIALOG_ID);
+  });
+</script>
