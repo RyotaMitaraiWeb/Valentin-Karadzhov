@@ -13,7 +13,7 @@ const { class: className, side, ...props } = Astro.props;
   data-drawer
   class:list={[
     side,
-    "bg-transparent overflow-hidden min-w-screen min-h-screen motion-safe:transition-colors",
+    "overflow-hidden min-w-screen min-h-screen motion-safe:transition-colors",
     className,
   ]}
   {...props}
@@ -87,12 +87,10 @@ const { class: className, side, ...props } = Astro.props;
       }
     }
 
-    &::backdrop {
-      background-color: transparent;
+    background-color: transparent;
 
-      &.open {
-        background-color: rgba(0, 0, 0, 0.6);
-      }
+    &.open {
+      background-color: rgba(0, 0, 0, 0.5);
     }
   }
 
