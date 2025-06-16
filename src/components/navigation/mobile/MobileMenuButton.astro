@@ -26,7 +26,11 @@ import BurgerMenuIcon from "../../icons/BurgerMenuIcon.astro";
       MOBILE_MENU_DIALOG_ID
     ) as HTMLDialogElement;
     menu.showModal();
-  
-    requestAnimationFrame(() => menu.classList.add('open'));
+
+    requestAnimationFrame(() => {
+      menu.classList.add("open");
+      const html = document.querySelector("html")!;
+      html.classList.add("locked");
+    });
   });
 </script>

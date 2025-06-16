@@ -6,8 +6,8 @@ import MobileNavigationLink from "./MobileNavigationLink.astro";
 ---
 
 <Drawer side="left" id={MOBILE_MENU_DIALOG_ID} class="lg:hidden">
-  <nav class="bg-surface h-screen w-9/10 sm:w-2/3 md:w-1/2">
-    <ul class="h-full">
+  <nav class="bg-surface min-h-screen w-9/10 sm:w-2/3 md:w-1/2">
+    <ul>
       {
         links.map((link) => (
           <MobileNavigationLink href={link.href}>

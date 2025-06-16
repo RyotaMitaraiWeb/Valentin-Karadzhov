@@ -13,7 +13,7 @@ const { class: className, side, ...props } = Astro.props;
   data-drawer
   class:list={[
     side,
-    "overflow-hidden min-w-screen min-h-screen motion-safe:transition-colors",
+    "overflow-x-hidden min-w-screen min-h-screen motion-safe:transition-colors",
     className,
   ]}
   {...props}
@@ -39,6 +39,8 @@ const { class: className, side, ...props } = Astro.props;
     dialog.addEventListener("close", () => {
       dialog.classList.remove("close");
       dialog.classList.remove("open");
+      const html = document.querySelector("html")!;
+      html.classList.remove("locked");
     });
   }
 </script>

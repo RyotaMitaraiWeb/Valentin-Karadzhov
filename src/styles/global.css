@@ -73,3 +73,7 @@ html.high-contrast {
   --color-site-bg: var(--_site-bg-hc);
   --color-on-site-bg: var(--_on-site-bg-hc);
 }
+
+html.locked, html.locked body {
+  overflow: hidden;
+}
