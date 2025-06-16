@@ -1,0 +1,134 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"dialog"> {
+  side: "left" | "right";
+  id: string;
+}
+
+const { class: className, side, ...props } = Astro.props;
+---
+
+<dialog
+  data-drawer
+  class:list={[
+    side,
+    "overflow-x-hidden min-w-screen min-h-screen motion-safe:transition-colors",
+    className,
+  ]}
+  {...props}
+>
+  <slot />
+</dialog>
+
+<script>
+  import { closeDialog } from "../../util/dialog/closeDialog";
+
+  const dialogs = document.querySelectorAll(
+    "dialog[data-drawer]"
+  ) as NodeListOf<HTMLDialogElement>;
+
+  for (const dialog of dialogs) {
+    dialog.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target === dialog) {
+        closeDialog(dialog);
+      }
+    });
+
+    dialog.addEventListener("close", () => {
+      dialog.classList.remove("close");
+      dialog.classList.remove("open");
+      const html = document.querySelector("html")!;
+      html.classList.remove("locked");
+    });
+  }
+</script>
+
+<style lang="scss" is:global>
+  $animation-style: cubic-bezier(0.4, 0, 0.2, 1);
+
+  dialog {
+    @media (prefers-reduced-motion: no-preference) {
+      &.left {
+        & > * {
+          animation: slideInFromLeft 150ms $animation-style both;
+        }
+
+        &.close {
+          animation: slideToTheLeft 150ms $animation-style both;
+        }
+      }
+
+      &.right {
+        & > * {
+          animation: slideInFromRight 150ms $animation-style both;
+        }
+
+        &.close {
+          animation: slideToTheRight 150ms $animation-style both;
+        }
+      }
+    }
+
+    &.left {
+      transform: translateX(-100%);
+
+      &.open {
+        transform: translateX(0);
+      }
+    }
+
+    &.right {
+      transform: translateX(100%);
+
+      &.open {
+        transform: translateX(0);
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    background-color: transparent;
+
+    &.open {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideToTheRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes slideToTheLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>

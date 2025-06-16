@@ -1,0 +1,65 @@
+---
+import "../styles/global.css";
+import "../styles/system-theme-preferences.scss";
+import "../styles/focus-outline.scss";
+import Navigation from '../components/navigation/Navigation.astro';
+import MobileMenu from "../components/navigation/mobile/MobileMenu.astro";
+import Footer from "../components/footer/Footer.astro";
+
+interface Props {
+  pageTitle: string;
+  metaDescription: string;
+}
+
+const props = Astro.props;
+
+
+/*
+	Inline script below is used this way so that the theme can be loaded before
+	the CSS has loaded, preventing а flash of unstyled content. Astro, by default,
+	uses module scripts, which are asynchronous. Inline scripts do not support
+	imports, so WET code is pretty much necessary here.
+
+	Because of this, if you make any changes to the theming, you need to
+	check this file as well and ensure it's consistent with the changes.
+
+	The script is also executed as an IIFE to prevent global scope pollution.
+*/
+---
+
+<html lang="en" class="system h-full">
+  <head>
+    <script is:inline>
+      (function() {
+				const theme = localStorage.getItem('theme') || 'system';
+				const html = document.querySelector('html');
+
+				/* 
+					"system" is the default theme (the class in the <html> tag), 
+					so there's no point in doing anything if it's the preferred
+					theme
+				*/
+				if (theme === 'system' || !html) return;
+
+				html.classList.remove('system');
+				html.classList.add(theme);
+			})();
+    </script>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={props.metaDescription}>
+    <title>{props.pageTitle}</title>
+  </head>
+  <body class="w-full h-full bg-site-bg text-on-site-bg flex flex-col gap-8">
+    <MobileMenu />
+    <header class="w-screen">
+      <Navigation />
+    </header>
+    <main id="main" class="flex-1 flex flex-col gap-8">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
