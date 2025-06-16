@@ -13,10 +13,10 @@ const iconSize = 24;
 ---
 
 <Drawer id={SETTINGS_MENU_DIALOG_ID} side="right">
-  <div class="bg-surface text-on-surface min-h-screen w-9/10 sm:w-2/3 md:w-1/2">
+  <div class="bg-surface p-4 text-on-surface min-h-screen w-9/10 sm:w-2/3 md:w-1/2">
     <section>
       <h2 id={changeThemeId}>Change the website's theme</h2>
-      <div aria-labelledby={changeThemeId}>
+      <div class="flex flex-col gap-4" aria-labelledby={changeThemeId}>
         <ThemeButton
           value={themes.light.value}
           description={themes.light.description}
