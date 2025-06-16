@@ -7,17 +7,24 @@ import GearIcon from "../../icons/GearIcon.astro";
   aria-label="Open settings menu"
   id="settings-menu-button"
 >
-  <GearIcon className="fill-on-surface group-hover:fill-primary group-active:opacity-65 motion-safe:transition-colors" size={24} />
+  <GearIcon
+    className="fill-on-surface group-hover:fill-primary group-active:opacity-65 motion-safe:transition-colors"
+    size={24}
+  />
 </button>
 
 <script>
-import { SETTINGS_MENU_DIALOG_ID } from "../../../common/dialog";
+  import { SETTINGS_MENU_DIALOG_ID } from "../../../common/dialog";
 
-  const button = document.getElementById('settings-menu-button') as HTMLButtonElement;
+  const button = document.getElementById(
+    "settings-menu-button"
+  ) as HTMLButtonElement;
 
-  button.addEventListener('click', (e) => {
+  button.addEventListener("click", (e) => {
     e.preventDefault();
-    const menu = document.getElementById(SETTINGS_MENU_DIALOG_ID) as HTMLDialogElement;
+    const menu = document.getElementById(
+      SETTINGS_MENU_DIALOG_ID
+    ) as HTMLDialogElement;
     menu.showModal();
 
     requestAnimationFrame(() => {

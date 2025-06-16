@@ -1,14 +1,59 @@
 ---
 import { SETTINGS_MENU_DIALOG_ID } from "../../../common/dialog";
+import { themes } from "../../../common/theme";
 import Drawer from "../../drawer/Drawer.astro";
+import DarkModeIcon from "../../icons/DarkModeIcon.astro";
+import HighContrastModeIcon from "../../icons/HighContrastModeIcon.astro";
+import LightModeIcon from "../../icons/LightModeIcon.astro";
+import SystemModeIcon from "../../icons/SystemModeIcon.astro";
+import ThemeButton from "./ThemeButton.astro";
 
 const changeThemeId = "change-theme";
+const iconSize = 24;
 ---
 
 <Drawer id={SETTINGS_MENU_DIALOG_ID} side="right">
   <div class="bg-surface text-on-surface min-h-screen w-9/10 sm:w-2/3 md:w-1/2">
     <section>
       <h2 id={changeThemeId}>Change the website's theme</h2>
+      <div aria-labelledby={changeThemeId}>
+        <ThemeButton
+          value={themes.light.value}
+          description={themes.light.description}
+        >
+          <LightModeIcon slot="icon" size={iconSize} className="fill-current" />
+          {themes.light.label}
+        </ThemeButton>
+        <ThemeButton
+          value={themes.dark.value}
+          description={themes.dark.description}
+        >
+          <DarkModeIcon slot="icon" size={iconSize} className="fill-current" />
+          {themes.dark.label}
+        </ThemeButton>
+        <ThemeButton
+          value={themes["high-contrast"].value}
+          description={themes["high-contrast"].description}
+        >
+          <HighContrastModeIcon
+            slot="icon"
+            size={iconSize}
+            className="fill-current"
+          />
+          {themes["high-contrast"].label}
+        </ThemeButton>
+        <ThemeButton
+          value={themes.system.value}
+          description={themes.system.description}
+        >
+          <SystemModeIcon
+            slot="icon"
+            size={iconSize}
+            className="fill-current"
+          />
+          {themes.system.label}
+        </ThemeButton>
+      </div>
     </section>
   </div>
 </Drawer>
