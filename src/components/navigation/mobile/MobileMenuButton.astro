@@ -15,6 +15,7 @@ import BurgerMenuIcon from "../../icons/BurgerMenuIcon.astro";
 
 <script>
   import { MOBILE_MENU_DIALOG_ID } from "../../../common/dialog";
+  import { openDialog } from "../../../util/dialog/openDialog";
 
   const button = document.querySelector(
     "#mobile-menu-button"
@@ -22,15 +23,6 @@ import BurgerMenuIcon from "../../icons/BurgerMenuIcon.astro";
   button.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const menu = document.getElementById(
-      MOBILE_MENU_DIALOG_ID
-    ) as HTMLDialogElement;
-    menu.showModal();
-
-    requestAnimationFrame(() => {
-      menu.classList.add("open");
-      const html = document.querySelector("html")!;
-      html.classList.add("locked");
-    });
+    openDialog(MOBILE_MENU_DIALOG_ID);
   });
 </script>

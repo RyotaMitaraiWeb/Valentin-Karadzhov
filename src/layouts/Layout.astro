@@ -2,9 +2,10 @@
 import "../styles/global.css";
 import "../styles/system-theme-preferences.scss";
 import "../styles/focus-outline.scss";
-import Navigation from '../components/navigation/Navigation.astro';
+import Navigation from "../components/navigation/Navigation.astro";
 import MobileMenu from "../components/navigation/mobile/MobileMenu.astro";
 import Footer from "../components/footer/Footer.astro";
+import SettingsMenu from "../components/navigation/settings/SettingsMenu.astro";
 
 interface Props {
   pageTitle: string;
@@ -12,7 +13,6 @@ interface Props {
 }
 
 const props = Astro.props;
-
 
 /*
 	Inline script below is used this way so that the theme can be loaded before
@@ -30,29 +30,30 @@ const props = Astro.props;
 <html lang="en" class="system h-full">
   <head>
     <script is:inline>
-      (function() {
-				const theme = localStorage.getItem('theme') || 'system';
-				const html = document.querySelector('html');
+      (function () {
+        const theme = localStorage.getItem("theme") || "system";
+        const html = document.querySelector("html");
 
-				/* 
+        /* 
 					"system" is the default theme (the class in the <html> tag), 
 					so there's no point in doing anything if it's the preferred
 					theme
 				*/
-				if (theme === 'system' || !html) return;
+        if (theme === "system" || !html) return;
 
-				html.classList.remove('system');
-				html.classList.add(theme);
-			})();
+        html.classList.remove("system");
+        html.classList.add(theme);
+      })();
     </script>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={props.metaDescription}>
+    <meta name="description" content={props.metaDescription} />
     <title>{props.pageTitle}</title>
   </head>
   <body class="w-full h-full bg-site-bg text-on-site-bg flex flex-col gap-8">
+    <SettingsMenu />
     <MobileMenu />
     <header class="w-screen">
       <Navigation />
@@ -61,5 +62,7 @@ const props = Astro.props;
       <slot />
     </main>
     <Footer />
+
+    <script src="../scripts/selectThemeButtonOnLoad.ts"></script>
   </body>
 </html>
