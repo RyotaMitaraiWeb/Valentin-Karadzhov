@@ -15,6 +15,7 @@ import GearIcon from "../../icons/GearIcon.astro";
 
 <script>
   import { SETTINGS_MENU_DIALOG_ID } from "../../../common/dialog";
+  import { openDialog } from "../../../util/dialog/openDialog";
 
   const button = document.getElementById(
     "settings-menu-button"
@@ -22,15 +23,6 @@ import GearIcon from "../../icons/GearIcon.astro";
 
   button.addEventListener("click", (e) => {
     e.preventDefault();
-    const menu = document.getElementById(
-      SETTINGS_MENU_DIALOG_ID
-    ) as HTMLDialogElement;
-    menu.showModal();
-
-    requestAnimationFrame(() => {
-      menu.classList.add("open");
-      const html = document.querySelector("html")!;
-      html.classList.add("locked");
-    });
+    openDialog(SETTINGS_MENU_DIALOG_ID);
   });
 </script>
