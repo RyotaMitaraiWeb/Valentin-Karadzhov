@@ -1,0 +1,70 @@
+---
+import { GITHUB_PROFILE_URL } from "../../common/github";
+import { LINKEDIN_PROFILE_URL } from "../../common/linkedin";
+import { EMAIL_ADDRESS } from "../../common/personalAssets";
+import EmailIcon from "../icons/EmailIcon.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
+import PdfIcon from "../icons/PdfIcon.astro";
+import FooterLink from "./FooterLink.astro";
+
+const iconSize = 16;
+---
+
+<footer class="w-full py-8 flex flex-col gap-8 lg:gap-0 lg:flex-row lg:justify-evenly">
+  <section>
+    <h2>Valentin Karadzhov</h2>
+    <p>TypeScript and .NET developer and a web designer</p>
+  </section>
+  <section>
+    <h2>External links</h2>
+    <ul role="list" class="flex flex-col gap-4">
+      <li>
+        <FooterLink href={`mailto:${EMAIL_ADDRESS}`}>
+          <EmailIcon size={iconSize} slot="icon" />
+          {EMAIL_ADDRESS}
+        </FooterLink>
+      </li>
+      <li>
+        <FooterLink href={GITHUB_PROFILE_URL} target="_blank">
+          <GitHubIcon size={iconSize} slot="icon" />
+          GitHub profile
+        </FooterLink>
+      </li>
+      <li>
+        <FooterLink href={LINKEDIN_PROFILE_URL} target="_blank">
+          <LinkedInIcon size={iconSize} slot="icon" />
+          LinkedIn profile
+        </FooterLink>
+      </li>
+      <li>
+        <FooterLink href={"#"} target="_blank">
+          <PdfIcon size={iconSize} slot="icon" />
+          Open my CV in a new tab
+        </FooterLink>
+      </li>
+    </ul>
+  </section>
+</footer>
+
+<style lang="scss" is:global>
+  footer {
+    background-color: #000000;
+    color: #ffffff;
+
+    svg {
+      fill: #ffffff;
+    }
+  }
+
+  html.high-contrast {
+    footer {
+      background-color: #ffffff;
+      color: #000000;
+
+      svg {
+        fill: #000000;
+      }
+    }
+  }
+</style>
