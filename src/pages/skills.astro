@@ -1,4 +1,8 @@
 ---
+import PageTitle from "../components/content/PageTitle.astro";
+import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
+import Text from "../components/content/Text.astro";
+import TextLink from "../components/content/TextLink.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -6,21 +10,22 @@ import Layout from "../layouts/Layout.astro";
   pageTitle="Tech stack and skills | Valentin Karadzhov"
   metaDescription="See what technologies I work with (mostly JavaScript and .NET based ones)"
 >
-  <h1>Tech stack and skills</h1>
-  <div>
-    <p>
+  <SiteBackgroundSection>
+    <PageTitle>Tech stack and skills</PageTitle>
+    <Text>
       Below are listed various technologies (programming languages, libraries,
       frameworks, databases, and others) which I have used at least once in a
       personal or professional project. The list does not include more "minor"
       technologies like component libraries, though such may have been used in
       my projects.
-    </p>
+    </Text>
 
-    <p>
-      The graphics for each technology were taken from <a
+    <Text>
+      The graphics for each technology were taken from <TextLink
         href="https://devicon.dev/"
         target="_blank"
-        rel="nofollow">Devicon.dev</a>
-    </p>
-  </div>
+        rel="nofollow">devicon.dev</TextLink
+      >
+    </Text>
+  </SiteBackgroundSection>
 </Layout>

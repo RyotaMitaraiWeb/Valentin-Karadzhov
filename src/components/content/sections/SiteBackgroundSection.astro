@@ -1,0 +1,19 @@
+---
+interface Props {
+  selector?: keyof HTMLElementTagNameMap;
+  id?: string;
+  class?: string;
+}
+
+const { class: className, selector: Tag = "section", ...props } = Astro.props;
+---
+
+<Tag
+  class:list={[
+    "bg-site-section px-8 lg:24 xl:px-32 bg-site-bg text-on-site-bg flex flex-col gap-8",
+    className,
+  ]}
+  {...props}
+>
+  <slot />
+</Tag>
