@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {
+  href: string;
+}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<a
+  class:list={[
+    "focus-outline text-xl w-max rounded-md px-8 py-4 bg-primary text-on-primary font-bold hover:bg-primary-hover active:bg-primary-active motion-safe:transition-transform motion-safe:transition-colors motion-safe:hover:-translate-y-1",
+    className,
+  ]}
+  {...props}
+>
+  <slot />
+</a>
