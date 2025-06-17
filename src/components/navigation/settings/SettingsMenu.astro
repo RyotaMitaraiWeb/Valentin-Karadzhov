@@ -1,6 +1,7 @@
 ---
 import { SETTINGS_MENU_DIALOG_ID } from "../../../common/dialog";
 import { themes } from "../../../common/theme";
+import Heading2 from "../../content/Heading2.astro";
 import Drawer from "../../drawer/Drawer.astro";
 import DarkModeIcon from "../../icons/DarkModeIcon.astro";
 import HighContrastModeIcon from "../../icons/HighContrastModeIcon.astro";
@@ -15,7 +16,7 @@ const iconSize = 24;
 <Drawer id={SETTINGS_MENU_DIALOG_ID} side="right">
   <div class="bg-surface text-on-surface min-h-screen w-9/10 sm:w-2/3 md:w-1/2 motion-safe:transition-colors">
     <section class="p-4 flex flex-col gap-4">
-      <h2 id={changeThemeId}>Change the website's theme</h2>
+      <Heading2 id={changeThemeId}>Change the website's theme</Heading2>
       <div class="flex flex-col gap-4" aria-labelledby={changeThemeId}>
         <ThemeButton
           value={themes.light.value}

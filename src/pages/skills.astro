@@ -1,0 +1,88 @@
+---
+import {
+  backEndTechStack,
+  frontEndTechStack,
+  otherTech,
+} from "../common/techStack";
+import Heading2 from "../components/content/Heading2.astro";
+import LinkButton from "../components/content/LinkButton.astro";
+import PageTitle from "../components/content/PageTitle.astro";
+import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
+import SurfaceSection from "../components/content/sections/SurfaceSection.astro";
+import Text from "../components/content/Text.astro";
+import TextLink from "../components/content/TextLink.astro";
+import TechStackSection from "../components/tech-stack/TechStackSection.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  pageTitle="Tech stack and skills | Valentin Karadzhov"
+  metaDescription="See what technologies I work with (mostly JavaScript and .NET based ones)"
+>
+  <SiteBackgroundSection>
+    <PageTitle>Tech stack and skills</PageTitle>
+    <Text>
+      Below are listed various technologies (programming languages, libraries,
+      frameworks, databases, and others) which I have used at least once in a
+      personal or professional project. The list does not include more "minor"
+      technologies like component libraries, though such may have been used in
+      my projects.
+    </Text>
+
+    <Text>
+      The graphics for each technology were taken from <TextLink
+        href="https://devicon.dev/"
+        target="_blank"
+        rel="nofollow">devicon.dev</TextLink
+      >
+    </Text>
+  </SiteBackgroundSection>
+  <SurfaceSection selector="section" class="py-4 lg:py-8 gap-16">
+    <TechStackSection
+      heading="Front-end / UI technologies"
+      techStack={frontEndTechStack}
+    />
+
+    <hr />
+    <TechStackSection
+      heading="Back-end technologies and databases"
+      techStack={backEndTechStack}
+    />
+
+    <hr />
+
+    <TechStackSection heading="Other technologies" techStack={otherTech} />
+  </SurfaceSection>
+  <SiteBackgroundSection class="text-center">
+    <Heading2>Want to see those technologies applied in action?</Heading2>
+    <LinkButton href="/portfolio" class="self-center">
+      Check out my projects
+    </LinkButton>
+  </SiteBackgroundSection>
+  <SurfaceSection selector="section" class="py-4 lg:py-8">
+    <Heading2 class="text-center lg:text-left"
+      >Other skills of interest</Heading2
+    >
+    <ul class="list-disc flex flex-col gap-8">
+      <Text selector="li"
+        >I have experience with Adobe Photoshop, Illustrator, and InDesign. I
+        have used them in minor professional settings and occassionally in
+        university projects (such as creating logos, brochures, and flyers for
+        fictional companies)</Text
+      >
+      <Text selector="li"
+        >I have experience with Microsoft Excel, which I have used in various
+        university projects to analyze data, establish potential relations (and lack thereof) between
+        variables, and forecast future events</Text
+      >
+      <Text selector="li">
+        I am experienced in web scraping with Python and have used this skill in
+        various university projects to collect data online to analyze it later
+        on
+      </Text>
+      <Text selector="li">
+        I am fluent in English and have a decent Spanish
+      </Text>
+    </ul>
+  </SurfaceSection>
+</Layout>

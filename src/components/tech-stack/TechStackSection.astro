@@ -1,0 +1,42 @@
+---
+import { type TechStackItem } from "../../common/techStack";
+import Heading2 from "../content/Heading2.astro";
+import TechnologyCard from "./TechnologyCard.astro";
+
+interface Props {
+  heading: string;
+  techStack: TechStackItem[];
+}
+
+const props = Astro.props;
+---
+
+<div class="flex flex-col gap-8 lg:flex-row items-center lg:justify-center">
+  <Heading2 class="text-center lg:text-left lg:mx-auto lg:w-1/3 flex"> {props.heading} </Heading2>
+  <ul
+    role="list"
+    class="mx-auto lg:w-2/3 flex flex-col gap-12 sm:flex-row sm:flex-wrap justify-center items-center lg:justify-start"
+  >
+    {
+      props.techStack.map(({ icon: Icon, label }) => (
+        <li class="tech">
+          <TechnologyCard>
+            <Icon slot="icon" />
+            {label}
+          </TechnologyCard>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style lang="scss" is:global>
+  $size: 64px;
+
+  .tech {
+    svg {
+      width: $size;
+      height: $size;
+    }
+  }
+</style>
