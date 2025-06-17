@@ -1,8 +1,17 @@
 ---
+import {
+  backEndTechStack,
+  frontEndTechStack,
+  otherTech,
+} from "../common/techStack";
+import Heading2 from "../components/content/Heading2.astro";
+import LinkButton from "../components/content/LinkButton.astro";
 import PageTitle from "../components/content/PageTitle.astro";
 import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
+import SurfaceSection from "../components/content/sections/SurfaceSection.astro";
 import Text from "../components/content/Text.astro";
 import TextLink from "../components/content/TextLink.astro";
+import TechStackSection from "../components/tech-stack/TechStackSection.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -27,5 +36,27 @@ import Layout from "../layouts/Layout.astro";
         rel="nofollow">devicon.dev</TextLink
       >
     </Text>
+  </SiteBackgroundSection>
+  <SurfaceSection selector="section" class="py-4 lg:py-8 gap-16">
+    <TechStackSection
+      heading="Front-end / UI technologies"
+      techStack={frontEndTechStack}
+    />
+
+    <hr />
+    <TechStackSection
+      heading="Back-end technologies and databases"
+      techStack={backEndTechStack}
+    />
+
+    <hr />
+
+    <TechStackSection heading="Other technologies" techStack={otherTech} />
+  </SurfaceSection>
+  <SiteBackgroundSection class="text-center">
+    <Heading2>Want to see those technologies applied in action?</Heading2>
+    <LinkButton href="/portfolio" class="self-center">
+      Check out my projects
+    </LinkButton>
   </SiteBackgroundSection>
 </Layout>
