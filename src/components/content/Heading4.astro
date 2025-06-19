@@ -6,6 +6,6 @@ interface Props extends HTMLAttributes<"h4"> {}
 const { class: className, ...props } = Astro.props;
 ---
 
-<h4 class:list={["font-bold text-lg", className]} {...props}>
+<h4 class:list={["font-bold text-xl", className]} {...props}>
   <slot />
 </h4>
