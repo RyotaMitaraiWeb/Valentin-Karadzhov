@@ -9,6 +9,7 @@ export type ExternalLink = {
 };
 
 export type Project = {
+  id: string;
   title: string;
   description: string;
   fullContent: AstroComponent;
@@ -21,9 +22,10 @@ export type Project = {
 
 export const webApps: Project[] = [
   {
+    id: "cardflow",
     title: "Cardflow",
     description:
-      "A web platform for buying, selling, and trading TCG items like Yu-Gi-Oh cards. Developed in collaboration with other developers. I participated as the main front-end engineer.",
+      "A web platform for buying, selling, and trading TCG items like Yu-Gi-Oh cards. Developed in collaboration with other developers.",
     fullContent: CardflowText,
     pageSubRoute: "cardflow",
     techStack: [
