@@ -2,7 +2,12 @@
 import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
 import Text from "../components/content/Text.astro";
 import HeroHeading from "../components/home/HeroHeading.astro";
+import QuickLink from "../components/home/QuickLink.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import Layout from "../layouts/Layout.astro";
+
+const iconSize = 32;
 ---
 
 <Layout
@@ -10,11 +15,24 @@ import Layout from "../layouts/Layout.astro";
   metaDescription="Valentin Karadzhov is a TypeScript and .NET developer, as well as a web designer"
 >
   <HeroHeading>Valentin Karadzhov</HeroHeading>
+  <ul role="list" class="flex justify-center gap-12">
+    <li>
+      <QuickLink href="" target="_blank" screenreaderText="My GitHub profile">
+        <GitHubIcon className="fill-current" size={iconSize} />
+      </QuickLink>
+    </li>
+    <li>
+      <QuickLink href="" target="_blank" screenreaderText="My LinkedIn profile">
+        <LinkedInIcon className="fill-current" size={iconSize} />
+      </QuickLink>
+    </li>
+  </ul>
   <SiteBackgroundSection selector="p">
     <Text class="text-lg! lg:text-2xl!" selector="span"
       >I am a software engineer that specializes in web development with
-      TypeScript and .NET, always striving to expand my skillset and improve my code's readability and maintainability. I am also a
-      freelance web designer that is experienced in working with tight budgets.</Text
+      TypeScript and .NET, always striving to expand my skillset and improve my
+      code's readability and maintainability. I am also a freelance web designer
+      that is experienced in working with tight budgets.</Text
     >
   </SiteBackgroundSection>
 </Layout>
