@@ -1,16 +1,25 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+type size = "medium" | "large" | "small";
 interface Props extends HTMLAttributes<"a"> {
   href: string;
+  size?: size;
 }
 
-const { class: className, ...props } = Astro.props;
+const { class: className, size = "large", ...props } = Astro.props;
+
+const sizeRelatedClassNames: Record<size, string> = {
+  small: "text-sm px-4 py-2",
+  medium: "text-lg px-4 py-2",
+  large: "text-xl px-8 py-4"
+}
 ---
 
 <a
   class:list={[
-    "focus-outline text-xl w-max rounded-md px-8 py-4 bg-primary text-on-primary font-bold hover:bg-primary-hover active:bg-primary-active motion-safe:transition-transform motion-safe:transition-colors motion-safe:hover:-translate-y-1",
+    "block focus-outline w-max rounded-md bg-primary text-on-primary font-bold hover:bg-primary-hover active:bg-primary-active active:shadow-lg motion-safe:transition motion-safe:hover:-translate-y-1",
+    sizeRelatedClassNames[size],
     className,
   ]}
   {...props}

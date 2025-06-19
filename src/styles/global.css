@@ -11,6 +11,9 @@
   --_on-site-bg-light: #2c2c2c;
   --_outline-width-light: 3px;
   --_outline-color-light: blue;
+  --_chip-bg-light: #E0E0E0;
+  --_chip-text-light: #1A1A1A;
+  --_chip-outline-light: transparent;
 
   --_primary-dark: #A48EFF;
   --_on-primary-dark: #1A1A1A;
@@ -22,6 +25,9 @@
   --_on-site-bg-dark: #e0e0e0;
   --_outline-width-dark: 3px;
   --_outline-color-dark: lightskyblue;
+  --_chip-bg-dark: #555555;
+  --_chip-text-dark: #E0E0E0;
+  --_chip-outline-dark: transparent;
 
   --_primary-hc: #ffd700;
   --_on-primary-hc: #000;
@@ -33,6 +39,8 @@
   --_on-site-bg-hc: #fff;
   --_outline-width-hc: 6px;
   --_outline-color-hc: #00b7ff;
+  --_chip-bg-hc: #000000;
+  --_chip-text-hc: #ffffff;
 }
 
 @theme {
@@ -46,6 +54,8 @@
 
   --color-site-bg: var(--_site-bg-light);
   --color-on-site-bg: var(--_on-site-bg-light);
+  --color-chip-bg: var(--_chip-bg-light);
+  --color-chip-text: var(--_chip-text-light);
 }
 
 html.dark {
@@ -59,6 +69,9 @@ html.dark {
 
   --color-site-bg: var(--_site-bg-dark);
   --color-on-site-bg: var(--_on-site-bg-dark);
+
+  --color-chip-bg: var(--_chip-bg-dark);
+  --color-chip-text: var(--_chip-text-dark);
 }
 
 html.high-contrast {
@@ -72,8 +85,12 @@ html.high-contrast {
 
   --color-site-bg: var(--_site-bg-hc);
   --color-on-site-bg: var(--_on-site-bg-hc);
+
+  --color-chip-bg: var(--_chip-bg-hc);
+  --color-chip-text: var(--_chip-text-hc);
 }
 
-html.locked, html.locked body {
+html.locked,
+html.locked body {
   overflow: hidden;
 }

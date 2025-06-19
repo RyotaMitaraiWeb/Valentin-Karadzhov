@@ -1,0 +1,11 @@
+---
+import type { ExternalLink } from '../../common/portfolio';
+
+type Props = ExternalLink;
+
+const props = Astro.props;
+---
+
+<a target="_blank" href={props.href} class="focus-outline italic underline hover:no-underline text-on-surface active:underline"
+  >{props.text}</a
+>
