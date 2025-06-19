@@ -23,21 +23,23 @@ import Heading2 from "../../components/content/Heading2.astro";
     >
   </SiteBackgroundSection>
 
-  <SiteBackgroundSection selector="section">
-    <Heading2>Featured web applications</Heading2>
-    {
-      webApps.map((app) => (
-        <PortfolioOverviewProjectCard
-          title={app.title}
-          techStack={app.techStack}
-          image={app.banner}
-          imageAlt={app.bannerAlt}
-          externalLinks={app.externalLinks}
-          id={app.id}
-        >
-          <Text>{app.description}</Text>
-        </PortfolioOverviewProjectCard>
-      ))
-    }
+  <section class="p-8 flex flex-col gap-8">
+    <Heading2 class="text-center">Featured web applications</Heading2>
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-x-16 gap-y-32 lg:gap-8">
+      {
+        webApps.map((app) => (
+          <PortfolioOverviewProjectCard
+            title={app.title}
+            techStack={app.techStack}
+            image={app.banner}
+            imageAlt={app.bannerAlt}
+            externalLinks={app.externalLinks}
+            id={app.id}
+          >
+            <Text>{app.description}</Text>
+          </PortfolioOverviewProjectCard>
+        ))
+      }
+    </div>
   </SiteBackgroundSection>
 </Layout>
