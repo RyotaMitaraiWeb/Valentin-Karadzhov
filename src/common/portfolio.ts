@@ -23,7 +23,7 @@ export const webApps: Project[] = [
   {
     title: "Cardflow",
     description:
-      "A web platform for buying, selling, and trading TCG items like Yu-Gi-Oh cards. Developed in collaboration with other developers",
+      "A web platform for buying, selling, and trading TCG items like Yu-Gi-Oh cards. Developed in collaboration with other developers. I participated as the main front-end engineer.",
     fullContent: CardflowText,
     pageSubRoute: "cardflow",
     techStack: [
@@ -41,6 +41,7 @@ export const webApps: Project[] = [
       },
     ],
     banner: CardflowBanner,
-    bannerAlt: "A sample from the Cardflow project, showing two users engaging in a trade, which features a chat and an offer tracker."
+    bannerAlt:
+      "A sample from the Cardflow project, showing two users engaging in a trade, which features a chat and an offer tracker.",
   },
 ];
