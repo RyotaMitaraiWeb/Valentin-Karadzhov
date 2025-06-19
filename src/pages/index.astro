@@ -1,5 +1,7 @@
 ---
-
+import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
+import Text from "../components/content/Text.astro";
+import HeroHeading from "../components/home/HeroHeading.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -7,5 +9,12 @@ import Layout from "../layouts/Layout.astro";
   pageTitle="Valentin Karadzhov | Software engineer and web designer"
   metaDescription="Valentin Karadzhov is a TypeScript and .NET developer, as well as a web designer"
 >
-  <h1>Test</h1>
+  <HeroHeading>Valentin Karadzhov</HeroHeading>
+  <SiteBackgroundSection selector="p">
+    <Text class="text-lg! lg:text-2xl!" selector="span"
+      >I am a software engineer that specializes in web development with
+      TypeScript and .NET, always striving to expand my skillset and improve my code's readability and maintainability. I am also a
+      freelance web designer that is experienced in working with tight budgets.</Text
+    >
+  </SiteBackgroundSection>
 </Layout>
