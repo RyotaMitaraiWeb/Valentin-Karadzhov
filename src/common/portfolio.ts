@@ -17,7 +17,6 @@ export type Project = {
   externalLinks: ExternalLink[];
   banner: ImageMetadata;
   bannerAlt: string;
-  pageSubRoute: string;
 };
 
 export const webApps: Project[] = [
@@ -27,7 +26,6 @@ export const webApps: Project[] = [
     description:
       "A web platform for buying, selling, and trading TCG items like Yu-Gi-Oh cards. Developed in collaboration with other developers.",
     fullContent: CardflowText,
-    pageSubRoute: "cardflow",
     techStack: [
       "React",
       "TypeScript",

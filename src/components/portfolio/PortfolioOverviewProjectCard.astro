@@ -10,8 +10,8 @@ import Heading3 from "../content/Heading3.astro";
 import Heading4 from "../content/Heading4.astro";
 
 interface Props {
+  id: string;
   techStack: string[];
-  href: string;
   externalLinks: ExternalLink[];
   image: ImageMetadata;
   imageAlt: string;
@@ -61,7 +61,7 @@ const props = Astro.props;
       <LinkButton
         class="self-end"
         size="medium"
-        href={`/portfolio/${props.href}`}
+        href={`/portfolio/${props.id}`}
       >
         Full details
       </LinkButton>
