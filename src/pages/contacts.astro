@@ -1,0 +1,44 @@
+---
+import { GITHUB_PROFILE_URL } from "../common/github";
+import { LINKEDIN_PROFILE_URL } from "../common/linkedin";
+import { CV_PATH, EMAIL_ADDRESS } from "../common/personalAssets";
+import ContactBox from "../components/contacts/ContactBox.astro";
+import LinkButton from "../components/content/LinkButton.astro";
+import PageTitle from "../components/content/PageTitle.astro";
+import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
+import Text from "../components/content/Text.astro";
+import EmailIcon from "../components/icons/EmailIcon.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import Layout from "../layouts/Layout.astro";
+
+const iconSize = 48;
+---
+
+<Layout
+  pageTitle="Contacts"
+  metaDescription="Contact me by email or LinkedIn. Review my GitHub profile and CV"
+>
+  <PageTitle>Contact me</PageTitle>
+  <div class="grid grid-cols-1 lg:grid-cols-3 mt-16 gap-y-32">
+    <ContactBox href={`mailto:${EMAIL_ADDRESS}`} heading="Email">
+      <EmailIcon slot="icon" className="fill-current" size={iconSize} />
+      My preferred way of initial contact. I will get back to you as soon as possible.
+      My email is <strong><i>{EMAIL_ADDRESS}</i></strong>
+    </ContactBox>
+    <ContactBox href={LINKEDIN_PROFILE_URL} heading="LinkedIn">
+      <LinkedInIcon slot="icon" className="fill-current" size={iconSize} />
+      An alternative way to connect with me.
+    </ContactBox>
+    <ContactBox href={GITHUB_PROFILE_URL} heading="GitHub">
+      <GitHubIcon slot="icon" className="fill-current" size={iconSize} />
+      You can find a majority of my personal projects on my GitHub profile.
+    </ContactBox>
+  </div>
+  <LinkButton size="large" href={CV_PATH} target="_blank" class="mx-auto">
+    Get my CV (PDF)
+  </LinkButton>
+  <Text class="text-center"
+    >Do not hesitate to contact me if you have any additional inquiries!</Text
+  >
+</Layout>
