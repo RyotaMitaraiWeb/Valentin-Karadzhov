@@ -6,6 +6,8 @@ import PortfolioOverviewProjectCard from "../../components/portfolio/PortfolioOv
 import Layout from "../../layouts/Layout.astro";
 import { webApps } from "../../common/portfolio";
 import Heading2 from "../../components/content/Heading2.astro";
+import TextLink from "../../components/content/TextLink.astro";
+import { GITHUB_PROFILE_URL } from "../../common/github";
 ---
 
 <Layout
@@ -19,8 +21,14 @@ import Heading2 from "../../components/content/Heading2.astro";
       includes a short description of the project, the tech stack used, and
       useful external links (such as links to their GitHub repositories). Each
       project has its own dedicated page with more information, which you can
-      access from the list</Text
+      access from the list.</Text
     >
+    <Text
+      >Most of my personal projects are open-source, so if you are curious to
+      see more projects of mine, <TextLink href={GITHUB_PROFILE_URL}
+        >feel free to check out my GitHub profile.</TextLink
+      >
+    </Text>
   </SiteBackgroundSection>
 
   <section class="p-8 flex flex-col gap-8">
@@ -41,5 +49,5 @@ import Heading2 from "../../components/content/Heading2.astro";
         ))
       }
     </div>
-  </SiteBackgroundSection>
+  </section>
 </Layout>
