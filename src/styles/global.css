@@ -13,7 +13,8 @@
   --_outline-color-light: blue;
   --_chip-bg-light: #E0E0E0;
   --_chip-text-light: #1A1A1A;
-  --_chip-outline-light: transparent;
+  --_avatar-light: #D4D4D4;
+  --_on-avatar-light: #1A1A1A;
 
   --_primary-dark: #A48EFF;
   --_on-primary-dark: #1A1A1A;
@@ -27,7 +28,8 @@
   --_outline-color-dark: lightskyblue;
   --_chip-bg-dark: #555555;
   --_chip-text-dark: #E0E0E0;
-  --_chip-outline-dark: transparent;
+  --_avatar-dark: #3A3A3A;
+  --_on-avatar-dark: #FFFFFF;
 
   --_primary-hc: #ffd700;
   --_on-primary-hc: #000;
@@ -41,6 +43,8 @@
   --_outline-color-hc: #00b7ff;
   --_chip-bg-hc: #000000;
   --_chip-text-hc: #ffffff;
+  --_avatar-hc: #FFD700;
+  --_on-avatar-hc: #000000;
 }
 
 @theme {
@@ -56,6 +60,9 @@
   --color-on-site-bg: var(--_on-site-bg-light);
   --color-chip-bg: var(--_chip-bg-light);
   --color-chip-text: var(--_chip-text-light);
+
+  --color-avatar: var(--_avatar-light);
+  --color-on-avatar: var(--_on-avatar-light);
 }
 
 html.dark {
@@ -72,6 +79,9 @@ html.dark {
 
   --color-chip-bg: var(--_chip-bg-dark);
   --color-chip-text: var(--_chip-text-dark);
+
+  --color-avatar: var(--_avatar-dark);
+  --color-on-avatar: var(--_on-avatar-dark);
 }
 
 html.high-contrast {
@@ -88,6 +98,9 @@ html.high-contrast {
 
   --color-chip-bg: var(--_chip-bg-hc);
   --color-chip-text: var(--_chip-text-hc);
+
+  --color-avatar: var(--_avatar-hc);
+  --color-on-avatar: var(--_on-avatar-hc);
 }
 
 html.locked,

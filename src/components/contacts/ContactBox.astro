@@ -1,0 +1,33 @@
+---
+import Heading2 from "../content/Heading2.astro";
+import Text from "../content/Text.astro";
+import TextLink from "../content/TextLink.astro";
+
+interface Props {
+  heading: string;
+  href: string;
+}
+
+const props = Astro.props;
+---
+
+<section
+  class="bg-surface mx-auto text-on-surface rounded max-w-90 h-90 p-8 pt-0 flex flex-col"
+>
+  <div
+    aria-hidden="true"
+    class="bg-avatar mx-auto text-on-avatar h-24 w-24 rounded-[50%] flex justify-center items-center -mt-12"
+  >
+    <slot name="icon" />
+  </div>
+  <div class="flex flex-col gap-4 pt-4">
+    <Heading2>
+      <TextLink href={props.href}>
+        {props.heading}
+      </TextLink>
+    </Heading2>
+    <Text>
+      <slot />
+    </Text>
+  </div>
+</section>
