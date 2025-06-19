@@ -41,6 +41,7 @@ const Content = project.fullContent;
         <div>
           <div class="flex flex-col gap-4">
             <PageTitle>{project.title}</PageTitle>
+            <Heading2 class="screenreader-only">Technologies used</Heading2>
             <ul role="list" class="flex flex-wrap gap-2 mx-auto px-4">
               {
                 project.techStack.map((tech) => (
