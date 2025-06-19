@@ -4,8 +4,8 @@ import SiteBackgroundSection from "../components/content/sections/SiteBackground
 import Text from "../components/content/Text.astro";
 import PortfolioOverviewProjectCard from "../components/portfolio/PortfolioOverviewProjectCard.astro";
 import Layout from "../layouts/Layout.astro";
-import Test from "../images/example_image.jpg";
 import { webApps } from "../common/portfolio";
+import Heading2 from "../components/content/Heading2.astro";
 ---
 
 <Layout
@@ -23,18 +23,21 @@ import { webApps } from "../common/portfolio";
     >
   </SiteBackgroundSection>
 
-  {
-    webApps.map((app) => (
-      <PortfolioOverviewProjectCard
-        title={app.title}
-        techStack={app.techStack}
-        image={app.banner}
-        imageAlt={app.bannerAlt}
-        externalLinks={app.externalLinks}
-        href={app.pageSubRoute}
-      >
-        <Text>{app.description}</Text>
-      </PortfolioOverviewProjectCard>
-    ))
-  }
+  <SiteBackgroundSection selector="section">
+    <Heading2>Featured web applications</Heading2>
+    {
+      webApps.map((app) => (
+        <PortfolioOverviewProjectCard
+          title={app.title}
+          techStack={app.techStack}
+          image={app.banner}
+          imageAlt={app.bannerAlt}
+          externalLinks={app.externalLinks}
+          href={app.pageSubRoute}
+        >
+          <Text>{app.description}</Text>
+        </PortfolioOverviewProjectCard>
+      ))
+    }
+  </SiteBackgroundSection>
 </Layout>
