@@ -2,7 +2,7 @@
 import { GITHUB_PROFILE_URL } from "../common/github";
 import { LINKEDIN_PROFILE_URL } from "../common/linkedin";
 import { CV_PATH } from "../common/personalAssets";
-import { cardflow, webApps, type Project } from "../common/portfolio";
+import { cardflow, quizWorld, webApps, type Project } from "../common/portfolio";
 import Heading2 from "../components/content/Heading2.astro";
 import LinkButton from "../components/content/LinkButton.astro";
 import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
@@ -18,7 +18,7 @@ import Layout from "../layouts/Layout.astro";
 
 const iconSize = 32;
 
-const featuredProjects: Project[] = [cardflow, cardflow, cardflow];
+const featuredProjects: Project[] = [cardflow, quizWorld, cardflow];
 ---
 
 <Layout
