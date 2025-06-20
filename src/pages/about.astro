@@ -11,70 +11,73 @@ import SurfaceSection from "../components/content/sections/SurfaceSection.astro"
   pageTitle="About me | Valentin Karadzhov"
   metaDescription="Find out more about my professional experience, education, and interests"
 >
-  <PageTitle>About me</PageTitle>
+  <div class="flex flex-col gap-8">
+    <PageTitle>About me</PageTitle>
 
-  <SurfaceSection selector="section" class="py-8">
-    <div class="flex flex-col gap-4">
-      <Heading2>My programming journey</Heading2>
-      <Text
-        >My first exposure to programming was in a computer science class back
-        in 10th grade. In that class, we had to use a self-teaching platform to
-        learn programming with C++. I initially had a lot of fun with that and
-        became motivated to learn more. However, at some point, I started to
-        struggle with some more advanced concepts, especially object-oriented
-        programming, thus I decided to move to web development, initially
-        starting with learning HTML. Over time, I broadened my skillset with
-        more technologies by practicing a lot and developing many personal
-        projects. At some point, I was also able to understand the advanced
-        concepts that gave me a hard time as a beginner, allowing me to overcome
-        the obstacles that tripped me back then
+    <SurfaceSection selector="section" class="py-8">
+      <div class="flex flex-col gap-4">
+        <Heading2>My programming journey</Heading2>
+        <Text
+          >My first exposure to programming was in a computer science class back
+          in 10th grade. In that class, we had to use a self-teaching platform
+          to learn programming with C++. I initially had a lot of fun with that
+          and became motivated to learn more. However, at some point, I started
+          to struggle with some more advanced concepts, especially
+          object-oriented programming, thus I decided to move to web
+          development, initially starting with learning HTML. Over time, I
+          broadened my skillset with more technologies by practicing a lot and
+          developing many personal projects. At some point, I was also able to
+          understand the advanced concepts that gave me a hard time as a
+          beginner, allowing me to overcome the obstacles that tripped me back
+          then
+        </Text>
+      </div>
+
+      <Text>
+        I am a huge fan of testing and have employed test-driven development
+        multiple times in my projects. I also aim for readable code, because
+        code is written by humans, for humans. Most importantly, I always strive
+        to learn new things; for example, my projects tend to incorporate new
+        technologies, techniques, and methodologies which I have never heard of
+        or tried prior that momen
       </Text>
-    </div>
-
-    <Text>
-      I am a huge fan of testing and have employed test-driven development
-      multiple times in my projects. I also aim for readable code, because code
-      is written by humans, for humans. Most importantly, I always strive to
-      learn new things; for example, my projects tend to incorporate new
-      technologies, techniques, and methodologies which I have never heard of or
-      tried prior that momen
-    </Text>
-  </SurfaceSection>
-  <SiteBackgroundSection>
-    <div class="flex flex-col gap-4">
-      <Heading2>Education</Heading2>
+    </SurfaceSection>
+    <SiteBackgroundSection>
+      <div class="flex flex-col gap-4">
+        <Heading2>Education</Heading2>
+        <Text
+          >I graduated high school with specialization in Spanish. During my
+          high school years, I was a member of my school's debates club, which
+          gave me opportunities to not only do public speeches, but to also
+          defend viewpoints and ideas that I did not necessarily agree with. I
+          have also made it to second rounds of olympiads dedicated to English,
+          Spanish, and philosophy</Text
+        >
+      </div>
+      <Text>
+        I obtained my bachelor's degree in marketing in 2025 at the University
+        of National and World Economics. I have used some of the knowledge I
+        obtained there in my time as a freelance web designer.
+      </Text>
+    </SiteBackgroundSection>
+    <SurfaceSection class="py-8">
+      <div class="flex flex-col gap-4">
+        <Heading2>Personal life and interests</Heading2>
+        <Text
+          >When I am not coding, I like to read on various topics, especially
+          geography and history</Text
+        >
+      </div>
       <Text
-        >I graduated high school with specialization in Spanish. During my high
-        school years, I was a member of my school's debates club, which gave me
-        opportunities to not only do public speeches, but to also defend
-        viewpoints and ideas that I did not necessarily agree with. I have also
-        made it to second rounds of olympiads dedicated to English, Spanish, and
-        philosophy</Text
+        >I am also engaged in various sports, such as soccer, table tennis, and
+        long-distance running. I also occassionally play chess</Text
       >
-    </div>
-    <Text>
-      I obtained my bachelor's degree in marketing in 2025 at the University of
-      National and World Economics. I have used some of the knowledge I obtained
-      there in my time as a freelance web designer.
-    </Text>
-  </SiteBackgroundSection>
-  <SurfaceSection class="py-8">
-    <div class="flex flex-col gap-4">
-      <Heading2>Personal life and interests</Heading2>
-      <Text
-        >When I am not coding, I like to read on various topics, especially
-        geography and history</Text
-      >
-    </div>
-    <Text
-      >I am also engaged in various sports, such as soccer, table tennis, and
-      long-distance running. I also occassionally play chess</Text
-    >
-    <Text>
-      I am also fond of video games, especially single-player ones. Some of my
-      favorite games / franchises include the original <i>DOOM</i> games, <i
-        >Pokémon</i
-      >, and <i>Cuphead</i>
-    </Text>
-  </SurfaceSection>
+      <Text>
+        I am also fond of video games, especially single-player ones. Some of my
+        favorite games / franchises include the original <i>DOOM</i> games, <i
+          >Pokémon</i
+        >, and <i>Cuphead</i>
+      </Text>
+    </SurfaceSection>
+  </div>
 </Layout>
