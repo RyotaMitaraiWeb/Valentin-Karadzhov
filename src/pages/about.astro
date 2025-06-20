@@ -4,6 +4,7 @@ import PageTitle from "../components/content/PageTitle.astro";
 import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
 import Layout from "../layouts/Layout.astro";
 import Text from "../components/content/Text.astro";
+import SurfaceSection from "../components/content/sections/SurfaceSection.astro";
 ---
 
 <Layout
@@ -12,8 +13,8 @@ import Text from "../components/content/Text.astro";
 >
   <PageTitle>About me</PageTitle>
 
-  <SiteBackgroundSection selector="section">
-    <div class="flex flex-col gap-2">
+  <SurfaceSection selector="section" class="py-8">
+    <div class="flex flex-col gap-4">
       <Heading2>My programming journey</Heading2>
       <Text
         >My first exposure to programming was in a computer science class back
@@ -38,9 +39,9 @@ import Text from "../components/content/Text.astro";
       technologies, techniques, and methodologies which I have never heard of or
       tried prior that momen
     </Text>
-  </SiteBackgroundSection>
+  </SurfaceSection>
   <SiteBackgroundSection>
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-4">
       <Heading2>Education</Heading2>
       <Text
         >I graduated high school with specialization in Spanish. During my high
@@ -57,8 +58,8 @@ import Text from "../components/content/Text.astro";
       there in my time as a freelance web designer.
     </Text>
   </SiteBackgroundSection>
-  <SiteBackgroundSection>
-    <div class="gap-2">
+  <SurfaceSection class="py-8">
+    <div class="flex flex-col gap-4">
       <Heading2>Personal life and interests</Heading2>
       <Text
         >When I am not coding, I like to read on various topics, especially
@@ -75,5 +76,5 @@ import Text from "../components/content/Text.astro";
         >Pokémon</i
       >, and <i>Cuphead</i>
     </Text>
-  </SiteBackgroundSection>
+  </SurfaceSection>
 </Layout>
