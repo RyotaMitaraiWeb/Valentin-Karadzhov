@@ -1,5 +1,8 @@
 ---
 import { CV_PATH } from "../common/personalAssets";
+import { cardflow, webApps, type Project } from "../common/portfolio";
+import Heading2 from "../components/content/Heading2.astro";
+import Heading3 from "../components/content/Heading3.astro";
 import LinkButton from "../components/content/LinkButton.astro";
 import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
 import Text from "../components/content/Text.astro";
@@ -7,9 +10,12 @@ import HeroHeading from "../components/home/HeroHeading.astro";
 import QuickLink from "../components/home/QuickLink.astro";
 import GitHubIcon from "../components/icons/GitHubIcon.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import PortfolioOverviewProjectCard from "../components/portfolio/PortfolioOverviewProjectCard.astro";
 import Layout from "../layouts/Layout.astro";
 
 const iconSize = 32;
+
+const featuredProjects: Project[] = [cardflow, cardflow, cardflow];
 ---
 
 <Layout
@@ -40,4 +46,28 @@ const iconSize = 32;
   <LinkButton size="large" href={CV_PATH} target="_blank" class="mx-auto">
     Get my CV (PDF)
   </LinkButton>
+
+  <section class="flex flex-col gap-8">
+    <Heading2 class="text-center">Featured projects</Heading2>
+    <div class="grid grid-cols-1 px-8 xl:grid-cols-3 gap-x-8 gap-y-16">
+      {
+        featuredProjects.map((project) => (
+          <PortfolioOverviewProjectCard
+            id={project.id}
+            title={project.title}
+            techStack={project.techStack}
+            externalLinks={[]}
+            image={project.banner}
+            imageAlt={project.bannerAlt}
+          >
+            <Text>{project.description}</Text>
+          </PortfolioOverviewProjectCard>
+        ))
+      }
+    </div>
+
+    <LinkButton size="large" class="mx-auto" href="/portfolio">
+      Browse more projects
+    </LinkButton>
+  </section>
 </Layout>
