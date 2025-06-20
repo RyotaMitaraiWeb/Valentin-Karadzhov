@@ -40,10 +40,14 @@ export const webApps: Project[] = [
         href: "https://github.com/julkascript/cardflow",
         text: "GitHub repository",
       },
+      {
+        href: "https://www.figma.com/design/GpsRZnN69f29pOCkiciWD4/Cardflow?node-id=0-1&p=f",
+        text: "Design in Figma (not created by me)"
+      },
     ],
     banner: CardflowBanner,
     bannerAlt:
-      "A sample from the Cardflow project, showing two users engaging in a trade, which features a chat and an offer tracker.",
+      "Two users engaging in a trade, which features a chat and an offer tracker.",
   },
   {
     id: "quiz-world",
