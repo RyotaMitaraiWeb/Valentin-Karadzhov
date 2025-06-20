@@ -1,4 +1,6 @@
 ---
+import { CV_PATH } from "../common/personalAssets";
+import LinkButton from "../components/content/LinkButton.astro";
 import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
 import Text from "../components/content/Text.astro";
 import HeroHeading from "../components/home/HeroHeading.astro";
@@ -35,4 +37,7 @@ const iconSize = 32;
       that is experienced in working with tight budgets.</Text
     >
   </SiteBackgroundSection>
+  <LinkButton size="large" href={CV_PATH} target="_blank" class="mx-auto">
+    Get my CV (PDF)
+  </LinkButton>
 </Layout>
