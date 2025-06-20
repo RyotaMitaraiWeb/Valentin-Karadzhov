@@ -5,8 +5,10 @@ import Heading2 from "../components/content/Heading2.astro";
 import Heading3 from "../components/content/Heading3.astro";
 import LinkButton from "../components/content/LinkButton.astro";
 import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
+import SurfaceSection from "../components/content/sections/SurfaceSection.astro";
 import Text from "../components/content/Text.astro";
 import HeroHeading from "../components/home/HeroHeading.astro";
+import HomeSection from "../components/home/HomeSection.astro";
 import QuickLink from "../components/home/QuickLink.astro";
 import GitHubIcon from "../components/icons/GitHubIcon.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
@@ -70,4 +72,32 @@ const featuredProjects: Project[] = [cardflow, cardflow, cardflow];
       Browse more projects
     </LinkButton>
   </section>
+  <SurfaceSection class="py-8 gap-16">
+    <Heading2 class="text-center">Get to know me</Heading2>
+    <div
+      class="flex flex-col lg:flex-row gap-x-20 gap-y-16 lg:gap-y-32 lg:justify-between"
+    >
+      <HomeSection heading="Tech stack and skills">
+        <Text
+          >I primarily use JavaScript / TypeScript and .NET for my web apps. I
+          am also experienced with some web and graphic design tools.
+        </Text>
+        <LinkButton href="/skills">Review my tech stack</LinkButton>
+      </HomeSection>
+      <HomeSection heading="Biography">
+        <Text
+          >Find out how I started out as a software engineer, what my education
+          is and how I apply it in my career, and some interesting facts about
+          me
+        </Text>
+        <LinkButton href="/about">Learn more about me</LinkButton>
+      </HomeSection>
+    </div>
+  </SurfaceSection>
+  <div>
+    <Text class="text-center p-4"
+      >If you have additional questions or want to get in touch with me:</Text
+    >
+    <LinkButton href="/contacts" class="mx-auto">Contact me</LinkButton>
+  </div>
 </Layout>
