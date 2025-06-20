@@ -38,7 +38,10 @@ const Content = project.fullContent;
             class="w-full h-full object-cover"
           />
         </div>
-        <div>
+        <div aria-hidden="true">
+          <Text class="italic text-center text-sm!">{project.bannerAlt}</Text>
+        </div>
+        <div class="mt-4">
           <div class="flex flex-col gap-4">
             <PageTitle>{project.title}</PageTitle>
             <Heading2 class="screenreader-only">Technologies used</Heading2>
