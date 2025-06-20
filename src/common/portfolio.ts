@@ -45,3 +45,5 @@ export const webApps: Project[] = [
       "A sample from the Cardflow project, showing two users engaging in a trade, which features a chat and an offer tracker.",
   },
 ];
+
+export const cardflow = webApps.find(app => app.id === "cardflow")!;

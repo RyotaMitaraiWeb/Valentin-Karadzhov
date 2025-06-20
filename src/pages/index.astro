@@ -1,11 +1,103 @@
 ---
-
+import { CV_PATH } from "../common/personalAssets";
+import { cardflow, webApps, type Project } from "../common/portfolio";
+import Heading2 from "../components/content/Heading2.astro";
+import Heading3 from "../components/content/Heading3.astro";
+import LinkButton from "../components/content/LinkButton.astro";
+import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
+import SurfaceSection from "../components/content/sections/SurfaceSection.astro";
+import Text from "../components/content/Text.astro";
+import HeroHeading from "../components/home/HeroHeading.astro";
+import HomeSection from "../components/home/HomeSection.astro";
+import QuickLink from "../components/home/QuickLink.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import PortfolioOverviewProjectCard from "../components/portfolio/PortfolioOverviewProjectCard.astro";
 import Layout from "../layouts/Layout.astro";
+
+const iconSize = 32;
+
+const featuredProjects: Project[] = [cardflow, cardflow, cardflow];
 ---
 
 <Layout
   pageTitle="Valentin Karadzhov | Software engineer and web designer"
   metaDescription="Valentin Karadzhov is a TypeScript and .NET developer, as well as a web designer"
 >
-  <h1>Test</h1>
+  <HeroHeading>Valentin Karadzhov</HeroHeading>
+  <ul role="list" class="flex justify-center gap-12">
+    <li>
+      <QuickLink href="" target="_blank" screenreaderText="My GitHub profile">
+        <GitHubIcon className="fill-current" size={iconSize} />
+      </QuickLink>
+    </li>
+    <li>
+      <QuickLink href="" target="_blank" screenreaderText="My LinkedIn profile">
+        <LinkedInIcon className="fill-current" size={iconSize} />
+      </QuickLink>
+    </li>
+  </ul>
+  <SiteBackgroundSection selector="p">
+    <Text class="text-lg! lg:text-2xl!" selector="span"
+      >I am a software engineer that specializes in web development with
+      TypeScript and .NET. I am always striving to expand my skillset and improve my
+      code's readability and maintainability. I am also a freelance web designer
+      that is experienced in working with tight budgets.</Text
+    >
+  </SiteBackgroundSection>
+  <LinkButton size="large" href={CV_PATH} target="_blank" class="mx-auto">
+    Get my CV (PDF)
+  </LinkButton>
+
+  <section class="flex flex-col gap-8">
+    <Heading2 class="text-center">Featured projects</Heading2>
+    <div class="grid grid-cols-1 px-8 xl:grid-cols-3 gap-x-8 gap-y-16">
+      {
+        featuredProjects.map((project) => (
+          <PortfolioOverviewProjectCard
+            id={project.id}
+            title={project.title}
+            techStack={project.techStack}
+            externalLinks={[]}
+            image={project.banner}
+            imageAlt={project.bannerAlt}
+          >
+            <Text>{project.description}</Text>
+          </PortfolioOverviewProjectCard>
+        ))
+      }
+    </div>
+
+    <LinkButton size="large" class="mx-auto" href="/portfolio">
+      Browse more projects
+    </LinkButton>
+  </section>
+  <SurfaceSection class="py-8 gap-16">
+    <Heading2 class="text-center">Get to know me</Heading2>
+    <div
+      class="flex flex-col lg:flex-row gap-x-20 gap-y-16 lg:gap-y-32 lg:justify-between"
+    >
+      <HomeSection heading="Tech stack and skills">
+        <Text
+          >I primarily use JavaScript / TypeScript and .NET for my web apps. I
+          am also experienced with some web and graphic design tools.
+        </Text>
+        <LinkButton href="/skills">Review my tech stack</LinkButton>
+      </HomeSection>
+      <HomeSection heading="Biography">
+        <Text
+          >Find out how I started out as a software engineer, what my education
+          is and how I apply it in my career, and some interesting facts about
+          me
+        </Text>
+        <LinkButton href="/about">Learn more about me</LinkButton>
+      </HomeSection>
+    </div>
+  </SurfaceSection>
+  <div>
+    <Text class="text-center p-4"
+      >If you have additional questions or want to get in touch with me:</Text
+    >
+    <LinkButton href="/contacts" class="mx-auto">Contact me</LinkButton>
+  </div>
 </Layout>
