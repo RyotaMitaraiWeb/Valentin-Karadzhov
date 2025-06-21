@@ -10,6 +10,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: "https://ryotamitaraiweb.github.io/Valentin-Karadzhov/",
+  site: "https://ryotamitaraiweb.github.io",
+  base: "/Valentin-Karadzhov",
   integrations: [sitemap()],
 });

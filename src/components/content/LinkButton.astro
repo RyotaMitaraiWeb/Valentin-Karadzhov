@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { base } from "../../common/navigation";
 
 type size = "medium" | "large" | "small";
 interface Props extends HTMLAttributes<"a"> {
@@ -7,16 +8,19 @@ interface Props extends HTMLAttributes<"a"> {
   size?: size;
 }
 
-const { class: className, size = "large", ...props } = Astro.props;
+const { class: className, href, size = "large", ...props } = Astro.props;
 
 const sizeRelatedClassNames: Record<size, string> = {
   small: "text-sm px-4 py-2",
   medium: "text-lg px-4 py-2",
   large: "text-xl px-8 py-4"
 }
+
+const validHref = href.startsWith("/") ? base + href : href;
 ---
 
 <a
+  href={validHref}
   class:list={[
     "block focus-outline w-max rounded-md bg-primary text-on-primary font-bold hover:bg-primary-hover active:bg-primary-active active:shadow-lg motion-safe:transition motion-safe:hover:-translate-y-1",
     sizeRelatedClassNames[size],
