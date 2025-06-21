@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { webApps } from "../../common/portfolio";
+import { webApps, websites } from "../../common/portfolio";
 import PageTitle from "../../components/content/PageTitle.astro";
 import SiteBackgroundSection from "../../components/content/sections/SiteBackgroundSection.astro";
 import Text from "../../components/content/Text.astro";
@@ -10,7 +10,8 @@ import Heading2 from "../../components/content/Heading2.astro";
 import PortfolioExternalLink from "../../components/portfolio/PortfolioExternalLink.astro";
 
 export async function getStaticPaths() {
-  return webApps.map((app) => ({
+  const test = [...webApps, ...websites];
+  return test.map((app) => ({
     params: { projectId: app.id },
     props: { project: app },
   }));
