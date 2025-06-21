@@ -26,7 +26,7 @@ const Content = project.fullContent;
   pageTitle={`${project.title} | Valentin Karadzhov`}
   metaDescription={project.description}
 >
-  <div class="px-8 lg:px-24 max-w-[1920px] mx-auto">
+  <div id="project" class="px-8 lg:px-24 max-w-[1920px] mx-auto">
     <section
       class="flex flex-col bg-surface text-on-surface rounded-xl border border-gray-500 shadow-lg"
     >
@@ -81,3 +81,11 @@ const Content = project.fullContent;
   </div>
   <LinkButton href="/portfolio" class="mx-auto">Back to the portfolio index</LinkButton>
 </Layout>
+
+<style lang="scss" is:global>
+  #project ul.list-disc {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+</style>
