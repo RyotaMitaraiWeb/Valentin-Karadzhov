@@ -1,0 +1,52 @@
+---
+import Text from "../components/content/Text.astro";
+---
+
+<Text>
+  <em>Vue Flashcards</em> is a web application that allows users to create and share
+  decks of flashcards. Flashcards are cards with text written on both sides. Typically,
+  one has some prompt, while the other contains some "answer", making them a particularly
+  interesting way to study.
+</Text>
+
+<Text>
+  The app aims for a good UX when using or creating decks. In regards to using a
+  deck, before starting to study, users can view the cards beforehand if they
+  just need to check for something quickly, and when they do start, they can
+  simply click on the card for an animated flip. When creating a deck, the UI
+  provides something akin to pagination so that users can are not overwhelmed
+  when creating large decks.
+</Text>
+
+<Text>
+  Outside of this, the app also provides a few other functionalities:
+</Text>
+
+<ul class="list-disc pl-4">
+  <Text selector="li">
+    <b>Searching and pagination</b> - users can search decks by title and sort them
+    by different categories and by different orders
+  </Text>
+
+  <Text selector="li"
+    ><b>Bookmarks</b> - users can save decks so that they can access them later without
+    searching for them</Text
+  >
+
+  <Text selector="li">
+    <b>Theme customization</b> - users can toggle their UI between light and dark
+    mode. In addition, the primary color of the app can also be chosen from a set
+    of provided colors (such as blue, deep purple, brown, and etc.)
+  </Text>
+
+  <Text
+    >I originally created a similar app a few years ago using React and Express.
+    However, the UI was rather "weird" and the codebase was pretty messy, which
+    prompted me years later to revive the project with a cleaner vision. I used
+    this as an opportunity to practice NestJS and Vue as well. One of the most
+    notable improvements to the codebase was the addition of tests on both the
+    front-end and the back-end. The front-end features component and end-to-end
+    tests, while the back-end features unit tests for the services and
+    controllers and end-to-end tests for the API endpoints.</Text
+  >
+</ul>

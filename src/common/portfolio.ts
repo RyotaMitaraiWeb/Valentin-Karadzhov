@@ -1,8 +1,10 @@
 import CardflowText from "../content/CardflowText.astro";
 import CardflowBanner from "../assets/images/projects/banners/cardflow.jpg";
 import QuizWorldBanner from "../assets/images/projects/banners/quiz-world.jpg";
+import VueFlashcardsBanner from "../assets/images/projects/banners/vue-flashcards.jpg";
 import type { AstroComponent } from "./util";
 import QuizWorldText from "../content/QuizWorldText.astro";
+import VueFlashcardsText from "../content/VueFlashcardsText.astro";
 
 export type ExternalLink = {
   href: string;
@@ -42,7 +44,7 @@ export const webApps: Project[] = [
       },
       {
         href: "https://www.figma.com/design/GpsRZnN69f29pOCkiciWD4/Cardflow?node-id=0-1&p=f",
-        text: "Design in Figma (not created by me)"
+        text: "Design in Figma (not created by me)",
       },
     ],
     banner: CardflowBanner,
@@ -69,15 +71,35 @@ export const webApps: Project[] = [
     externalLinks: [
       {
         href: "https://github.com/RyotaMitaraiWeb/Quiz-World",
-        text: "Front-end GitHub repository"
+        text: "Front-end GitHub repository",
       },
       {
         href: "https://github.com/RyotaMitaraiWeb/QuizWorld",
+        text: "Back-end GitHub repository",
+      },
+    ],
+  },
+  {
+    id: "vue-flashcards",
+    title: "Vue Flashcards",
+    description: "A web app for studying with flashcards",
+    fullContent: VueFlashcardsText,
+    banner: VueFlashcardsBanner,
+    bannerAlt: "A flashcard with a prompt on it",
+    techStack: ["Vue", "Vuetify", "TypeScript", "NestJS", "PostgreSQL"],
+    externalLinks: [
+      {
+        href: "https://github.com/RyotaMitaraiWeb/Flashcards",
+        text: "Front-end GitHub repository",
+      },
+      {
+        href: "https://github.com/RyotaMitaraiWeb/Flashcards-Service",
         text: "Back-end GitHub repository"
-      }
-    ]
+      },
+    ],
   },
 ];
 
 export const cardflow = webApps.find((app) => app.id === "cardflow")!;
 export const quizWorld = webApps[1];
+export const vueFlashcards = webApps[2];
