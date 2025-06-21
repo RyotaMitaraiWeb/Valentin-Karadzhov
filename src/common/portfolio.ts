@@ -3,10 +3,12 @@ import CardflowBanner from "../assets/images/projects/banners/cardflow.jpg";
 import QuizWorldBanner from "../assets/images/projects/banners/quiz-world.jpg";
 import VueFlashcardsBanner from "../assets/images/projects/banners/vue-flashcards.jpg";
 import ChatDotNetBanner from "../assets/images/projects/banners/chat-dotnet.jpg";
+import GoldenAgesBanner from "../assets/images/projects/banners/golden-ages.jpg";
 import type { AstroComponent } from "./util";
 import QuizWorldText from "../content/QuizWorldText.astro";
 import VueFlashcardsText from "../content/VueFlashcardsText.astro";
 import ChatDotNetText from "../content/ChatDotNetText.astro";
+import GoldenAgesText from "../content/GoldenAgesText.astro";
 
 export type ExternalLink = {
   href: string;
@@ -126,6 +128,46 @@ export const webApps: Project[] = [
     ],
   },
 ];
+
+export const websites: Project[] = [
+  {
+    id: "golden-ages",
+    title: "\"Zlatni Migove\" (Golden Ages)",
+    description: "Advertising materials for a senior club (website, Facebook post, flyer)",
+    fullContent: GoldenAgesText,
+    banner: GoldenAgesBanner,
+    bannerAlt: "A snapshot from the landing page, showcasing a hero banner",
+    techStack: [
+      "Astro",
+      "Photoshop",
+      "Illustrator",
+      "InDesign",
+      "Figma",
+    ],
+    externalLinks: [
+      {
+        href: "https://ryotamitaraiweb.github.io/zlatnimigove/",
+        text: "Live version of the website (landing page only, in Bulgarian)"
+      },
+      {
+        href: "https://www.figma.com/design/5FcN2iaSgnm7BYuefnHBMQ/Zlatni-Migove",
+        text: "Design in Figma (wireframes + mockup)"
+      },
+      {
+        href: "/images/golden-ages/logo.png",
+        text: "Logo of the brand (PNG, text in Bulgarian)"
+      },
+      {
+        href: "/pdf/golden-ages/facebook-post.pdf",
+        text: "Design for an example Facebook post (PDF, in Bulgarian)"
+      },
+      {
+        href: "/pdf/golden-ages/flyer.pdf",
+        text: "Design for an example flyer (PDF, in Bulgarian)"
+      },
+    ]
+  }
+]
 
 export const cardflow = webApps.find((app) => app.id === "cardflow")!;
 export const quizWorld = webApps[1];
