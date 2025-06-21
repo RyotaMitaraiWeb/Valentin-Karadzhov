@@ -11,6 +11,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: "https://ryotamitaraiweb.github.io",
-  base: "Valentin-Karadzhov",
+  base: "/Valentin-Karadzhov",
   integrations: [sitemap()],
 });
