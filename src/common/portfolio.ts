@@ -9,6 +9,7 @@ import QuizWorldText from "../content/QuizWorldText.astro";
 import VueFlashcardsText from "../content/VueFlashcardsText.astro";
 import ChatDotNetText from "../content/ChatDotNetText.astro";
 import GoldenMomentsText from "../content/GoldenMomentsText.astro";
+import { base } from "./navigation";
 
 export type ExternalLink = {
   href: string;
@@ -153,15 +154,15 @@ export const websites: Project[] = [
         text: "Design in Figma (wireframes + mockup)",
       },
       {
-        href: "/images/golden-moments/logo.png",
+        href: `${base}/images/golden-moments/logo.png`,
         text: "Logo of the brand (PNG, text in Bulgarian)",
       },
       {
-        href: "/pdf/golden-moments/facebook-post.pdf",
+        href: `${base}/pdf/golden-moments/facebook-post.pdf`,
         text: "Design for an example Facebook post (PDF, in Bulgarian)",
       },
       {
-        href: "/pdf/golden-ages/flyer.pdf",
+        href: `${base}/pdf/golden-ages/flyer.pdf`,
         text: "Design for an example flyer (PDF, in Bulgarian)",
       },
     ],

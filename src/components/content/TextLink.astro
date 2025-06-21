@@ -1,14 +1,18 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { base } from "../../common/navigation";
 
 interface Props extends HTMLAttributes<"a"> {
   href: string;
 }
 
-const { class: className, ...props } = Astro.props;
+const { class: className, href, ...props } = Astro.props;
+const validHref = href.startsWith("/") ? base + href : href;
+
 ---
 
 <a
+  href={validHref}
   class:list={[
     "underline focus-outline hover:no-underline italic active:underline",
     className,

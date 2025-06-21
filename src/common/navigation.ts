@@ -3,25 +3,27 @@ export type NavigationLink = {
   href: string;
 };
 
+export const base = "/Valentin-Karadzhov";
+
 export const links: NavigationLink[] = [
   {
     text: "Home",
-    href: "/",
+    href: base + "/",
   },
   {
     text: "Portfolio",
-    href: "/portfolio",
+    href: base + "/portfolio",
   },
   {
     text: "Tech stack",
-    href: "/skills",
+    href: base + "/skills",
   },
   {
     text: "About me",
-    href: "/about",
+    href: base + "/about",
   },
   {
     text: "Contact me",
-    href: "/contacts"
+    href: base + "/contacts"
   },
 ];
