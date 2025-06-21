@@ -1,0 +1,28 @@
+.focus-outline:focus-visible {
+  outline-style: solid;
+}
+
+.light,
+.system {
+  .focus-outline:focus-visible {
+    outline-width: var(--_outline-width-light);
+    outline-color: var(--_outline-color-light);
+  }
+}
+
+.dark .focus-outline:focus-visible {
+  outline-width: var(--_outline-width-dark);
+  outline-color: var(--_outline-color-dark);
+}
+
+.system .focus-outline:focus-visible {
+  @media (prefers-color-scheme: dark) {
+    outline-width: var(--_outline-width-dark);
+    outline-color: var(--_outline-color-dark);
+  }
+}
+
+.high-contrast .focus-outline:focus-visible {
+  outline-width: var(--_outline-width-hc);
+  outline-color: var(--_outline-color-hc);
+}

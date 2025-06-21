@@ -1,0 +1,28 @@
+---
+interface Props {
+  /**
+   * Width and height in pixels
+   */
+  size: number;
+  className?: string;
+}
+
+const { size, className = "" } = Astro.props;
+
+const viewBox = "0 0 24 24";
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox={viewBox}
+  class:list={["block", className]}
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  role="img"
+  stroke-width="3"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 6h18M3 12h18M3 18h18" />
+</svg>

@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import Text from '../content/Text.astro';
+
+interface Props extends HTMLAttributes<"a"> {
+  href: string;
+  screenreaderText: string;
+}
+
+const { screenreaderText, ...props } = Astro.props;
+---
+
+<a {...props} title={screenreaderText}  class="hover:opacity-65 focus-outline">
+  <span aria-hidden="true">
+    <slot />
+  </span>
+  <Text selector="span" class="screenreader-only">{screenreaderText}</Text>
+</a>
+

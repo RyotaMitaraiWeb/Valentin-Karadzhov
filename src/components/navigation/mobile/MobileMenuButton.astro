@@ -1,0 +1,28 @@
+---
+import BurgerMenuIcon from "../../icons/BurgerMenuIcon.astro";
+---
+
+<button
+  class="group focus-outline cursor-pointer px-6 py-8 flex h-full items-center justify-center"
+  aria-label="Open navigation menu"
+  id="mobile-menu-button"
+>
+  <BurgerMenuIcon
+    className="stroke-on-surface group-hover:stroke-primary group-active:opacity-65 motion-safe:transition-colors"
+    size={24}
+  />
+</button>
+
+<script>
+  import { MOBILE_MENU_DIALOG_ID } from "../../../common/dialog";
+  import { openDialog } from "../../../util/dialog/openDialog";
+
+  const button = document.querySelector(
+    "#mobile-menu-button"
+  ) as HTMLButtonElement;
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    openDialog(MOBILE_MENU_DIALOG_ID);
+  });
+</script>

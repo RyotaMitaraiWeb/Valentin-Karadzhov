@@ -1,0 +1,28 @@
+---
+import GearIcon from "../../icons/GearIcon.astro";
+---
+
+<button
+  class="group focus-outline cursor-pointer px-6 py-8 flex h-full items-center justify-center"
+  aria-label="Open settings menu"
+  id="settings-menu-button"
+>
+  <GearIcon
+    className="fill-on-surface group-hover:fill-primary group-active:opacity-65 motion-safe:transition-colors"
+    size={24}
+  />
+</button>
+
+<script>
+  import { SETTINGS_MENU_DIALOG_ID } from "../../../common/dialog";
+  import { openDialog } from "../../../util/dialog/openDialog";
+
+  const button = document.getElementById(
+    "settings-menu-button"
+  ) as HTMLButtonElement;
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    openDialog(SETTINGS_MENU_DIALOG_ID);
+  });
+</script>

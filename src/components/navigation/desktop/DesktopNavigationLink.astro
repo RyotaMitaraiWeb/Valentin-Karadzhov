@@ -1,0 +1,12 @@
+---
+interface Props {
+  href: string;
+}
+
+const props = Astro.props;
+---
+<li class="hidden lg:block">
+  <a class="flex items-center text-xl text-on-surface hover:text-primary active:underline motion-safe:transition-colors px-6 py-8 focus-outline" href={props.href}>
+    <slot />
+  </a>
+</li>

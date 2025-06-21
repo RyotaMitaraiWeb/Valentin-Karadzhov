@@ -1,0 +1,76 @@
+---
+import PageTitle from "../../components/content/PageTitle.astro";
+import SiteBackgroundSection from "../../components/content/sections/SiteBackgroundSection.astro";
+import Text from "../../components/content/Text.astro";
+import PortfolioOverviewProjectCard from "../../components/portfolio/PortfolioOverviewProjectCard.astro";
+import Layout from "../../layouts/Layout.astro";
+import { webApps, websites } from "../../common/portfolio";
+import Heading2 from "../../components/content/Heading2.astro";
+import TextLink from "../../components/content/TextLink.astro";
+import { GITHUB_PROFILE_URL } from "../../common/github";
+---
+
+<Layout
+  pageTitle="Portfolio | Valentin Karadzhov"
+  metaDescription="Overview of my personal and professional projects. Check each link for more information"
+>
+  <SiteBackgroundSection selector="section">
+    <PageTitle>Portfolio</PageTitle>
+    <Text
+      >This is an overview of some of the projects I have worked on. The list
+      includes a short description of the project, the tech stack used, and
+      useful external links (such as links to their GitHub repositories). Each
+      project has its own dedicated page with more information, which you can
+      access from the list.</Text
+    >
+    <Text
+      >Most of my personal projects are open-source, so if you are curious to
+      see more projects of mine, <TextLink href={GITHUB_PROFILE_URL}
+        >feel free to check out my GitHub profile</TextLink
+      >.</Text
+    >
+  </SiteBackgroundSection>
+
+  <section class="p-8 flex flex-col gap-8">
+    <Heading2 class="text-center">Featured web applications</Heading2>
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-x-16 gap-y-32 lg:gap-8">
+      {
+        webApps.map((app) => (
+          <PortfolioOverviewProjectCard
+            title={app.title}
+            techStack={app.techStack}
+            image={app.banner}
+            imageAlt={app.bannerAlt}
+            externalLinks={app.externalLinks}
+            id={app.id}
+          >
+            <Text>{app.description}</Text>
+          </PortfolioOverviewProjectCard>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="p-8 flex flex-col gap-8">
+    <div class="flex flex-col gap-2">
+      <Heading2 class="text-center">Featured websites</Heading2>
+      <Text class="text-center text-sm italic">More coming soon!</Text>
+    </div>
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-x-16 gap-y-32 lg:gap-8">
+      {
+        websites.map((app) => (
+          <PortfolioOverviewProjectCard
+            title={app.title}
+            techStack={app.techStack}
+            image={app.banner}
+            imageAlt={app.bannerAlt}
+            externalLinks={app.externalLinks}
+            id={app.id}
+          >
+            <Text>{app.description}</Text>
+          </PortfolioOverviewProjectCard>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

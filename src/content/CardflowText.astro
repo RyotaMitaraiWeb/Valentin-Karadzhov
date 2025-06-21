@@ -1,0 +1,70 @@
+---
+import Text from "../components/content/Text.astro";
+---
+
+<Text
+  ><em>Cardflow</em> is an open-source online platform that allows users to buy,
+  sell, and trade TCG items like Yu-Gi-Oh cards. This was a collaborative project
+  in which I participated as the main front-end engineer.</Text
+>
+
+<Text>The web app supports various functionalities, including:</Text>
+<ul class="list-disc pl-4">
+  <Text selector="li">
+    <b>Authentication and authorization</b> - the app uses the access / refresh token
+    model. The front-end implements a "retry" model if it gets a 401 error
+  </Text>
+  <Text selector="li"
+    ><b>Various operations with card offers</b> - users can search, view, create,
+    edit, and delete card offers</Text
+  >
+  <Text selector="li"
+    ><b>Shopping cart</b> - while viewing a card, users can add a specific offer
+    to their shopping cart and then purchase their cards after checking out</Text
+  >
+  <Text selector="li"
+    ><b>Trading</b> - users can search for users and initiate a trade offer. Trades
+    allow users to trade cards between each other, potentially with some cash to
+    compensate for lower or higher value cards. The app provides a chat and an offer
+    tracker that allow the two users to keep track of everything</Text
+  >
+  <Text selector="li">
+    <b>Tracking and managing purchases and sales</b> - users can view a list
+    of their purchases and sales, as well as view details about them (such as the shipment address)
+    and manage them (such as updating the status of the order from "sent" to "received")
+  </Text>
+  <Text selector="li"
+    ><b>Internalization</b> - the app is translated in Bulgarian and English</Text
+  >
+  <Text selector="li">
+    <b>Profile customization</b> - users can change their profile picture, username, the default shipment address (which is automatically filled on checkout), and the default currency (between BGN and euro)
+  </Text>
+</ul>
+
+<Text
+  >I implemented almost all of those features on the front-end single-handedly.
+  The design of the UI was provided to me in Figma, though I occassionally (with
+  approval) made some minor improvements to the UI when I saw that something
+  could be visualized in a better way. I also wrote numerous unit and component
+  tests, which helped me with my goal of making the code more maintainable.</Text
+>
+
+<Text
+  >My involvement in the project wasn't limited to just making pages
+  interactive. In particular, I have opened issues on GitHub when I discovered
+  bugs with our backend API, providing detailed steps to reproduce the bugs and
+  even occassionally finding out what's causing the bug, or when I needed a
+  specific feature to implement something on the client. Sometimes, I even
+  contributed bugfixes myself (despite having little experience with Django or
+  Python in general) and very minor feature implementations. I also had the
+  opportunity to review pull requests from external contributors who had
+  expressed interest in contributing to the project.</Text
+>
+
+<Text
+  >This project gave me an opportunity to work in a team with other people that
+  I did not even know before that moment. In addition to communicating with each
+  other on a consistent basis, I also had opportunities to raise disagreements
+  when I felt that a particular decision (especially a technical one) were not
+  the best and there were better options to consider.
+</Text>

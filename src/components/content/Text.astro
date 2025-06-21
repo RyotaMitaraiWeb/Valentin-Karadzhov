@@ -1,0 +1,13 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+  selector?: keyof HTMLElementTagNameMap;
+}
+
+const { class: className, selector: Tag = 'p', ...props } = Astro.props;
+---
+
+<Tag class:list={["text-lg lg:text-xl", className]} {...props}>
+  <slot />
+</Tag>

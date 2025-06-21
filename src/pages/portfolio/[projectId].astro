@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets";
+import { webApps, websites } from "../../common/portfolio";
+import PageTitle from "../../components/content/PageTitle.astro";
+import SiteBackgroundSection from "../../components/content/sections/SiteBackgroundSection.astro";
+import Text from "../../components/content/Text.astro";
+import TechnologyChip from "../../components/portfolio/TechnologyChip.astro";
+import Layout from "../../layouts/Layout.astro";
+import Heading2 from "../../components/content/Heading2.astro";
+import PortfolioExternalLink from "../../components/portfolio/PortfolioExternalLink.astro";
+import LinkButton from "../../components/content/LinkButton.astro";
+
+export async function getStaticPaths() {
+  const test = [...webApps, ...websites];
+  return test.map((app) => ({
+    params: { projectId: app.id },
+    props: { project: app },
+  }));
+}
+
+const { project } = Astro.props;
+const Content = project.fullContent;
+---
+
+<Layout
+  pageTitle={`${project.title} | Valentin Karadzhov`}
+  metaDescription={project.description}
+>
+  <div id="project" class="px-8 lg:px-24 max-w-[1920px] mx-auto">
+    <section
+      class="flex flex-col bg-surface text-on-surface rounded-xl border border-gray-500 shadow-lg"
+    >
+      <header class="flex flex-col gap-4 rounded-t-xl">
+        <div
+          class="w-full max-w-[1920px] h-auto aspect-[4/3] lg:aspect-[2.15/1] rounded-t-xl overflow-hidden shadow-md"
+        >
+          <Image
+            src={project.banner}
+            alt={project.bannerAlt}
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div aria-hidden="true">
+          <Text class="italic text-center text-sm!">{project.bannerAlt}</Text>
+        </div>
+        <div class="mt-4">
+          <div class="flex flex-col gap-4">
+            <PageTitle>{project.title}</PageTitle>
+            <Heading2 class="screenreader-only">Technologies used</Heading2>
+            <ul role="list" class="flex flex-wrap gap-2 mx-auto px-4">
+              {
+                project.techStack.map((tech) => (
+                  <Text selector="li">
+                    <TechnologyChip>{tech}</TechnologyChip>
+                  </Text>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section class="flex flex-col gap-2 p-6">
+        <Heading2>Project overview</Heading2>
+        <div class="flex flex-col gap-4">
+          <Content />
+        </div>
+      </section>
+      <footer class="p-6 flex flex-col gap-2">
+        <Heading2>External links</Heading2>
+        <ul class="list-disc pl-4">
+          {
+            project.externalLinks.map((link) => (
+              <Text selector="li">
+                <PortfolioExternalLink href={link.href} text={link.text} />
+              </Text>
+            ))
+          }
+        </ul>
+      </footer>
+    </section>
+  </div>
+  <LinkButton href="/portfolio" class="mx-auto">Back to the portfolio index</LinkButton>
+</Layout>
+
+<style lang="scss" is:global>
+  #project ul.list-disc {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+</style>

@@ -1,0 +1,70 @@
+---
+import { themes, type theme } from "../../../common/theme";
+import CheckIcon from "../../icons/CheckIcon.astro";
+
+interface Props {
+  value: theme;
+  description?: string;
+}
+
+const props = Astro.props;
+const id = `theme-${props.value}`;
+---
+
+<div class="flex flex-col">
+  <button
+    data-theme={props.value}
+    class="focus-outline cursor-pointer inline-flex justify-between lg:justify-start items-center gap-8 py-4 font-bold hover:text-primary active:opacity-65"
+    aria-pressed={themes.system.value === props.value}
+    aria-describedby={props.description ? id : undefined}
+  >
+    <div class="flex gap-4">
+      <slot name="icon" />
+      <span class="flex flex-col text-left">
+        <slot />
+      </span>
+    </div>
+    <span class="check-icon">
+      <CheckIcon size={24} className="fill-current" />
+    </span>
+  </button>
+  {
+    props.description ? (
+      <p id={id} class="font-normal text-xs pl-10">{props.description}</p>
+    ) : null
+  }
+</div>
+<script>
+  import type { theme } from "../../../common/theme";
+  import { changeTheme } from "../../../util/changeTheme";
+
+  const buttons = document.querySelectorAll(
+    "[data-theme]"
+  ) as NodeListOf<HTMLButtonElement>;
+
+  for (const button of buttons) {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const theme: theme = button.dataset.theme as theme;
+
+      changeTheme(theme);
+    });
+  }
+</script>
+
+<style lang="scss">
+  button {
+    &[aria-pressed="true"] {
+      color: var(--color-primary);
+
+      .check-icon {
+        display: block;
+      }
+    }
+
+    .check-icon {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --_primary-light: #7843E9;
+  --_on-primary-light: #fff;
+  --_primary-hover-light: #5f30d4;
+  --_primary-active-light: #4c20b5;
+  --_surface-light: #fff;
+  --_on-surface-light: #1a1a1a;
+  --_site-bg-light: #f1f1f1;
+  --_on-site-bg-light: #2c2c2c;
+  --_outline-width-light: 3px;
+  --_outline-color-light: blue;
+  --_chip-bg-light: #E0E0E0;
+  --_chip-text-light: #1A1A1A;
+  --_avatar-light: #D4D4D4;
+  --_on-avatar-light: #1A1A1A;
+
+  --_primary-dark: #A48EFF;
+  --_on-primary-dark: #1A1A1A;
+  --_primary-hover-dark: #BCA9FF;
+  --_primary-active-dark: #937bff;
+  --_surface-dark: #23262f;
+  --_on-surface-dark: #fafafa;
+  --_site-bg-dark: #17181c;
+  --_on-site-bg-dark: #e0e0e0;
+  --_outline-width-dark: 3px;
+  --_outline-color-dark: lightskyblue;
+  --_chip-bg-dark: #555555;
+  --_chip-text-dark: #E0E0E0;
+  --_avatar-dark: #3A3A3A;
+  --_on-avatar-dark: #FFFFFF;
+
+  --_primary-hc: #ffd700;
+  --_on-primary-hc: #000;
+  --_primary-hover-hc: #84e2f1;
+  --_primary-active-hc: #ffffff;
+  --_surface-hc: #fff;
+  --_on-surface-hc: #000;
+  --_site-bg-hc: #000;
+  --_on-site-bg-hc: #fff;
+  --_outline-width-hc: 6px;
+  --_outline-color-hc: #00b7ff;
+  --_chip-bg-hc: #000000;
+  --_chip-text-hc: #ffffff;
+  --_avatar-hc: #FFD700;
+  --_on-avatar-hc: #000000;
+}
+
+@theme {
+  --color-primary: var(--_primary-light);
+  --color-on-primary: var(--_on-primary-light);
+  --color-primary-hover: var(--_primary-hover-light);
+  --color-primary-active: var(--_primary-active-light);
+
+  --color-surface: var(--_surface-light);
+  --color-on-surface: var(--_on-surface-light);
+
+  --color-site-bg: var(--_site-bg-light);
+  --color-on-site-bg: var(--_on-site-bg-light);
+  --color-chip-bg: var(--_chip-bg-light);
+  --color-chip-text: var(--_chip-text-light);
+
+  --color-avatar: var(--_avatar-light);
+  --color-on-avatar: var(--_on-avatar-light);
+}
+
+html.dark {
+  --color-primary: var(--_primary-dark);
+  --color-on-primary: var(--_on-primary-dark);
+  --color-primary-hover: var(--_primary-hover-dark);
+  --color-primary-active: var(--_primary-active-dark);
+
+  --color-surface: var(--_surface-dark);
+  --color-on-surface: var(--_on-surface-dark);
+
+  --color-site-bg: var(--_site-bg-dark);
+  --color-on-site-bg: var(--_on-site-bg-dark);
+
+  --color-chip-bg: var(--_chip-bg-dark);
+  --color-chip-text: var(--_chip-text-dark);
+
+  --color-avatar: var(--_avatar-dark);
+  --color-on-avatar: var(--_on-avatar-dark);
+}
+
+html.high-contrast {
+  --color-primary: var(--_primary-hc);
+  --color-on-primary: var(--_on-primary-hc);
+  --color-primary-hover: var(--_primary-hover-hc);
+  --color-primary-active: var(--_primary-active-hc);
+
+  --color-surface: var(--_surface-hc);
+  --color-on-surface: var(--_on-surface-hc);
+
+  --color-site-bg: var(--_site-bg-hc);
+  --color-on-site-bg: var(--_on-site-bg-hc);
+
+  --color-chip-bg: var(--_chip-bg-hc);
+  --color-chip-text: var(--_chip-text-hc);
+
+  --color-avatar: var(--_avatar-hc);
+  --color-on-avatar: var(--_on-avatar-hc);
+}
+
+html.locked,
+html.locked body {
+  overflow: hidden;
+}

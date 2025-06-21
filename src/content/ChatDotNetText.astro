@@ -1,0 +1,71 @@
+---
+import Text from "../components/content/Text.astro";
+---
+<Text
+  ><em>Chat.NET</em> is a chat application that I wanted to develop with the intention
+  of challenging myself with a few problems that I had never had an opportunity to
+  address before that. Most of those have been solved at their core, though it's
+  worth keeping in mind that the app is not completed as of yet.</Text
+>
+
+<Text>The challenges I purposely set for myself were the following:</Text>
+
+<ul class="list-disc pl-4">
+  <Text selector="li">
+    <b>Managing a large amount of technologies</b> - the app uses more technologies
+    (such as databases) compared to my other personal projects to store different
+    types of data
+  </Text>
+  <Text selector="li">
+    <b>Develop my own UI</b> - rather than rely on existing component libraries (like
+    Material UI for React), I wanted to try my hands at creating my own component
+    library, suited specifically for the needs of the app
+  </Text>
+  <Text selector="li">
+    <b>Develop a real-time application</b> - up until now, my projects had mostly
+    been using REST APIs (which I also authored) and, for once, I wanted to create
+    a project that has data that updates in real-time
+  </Text>
+</ul>
+
+<Text
+  >The app uses three different DBMS for its needs: a PostgreSQL database for
+  long-term storage (like chat rooms and users), a Redis store for managing user
+  sessions, and a MongoDB store for managing punishments (an example of a
+  punishment is a ban from a chat room. Read more about this in the next
+  paragraphs!). All of those (including the .NET and Next.js services) are managed
+  via Docker Compose, making development with that many services much easier.</Text
+>
+
+<Text
+  >The app also rolls out its own UI, which includes its own theming system and
+  its own component library. The theming system includes support for light and
+  dark mode, colors for various contexts (such as primary, secondary, success,
+  warning, etc.), which are adapted for those modes, and animations, among
+  others. The component library features over 20 components, ranging from simple
+  ones like typographic ones and alerts to more complex ones like paginators and
+  drawers. The style of the library leans towards being more opinionated (i.e.
+  many design decisions have already been taken), but with some room for
+  customization where appropriate (for example, the paginator, by default, uses
+  its own implementation with buttons, but the component allows you to define
+  its HTML structure with a render prop). The only design dependencies the UI
+  has are for incredibly difficult tasks that are not worth reimplementing, such
+  as focus traps.
+</Text>
+
+<Text
+  >The real-time connectivity of the app is not limited to just messaging other
+  users in chat rooms. One other special functionality is the support for chat
+  commands. The chat commands in this app have their own text-based syntax.
+  Currently, commands are used to apply punishments to misbehaving users. This
+  feature also includes real-time notifications (for example, if the user is
+  banned from a chat room, they will get a pop-up that informs them of this
+  action).</Text
+>
+
+<Text
+  >Despite being a real-time app, it still relies on REST API for some tasks,
+  such as searching for chat rooms (which can also have categories!). Another
+  planned feature is the addition of a management system for articles to support
+  a blog for the app.</Text
+>
