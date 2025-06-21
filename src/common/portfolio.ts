@@ -31,7 +31,7 @@ export const webApps: Project[] = [
     id: "cardflow",
     title: "Cardflow",
     description:
-      "A web platform for buying, selling, and trading TCG items like Yu-Gi-Oh cards. Developed in collaboration with other developers.",
+      "A web platform for buying, selling, and trading TCG items like Yu-Gi-Oh cards. Developed in collaboration with other developers",
     fullContent: CardflowText,
     techStack: [
       "React",
