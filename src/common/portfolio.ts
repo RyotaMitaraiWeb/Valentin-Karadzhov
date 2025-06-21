@@ -59,7 +59,7 @@ export const webApps: Project[] = [
     id: "quiz-world",
     title: "Quiz World",
     description:
-      "An app that allows users to play on and create quizzes. Supports single-choice, multiple-choice, and text-based questions",
+      "An app that allows users to play and create quizzes. Supports single-choice, multiple-choice, and text-based questions",
     fullContent: QuizWorldText,
     banner: QuizWorldBanner,
     bannerAlt:
