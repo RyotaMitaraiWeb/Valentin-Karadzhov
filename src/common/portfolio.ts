@@ -3,12 +3,12 @@ import CardflowBanner from "../assets/images/projects/banners/cardflow.jpg";
 import QuizWorldBanner from "../assets/images/projects/banners/quiz-world.jpg";
 import VueFlashcardsBanner from "../assets/images/projects/banners/vue-flashcards.jpg";
 import ChatDotNetBanner from "../assets/images/projects/banners/chat-dotnet.jpg";
-import GoldenAgesBanner from "../assets/images/projects/banners/golden-ages.jpg";
+import GoldenMomentsBanner from "../assets/images/projects/banners/golden-moments.jpg";
 import type { AstroComponent } from "./util";
 import QuizWorldText from "../content/QuizWorldText.astro";
 import VueFlashcardsText from "../content/VueFlashcardsText.astro";
 import ChatDotNetText from "../content/ChatDotNetText.astro";
-import GoldenAgesText from "../content/GoldenAgesText.astro";
+import GoldenMomentsText from "../content/GoldenMomentsText.astro";
 
 export type ExternalLink = {
   href: string;
@@ -135,14 +135,14 @@ export const webApps: Project[] = [
 
 export const websites: Project[] = [
   {
-    id: "golden-ages",
-    title: '"Zlatni Migove" (Golden Ages)',
+    id: "golden-moments",
+    title: '"Zlatni Migove" (Golden Moments)',
     description:
       "Advertising materials for a senior club (website, Facebook post, flyer)",
-    fullContent: GoldenAgesText,
-    banner: GoldenAgesBanner,
+    fullContent: GoldenMomentsText,
+    banner: GoldenMomentsBanner,
     bannerAlt: "A snapshot from the landing page, showcasing a hero banner",
-    techStack: ["Astro", "Photoshop", "Illustrator", "InDesign", "Figma"],
+    techStack: ["Astro", "TailwindCSS", "Photoshop", "Illustrator", "InDesign", "Figma"],
     externalLinks: [
       {
         href: "https://ryotamitaraiweb.github.io/zlatnimigove/",
@@ -153,11 +153,11 @@ export const websites: Project[] = [
         text: "Design in Figma (wireframes + mockup)",
       },
       {
-        href: "/images/golden-ages/logo.png",
+        href: "/images/golden-moments/logo.png",
         text: "Logo of the brand (PNG, text in Bulgarian)",
       },
       {
-        href: "/pdf/golden-ages/facebook-post.pdf",
+        href: "/pdf/golden-moments/facebook-post.pdf",
         text: "Design for an example Facebook post (PDF, in Bulgarian)",
       },
       {
