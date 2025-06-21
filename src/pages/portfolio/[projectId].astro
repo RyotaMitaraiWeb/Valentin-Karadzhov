@@ -8,6 +8,7 @@ import TechnologyChip from "../../components/portfolio/TechnologyChip.astro";
 import Layout from "../../layouts/Layout.astro";
 import Heading2 from "../../components/content/Heading2.astro";
 import PortfolioExternalLink from "../../components/portfolio/PortfolioExternalLink.astro";
+import LinkButton from "../../components/content/LinkButton.astro";
 
 export async function getStaticPaths() {
   const test = [...webApps, ...websites];
@@ -78,4 +79,5 @@ const Content = project.fullContent;
       </footer>
     </section>
   </div>
+  <LinkButton href="/portfolio" class="mx-auto">Back to the portfolio index</LinkButton>
 </Layout>
