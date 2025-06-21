@@ -2,7 +2,7 @@
 import { GITHUB_PROFILE_URL } from "../common/github";
 import { LINKEDIN_PROFILE_URL } from "../common/linkedin";
 import { CV_PATH } from "../common/personalAssets";
-import { cardflow, webApps, type Project } from "../common/portfolio";
+import { cardflow, quizWorld, vueFlashcards, webApps, type Project } from "../common/portfolio";
 import Heading2 from "../components/content/Heading2.astro";
 import LinkButton from "../components/content/LinkButton.astro";
 import SiteBackgroundSection from "../components/content/sections/SiteBackgroundSection.astro";
@@ -18,7 +18,7 @@ import Layout from "../layouts/Layout.astro";
 
 const iconSize = 32;
 
-const featuredProjects: Project[] = [cardflow, cardflow, cardflow];
+const featuredProjects: Project[] = [cardflow, quizWorld, vueFlashcards];
 ---
 
 <Layout
@@ -92,7 +92,7 @@ const featuredProjects: Project[] = [cardflow, cardflow, cardflow];
         <HomeSection heading="Tech stack and skills">
           <Text
             >I primarily use JavaScript / TypeScript and .NET for my web apps. I
-            am also experienced with some web and graphic design tools.
+            also have some experience with some web and graphic design tools.
           </Text>
           <LinkButton href="/skills">Review my tech stack</LinkButton>
         </HomeSection>

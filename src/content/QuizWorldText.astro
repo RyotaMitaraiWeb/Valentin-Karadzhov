@@ -1,0 +1,66 @@
+---
+import Text from "../components/content/Text.astro";
+---
+
+<Text>
+  <em>Quiz World</em> is a web application that's all about quizzes. The app provides
+  a clean UI for playing and creating quizzes. The quizzes in the app support three
+  types of questions:</Text
+>
+<ul class="pl-4 list-disc">
+  <Text selector="li"
+    ><b>Single-choice questions</b> - multiple options provided, of which one is
+    correct</Text
+  >
+  <Text selector="li"
+    ><b>Multiple-choice questions</b> - multiple options provided, of which <em
+      >at least one</em
+    > is correct. Players must pick all correct options</Text
+  >
+  <Text selector="li"
+    ><b>Text questions</b> - the player must input the correct answer in the provided
+    text field</Text
+  >
+</ul>
+
+<Text>In addition to creating and playing quizzes, the app also features:</Text>
+
+<ul class="pl-4 list-disc">
+  <Text selector="li"
+    ><b>Role-based authorization</b> - the app supports different roles that give
+    their users various permissions. Certain actions performed by certain roles are
+    also logged, which reduces the risk of abuse with power</Text
+  >
+  <Text selector="li"
+    ><b>Good UX when creating quizzes</b> - the UI packs various quality-of-life
+    features to make creating (and editing) quizzes easier. For example, when adding
+    a new answer to a question, its text field will receive automatic focus, allowing
+    them to start typing immediately</Text
+  >
+  <Text selector="li">
+    <b>Feedback during a game</b> - players can easily tell if they have answered
+    a question correctly or incorrectly. The app also provides a "performance" tracker,
+    which shows the player how many questions they've got right or wrong, as well
+    as if there are questions that are still awaiting an answer
+  </Text>
+  <Text selector="li"
+    ><b>Administration area</b> - in line with the role-based authorization mentioned
+    earlier, users that are administrators can manage certain parts of the app, such
+    as promoting users to and demoting users from certain roles</Text
+  >
+</ul>
+
+<Text
+  >The app was originally written in Angular 16 and ASP.NET 6. It has since been
+  migrated to Angular 19/20 and ASP.NET 8. On the front-end, the migration
+  included a total overhaul of the UI and the addition of new quality-of-life
+  features. The front-end also saw improvements in the code quality and the
+  adoption of modern Angular features like signals. On the back-end, the
+  migration included a significant improvement to the code and its architecture,
+  as well as making the web API easier to consume (for example, in its initial
+  version, there were three endpoints for retrieving a list of quizzes - one for
+  all quizzes, one for searching by title, and one for retrieving a user's
+  quizzes. In the new version, all of those functionalities were merged in one
+  endpoint). The backend also utilizes a Redis cache store to maintain a list of
+  "blacklisted" JWTs, which enables the logout functionality of the app.</Text
+>
