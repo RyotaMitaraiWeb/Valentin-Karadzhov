@@ -10,25 +10,34 @@ import Text from "../components/content/Text.astro";
 
 <Text>The web app supports various functionalities, including:</Text>
 <ul class="list-disc pl-4">
-  <Text selector="li">Authentication and authorization</Text>
+  <Text selector="li">
+    <b>Authentication and authorization</b> - the app uses the access / refresh token
+    model. The front-end implements a "retry" model if it gets a 401 error
+  </Text>
   <Text selector="li"
-    >Searching, viewing, creating, editing, and deleting card offers</Text
+    ><b>Various operations with card offers</b> - users can search, view, create,
+    edit, and delete card offers</Text
   >
   <Text selector="li"
-    >Adding items to a shopping cart and then checking them out</Text
+    ><b>Shopping cart</b> - while viewing a card, users can add a specific offer
+    to their shopping cart and then purchase their cards after checking out</Text
   >
   <Text selector="li"
-    >Searching users and engaging in trades with them. The trading functionality
-    includes an offer tracker and a chat</Text
-  >
-  <Text selector="li">Tracking and managing purchases and sales</Text>
-  <Text selector="li"
-    >Internalization (the app is translated in Bulgarian and English)</Text
+    ><b>Trading</b> - users can search for users and initiate a trade offer. Trades
+    allow users to trade cards between each other, potentially with some cash to
+    compensate for lower or higher value cards. The app provides a chat and an offer
+    tracker that allow the two users to keep track of everything</Text
   >
   <Text selector="li">
-    Profile customization, which includes support for switching default currency
-    (between BGN and euro) and changing your profile picture, default shipment
-    address, username, and others
+    <b>Tracking and managing purchases and sales</b> - users can view a list
+    of their purchases and sales, as well as view details about them (such as the shipment address)
+    and manage them (such as updating the status of the order from "sent" to "received")
+  </Text>
+  <Text selector="li"
+    ><b>Internalization</b> - the app is translated in Bulgarian and English</Text
+  >
+  <Text selector="li">
+    <b>Profile customization</b> - users can change their profile picture, username, the default shipment address (which is automatically filled on checkout), and the default currency (between BGN and euro)
   </Text>
 </ul>
 
