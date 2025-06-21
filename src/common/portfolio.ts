@@ -2,9 +2,11 @@ import CardflowText from "../content/CardflowText.astro";
 import CardflowBanner from "../assets/images/projects/banners/cardflow.jpg";
 import QuizWorldBanner from "../assets/images/projects/banners/quiz-world.jpg";
 import VueFlashcardsBanner from "../assets/images/projects/banners/vue-flashcards.jpg";
+import ChatDotNetBanner from "../assets/images/projects/banners/chat-dotnet.jpg";
 import type { AstroComponent } from "./util";
 import QuizWorldText from "../content/QuizWorldText.astro";
 import VueFlashcardsText from "../content/VueFlashcardsText.astro";
+import ChatDotNetText from "../content/ChatDotNetText.astro";
 
 export type ExternalLink = {
   href: string;
@@ -94,7 +96,32 @@ export const webApps: Project[] = [
       },
       {
         href: "https://github.com/RyotaMitaraiWeb/Flashcards-Service",
-        text: "Back-end GitHub repository"
+        text: "Back-end GitHub repository",
+      },
+    ],
+  },
+  {
+    id: "chat-net",
+    title: "Chat.NET",
+    description:
+      "A chat application using various technologies. Currently work in progress",
+    fullContent: ChatDotNetText,
+    banner: ChatDotNetBanner,
+    bannerAlt: "Users interacting in a chat room.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "ASP.NET 8",
+      "SignalR",
+      "Entity Framework Core 8",
+      "PostgreSQL",
+      "Redis",
+      "MongoDB",
+    ],
+    externalLinks: [
+      {
+        href: "https://github.com/RyotaMitaraiWeb/Chat.NET",
+        text: "GitHub repository",
       },
     ],
   },
