@@ -163,7 +163,7 @@ export const websites: Project[] = [
         text: "Design for an example Facebook post (PDF, in Bulgarian)",
       },
       {
-        href: `${base}/pdf/golden-ages/flyer.pdf`,
+        href: `${base}/pdf/golden-moments/flyer.pdf`,
         text: "Design for an example flyer (PDF, in Bulgarian)",
       },
     ],
