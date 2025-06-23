@@ -12,11 +12,11 @@ const props = Astro.props;
 ---
 
 <section
-  class="bg-surface mx-auto text-on-surface rounded max-w-90 h-90 p-8 pt-0 flex flex-col"
+  class="bg-surface relative z-1 mx-auto text-on-surface rounded max-w-90 h-90 p-8 pt-0 flex flex-col"
 >
   <div
     aria-hidden="true"
-    class="bg-avatar mx-auto text-on-avatar h-24 w-24 rounded-[50%] flex justify-center items-center -mt-12"
+    class="bg-avatar relative z-2 mx-auto text-on-avatar h-24 w-24 rounded-[50%] flex justify-center items-center -mt-12"
   >
     <slot name="icon" />
   </div>
