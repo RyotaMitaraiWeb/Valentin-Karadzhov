@@ -72,6 +72,7 @@ export const webApps: Project[] = [
       "Entity Framework Core 8",
       "MS SQL Server",
       "Redis",
+      "SignalR",
     ],
     externalLinks: [
       {
