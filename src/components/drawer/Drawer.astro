@@ -49,6 +49,8 @@ const { class: className, side, ...props } = Astro.props;
   $animation-style: cubic-bezier(0.4, 0, 0.2, 1);
 
   dialog {
+    background-color: transparent;
+
     @media (prefers-reduced-motion: no-preference) {
       &.left {
         & > * {
@@ -88,8 +90,6 @@ const { class: className, side, ...props } = Astro.props;
         justify-content: flex-end;
       }
     }
-
-    background-color: transparent;
 
     &.open {
       background-color: rgba(0, 0, 0, 0.5);
