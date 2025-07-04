@@ -7,6 +7,10 @@ export function closeDialog(target: HTMLDialogElement | string) {
 
   target.classList.add("close");
 
+  if (history.state?.dialogOpen) {
+    history.back();
+  }
+
   if (hasNotBlockedAnimations()) {
     setTimeout(() => {
       target.close();

@@ -28,6 +28,12 @@ const { class: className, side, ...props } = Astro.props;
     "dialog[data-drawer]"
   ) as NodeListOf<HTMLDialogElement>;
 
+  window.addEventListener("popstate", (e) => {
+    for (const dialog of dialogs) {
+      closeDialog(dialog);
+    }
+  });
+
   for (const dialog of dialogs) {
     dialog.addEventListener("click", (e) => {
       const target = e.target;
