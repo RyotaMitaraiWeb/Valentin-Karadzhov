@@ -6,6 +6,8 @@ export function openDialog(dialogId: string) {
     ) as HTMLDialogElement;
     menu.showModal();
 
+    history.pushState({ dialogOpen: true }, '');
+
     requestAnimationFrame(() => {
       menu.classList.add("open");
       const html = document.querySelector("html")!;
